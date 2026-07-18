@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { supabase } from '../../lib/supabase';
 import { useAuthStore } from '../../store/useAuthStore';
 import { useContextStore } from '../../store/useContextStore';
-import { Plus, Search, Pencil, Trash2, X as CloseIcon } from 'lucide-react';
+import { Plus, Search, Pencil, X as CloseIcon } from 'lucide-react';
 
 interface MaterialRow {
   id: string;
@@ -341,7 +341,7 @@ export default function Inward() {
                     <div>TOTAL (₹)</div>
                     <div></div>
                   </div>
-                  {materials.map((m, index) => (
+                  {materials.map((m) => (
                     <div key={m.id} style={{ display: 'grid', gridTemplateColumns: '1.5fr 1fr 1.5fr 0.8fr 0.8fr 1fr 1fr 40px', padding: '0.75rem', borderBottom: '1px solid var(--border-light)', gap: '0.5rem', alignItems: 'center' }}>
                       <select required value={m.type} onChange={e => setMaterials(materials.map(mat => mat.id === m.id ? {...mat, type: e.target.value} : mat))} style={{ padding: '0.5rem', borderRadius: '4px', border: '1px solid var(--border-light)', width: '100%', boxSizing: 'border-box', backgroundColor: 'white' }}>
                         <option value="" disabled>Select type...</option>

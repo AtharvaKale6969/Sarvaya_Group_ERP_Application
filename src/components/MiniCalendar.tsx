@@ -127,7 +127,7 @@ export default function MiniCalendar({ isInteractive = false }: { isInteractive?
       ) : (
         // Calendar Grid
         <>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(7, 1fr)', gap: '0.5rem', textAlign: 'center' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(7, 1fr)', gap: '0.25rem', textAlign: 'center' }}>
             {['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'].map(d => (
               <div key={d} style={{ fontSize: '0.75rem', color: 'var(--text-emerald)', fontWeight: '600', marginBottom: '0.5rem' }}>{d}</div>
             ))}
@@ -151,7 +151,7 @@ export default function MiniCalendar({ isInteractive = false }: { isInteractive?
                 <div key={day.toISOString()} style={{
                   display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
                   aspectRatio: '1',
-                  borderRadius: '8px',
+                  borderRadius: '6px',
                   backgroundColor: isToday(day) ? 'rgba(35, 127, 112, 0.05)' : 'transparent',
                   border: isToday(day) ? '1px solid var(--accent-sage)' : '1px solid transparent',
                   cursor: 'default'
@@ -160,7 +160,7 @@ export default function MiniCalendar({ isInteractive = false }: { isInteractive?
                     {format(day, 'd')}
                   </span>
                   <div style={{
-                    width: '6px', height: '6px', borderRadius: '50%',
+                    width: '4px', height: '4px', borderRadius: '50%',
                     backgroundColor: statusColor, marginTop: '2px'
                   }} />
                 </div>

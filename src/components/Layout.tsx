@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Outlet, Link, useLocation } from 'react-router-dom';
 import { useAuthStore } from '../store/useAuthStore';
 import { useContextStore, ORGANIZATIONS, ROLES } from '../store/useContextStore';
-import { LayoutDashboard, Briefcase, Users, FileText, LogOut, Building2, Menu, X, ChevronDown, ChevronRight, Building, Shield, ListTodo, Kanban } from 'lucide-react';
+import { LayoutDashboard, Briefcase, Users, FileText, LogOut, Menu, ChevronDown, ChevronRight, Building, Shield, ListTodo, Kanban } from 'lucide-react';
 
 export default function Layout() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -16,7 +16,6 @@ export default function Layout() {
   const currentDept = currentOrg?.departments.find(d => d.name === activeDept);
 
   const isHR = userRoles.some(r => r.name === 'HR Admin' || r.name === 'Super Admin');
-  const isManager = userRoles.some(r => r.name === 'Manager' || r.name === 'Super Admin' || r.name === 'HR Admin');
   const hasTracksheets = userRoles.some(r => r.name === 'Employee' || r.name === 'Manager' || r.name === 'Super Admin');
 
   const hrSubItems = [
@@ -204,7 +203,7 @@ export default function Layout() {
                 return <div key={`sep-${index}`} style={{ height: '1px', background: 'var(--border-light)', margin: '0.5rem 0' }} />;
               }
               
-              const isActive = location.pathname.startsWith(item.path);
+              const isActive = location.pathname.startsWith(item.path || '');
               
               if (item.children) {
                 const isOpen = item.name === 'HR' ? isHrOpen : isWorkspaceOpen;
@@ -263,7 +262,7 @@ export default function Layout() {
               return (
                 <Link 
                   key={item.path} 
-                  to={item.path}
+                  to={item.path || ''}
                   onClick={() => setIsMobileMenuOpen(false)}
                   style={{
                     display: 'flex', alignItems: 'center', gap: '0.75rem',
@@ -289,7 +288,6 @@ export default function Layout() {
               display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.75rem',
               padding: '0.875rem 1rem',
               borderRadius: '12px',
-              border: 'none',
               background: 'var(--surface-bg)',
               color: 'var(--text-main)',
               fontWeight: '500',

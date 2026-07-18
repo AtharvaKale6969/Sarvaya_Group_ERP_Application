@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react';
 import { supabase } from '../../lib/supabase';
 import { useAuthStore } from '../../store/useAuthStore';
-import { Calendar as CalendarIcon, Clock, X, FileQuestion, Plus } from 'lucide-react';
-import MiniCalendar from '../../components/MiniCalendar'; // We can reuse the calendar for leave history
+import { X, FileQuestion, Plus } from 'lucide-react';
 
 export default function Leaves() {
   const { user } = useAuthStore();

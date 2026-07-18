@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { supabase } from '../../../lib/supabase';
 import { useAuthStore } from '../../../store/useAuthStore';
 import { useContextStore } from '../../../store/useContextStore';
-import { Search, Plus, Upload, Settings, Pencil, Trash2 } from 'lucide-react';
+import { Search, Plus, Upload, Pencil, Trash2 } from 'lucide-react';
 import { getClientOptions } from '../../../lib/constants';
 
 interface CallRecord {
@@ -16,8 +16,8 @@ interface CallRecord {
   contact_number: string;
   email: string;
   status: string;
-  reschedule_date?: string | null;
   is_trashed: boolean;
+  created_at?: string;
 }
 
 const INDIAN_STATES = [

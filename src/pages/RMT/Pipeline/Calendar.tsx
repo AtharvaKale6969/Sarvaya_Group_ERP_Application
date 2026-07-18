@@ -49,7 +49,7 @@ export default function PipelineCalendar() {
     const days = [];
     // Empty slots before first day
     for (let i = 0; i < firstDay; i++) {
-      days.push(<div key={`empty-${i}`} style={{ padding: '1rem' }}></div>);
+      days.push(<div key={`empty-${i}`} style={{ padding: '0.25rem' }}></div>);
     }
 
     // Days of month
@@ -73,23 +73,29 @@ export default function PipelineCalendar() {
 
       days.push(
         <div key={`day-${i}`} style={{ 
-          padding: '1rem 0.5rem', 
+          padding: '0.5rem 0.1rem', 
           border: '1px solid var(--border-light)', 
-          borderRadius: '8px',
+          borderRadius: '6px',
           textAlign: 'center',
           background: isToday ? '#eff6ff' : 'white',
-          position: 'relative'
+          position: 'relative',
+          minHeight: '45px',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center'
         }}>
           <span style={{ 
             fontWeight: isToday ? 'bold' : '500', 
-            color: isToday ? 'var(--text-emerald)' : 'var(--text-main)' 
+            color: isToday ? 'var(--text-emerald)' : 'var(--text-main)',
+            fontSize: '0.85rem'
           }}>
             {i}
           </span>
           {hasCalls && (
-            <div style={{ marginTop: '0.5rem', display: 'flex', justifyContent: 'center', gap: '0.25rem', flexWrap: 'wrap' }}>
-              <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: 'var(--text-emerald)' }} />
-              {callsOnDate.length > 1 && <span style={{ fontSize: '0.7rem', color: 'var(--text-emerald)', fontWeight: '600' }}>+{callsOnDate.length - 1}</span>}
+            <div style={{ marginTop: '0.25rem', display: 'flex', justifyContent: 'center', gap: '0.1rem', flexWrap: 'wrap', alignItems: 'center' }}>
+              <div style={{ width: '4px', height: '4px', borderRadius: '50%', background: 'var(--text-emerald)' }} />
+              {callsOnDate.length > 1 && <span style={{ fontSize: '0.65rem', color: 'var(--text-emerald)', fontWeight: '700' }}>+{callsOnDate.length - 1}</span>}
             </div>
           )}
         </div>
@@ -113,25 +119,25 @@ export default function PipelineCalendar() {
       
       {/* Calendar Section */}
       <div style={{ background: 'white', border: '1px solid var(--border-light)', borderRadius: '12px', padding: '1.5rem' }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem', marginBottom: '1.5rem' }}>
           <h2 style={{ margin: 0, fontSize: '1.25rem', color: 'var(--text-heading)', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
             <CalendarIcon size={20} color="var(--text-emerald)" /> 
             {currentDate.toLocaleString('default', { month: 'long', year: 'numeric' })}
           </h2>
-          <div style={{ display: 'flex', gap: '0.5rem' }}>
+          <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
             <button onClick={() => changeMonth(-1)} style={{ background: 'var(--surface-bg)', border: '1px solid var(--border-light)', padding: '0.5rem 1rem', borderRadius: '8px', cursor: 'pointer' }}>Prev</button>
             <button onClick={() => setCurrentDate(new Date())} style={{ background: 'var(--surface-bg)', border: '1px solid var(--border-light)', padding: '0.5rem 1rem', borderRadius: '8px', cursor: 'pointer' }}>Today</button>
             <button onClick={() => changeMonth(1)} style={{ background: 'var(--surface-bg)', border: '1px solid var(--border-light)', padding: '0.5rem 1rem', borderRadius: '8px', cursor: 'pointer' }}>Next</button>
           </div>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(7, 1fr)', gap: '0.5rem', marginBottom: '0.5rem' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(7, 1fr)', gap: '0.25rem', marginBottom: '0.5rem' }}>
           {['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].map(day => (
-            <div key={day} style={{ textAlign: 'center', fontSize: '0.85rem', fontWeight: '600', color: 'var(--text-muted)' }}>{day}</div>
+            <div key={day} style={{ textAlign: 'center', fontSize: '0.75rem', fontWeight: '600', color: 'var(--text-muted)' }}>{day}</div>
           ))}
         </div>
         
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(7, 1fr)', gap: '0.5rem' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(7, 1fr)', gap: '0.25rem' }}>
           {renderCalendar()}
         </div>
       </div>

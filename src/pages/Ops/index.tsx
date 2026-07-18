@@ -1,5 +1,5 @@
 import { Outlet, useLocation, useNavigate } from 'react-router-dom';
-import { Download, Upload, Filter, Plus } from 'lucide-react';
+import { Download, Filter } from 'lucide-react';
 
 export default function OpsWrapper() {
   const location = useLocation();

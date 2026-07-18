@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { supabase } from '../../../lib/supabase';
 import { useAuthStore } from '../../../store/useAuthStore';
 import { useContextStore } from '../../../store/useContextStore';
-import { Search, UploadCloud, FileText, Phone, MapPin, Briefcase, Calendar, CheckCircle2, TrendingUp, X } from 'lucide-react';
+import { Search, UploadCloud, FileText, Phone, Briefcase, Calendar, CheckCircle2, TrendingUp, X } from 'lucide-react';
 import { getClientOptions } from '../../../lib/constants';
 
 interface OfficialClient {

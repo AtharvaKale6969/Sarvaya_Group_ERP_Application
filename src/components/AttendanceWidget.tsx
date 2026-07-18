@@ -147,7 +147,6 @@ export default function AttendanceWidget() {
                 width: '100%',
                 padding: '1rem',
                 borderRadius: '14px',
-                border: 'none',
                 background: isPunchedIn ? '#F9FAFA' : 'var(--text-emerald)',
                 color: isPunchedIn ? 'var(--text-emerald)' : 'white',
                 border: isPunchedIn ? '2px solid var(--text-emerald)' : 'none',
