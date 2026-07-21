@@ -22,6 +22,29 @@ import AllEntries from './pages/Ops/AllEntries';
 import Notes from './pages/Ops/Notes';
 
 import { ProtectedRoute } from './components/ProtectedRoute';
+import { RoleProtectedRoute } from './components/RoleProtectedRoute';
+
+// HR Admin Routes
+import HRAdminWrapper from './pages/HRAdmin';
+import HRAdminDashboard from './pages/HRAdmin/Dashboard';
+import HREmployees from './pages/HRAdmin/Employees';
+import HRAdminDepartments from './pages/HRAdmin/Departments';
+import HRAdminDesignations from './pages/HRAdmin/Designations';
+import HRAdminAttendancePermission from './pages/HRAdmin/AttendancePermission';
+import HRAdminManageBranch from './pages/HRAdmin/ManageBranch';
+import HRAdminManageShifts from './pages/HRAdmin/ManageShifts';
+import HRAdminShiftAssignment from './pages/HRAdmin/ShiftAssignment';
+import HRAdminWeekOff from './pages/HRAdmin/WeekOff';
+import HRAdminRoster from './pages/HRAdmin/Roster';
+import HRAdminLeaveCreate from './pages/HRAdmin/LeaveCreate';
+import HRAdminLeaveAssign from './pages/HRAdmin/LeaveAssign';
+import HRAdminLeaveBalance from './pages/HRAdmin/LeaveBalance';
+import HRAdminHolidayCreate from './pages/HRAdmin/HolidayCreate';
+import HRAdminHolidayAssign from './pages/HRAdmin/HolidayAssign';
+import HRAdminApprovals from './pages/HRAdmin/Approvals';
+import HRAdminBulkAttendance from './pages/HRAdmin/BulkAttendance';
+import HRAdminProcessPayroll from './pages/HRAdmin/ProcessPayroll';
+import HRAdminPayrollGroup from './pages/HRAdmin/PayrollGroup';
 
 import Layout from './components/Layout';
 
@@ -66,6 +89,32 @@ function App() {
 
             {/* Default redirect to home if authenticated */}
             <Route path="/" element={<Navigate to="/home" replace />} />
+          </Route>
+
+          {/* HR Admin Route (Protected by Role, outside main Layout for full screen) */}
+          <Route element={<RoleProtectedRoute requiredRole="HR Admin" />}>
+            <Route path="/hr-admin" element={<HRAdminWrapper />}>
+              <Route path="dashboard" element={<HRAdminDashboard />} />
+              <Route path="employees" element={<HREmployees />} />
+              <Route path="departments" element={<HRAdminDepartments />} />
+              <Route path="designations" element={<HRAdminDesignations />} />
+              <Route path="attendance-permission" element={<HRAdminAttendancePermission />} />
+              <Route path="manage-branch" element={<HRAdminManageBranch />} />
+              <Route path="shifts" element={<HRAdminManageShifts />} />
+              <Route path="shift-assignment" element={<HRAdminShiftAssignment />} />
+              <Route path="week-off" element={<HRAdminWeekOff />} />
+              <Route path="roster" element={<HRAdminRoster />} />
+              <Route path="leave-create" element={<HRAdminLeaveCreate />} />
+              <Route path="leave-assign" element={<HRAdminLeaveAssign />} />
+              <Route path="leave-balance" element={<HRAdminLeaveBalance />} />
+              <Route path="holiday-create" element={<HRAdminHolidayCreate />} />
+              <Route path="holiday-assign" element={<HRAdminHolidayAssign />} />
+              <Route path="approvals" element={<HRAdminApprovals />} />
+              <Route path="bulk-attendance" element={<HRAdminBulkAttendance />} />
+              <Route path="process-payroll" element={<HRAdminProcessPayroll />} />
+              <Route path="payroll-group" element={<HRAdminPayrollGroup />} />
+              <Route index element={<Navigate to="dashboard" replace />} />
+            </Route>
           </Route>
         </Route>
         
