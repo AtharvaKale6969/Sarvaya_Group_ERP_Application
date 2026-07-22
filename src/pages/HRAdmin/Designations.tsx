@@ -164,7 +164,7 @@ export default function Designations() {
           
           {/* Drawer Panel */}
           <div style={{ 
-            width: '100%', maxWidth: '600px', backgroundColor: 'white', height: '100%', 
+            width: '100%', maxWidth: '600px', backgroundColor: 'white', height: '100%', maxHeight: '100%',
             boxShadow: '-4px 0 15px rgba(0,0,0,0.1)', display: 'flex', flexDirection: 'column',
             animation: 'slideIn 0.3s ease-out forwards'
           }}>

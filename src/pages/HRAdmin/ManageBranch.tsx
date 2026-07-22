@@ -119,7 +119,7 @@ export default function ManageBranch() {
       {isDrawerOpen && (
         <div style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: 'rgba(0,0,0,0.5)', zIndex: 1000, display: 'flex', justifyContent: 'flex-end' }}>
           {/* Drawer Panel */}
-          <div style={{ width: '450px', backgroundColor: 'white', height: '100%', display: 'flex', flexDirection: 'column', boxShadow: '-4px 0 15px rgba(0,0,0,0.1)', animation: 'slideIn 0.3s ease-out' }}>
+          <div style={{ width: '450px', backgroundColor: 'white', height: '100%', maxHeight: '100%', display: 'flex', flexDirection: 'column', boxShadow: '-4px 0 15px rgba(0,0,0,0.1)', animation: 'slideIn 0.3s ease-out' }}>
             {/* Drawer Header */}
             <div style={{ padding: '1.25rem', borderBottom: '1px solid #e5e7eb', display: 'flex', justifyContent: 'space-between', alignItems: 'center', backgroundColor: '#f9fafb' }}>
               <h2 style={{ fontSize: '1.125rem', fontWeight: '600', color: '#111827', margin: 0 }}>Modify Branch</h2>
@@ -272,7 +272,7 @@ export default function ManageBranch() {
           
           {/* Drawer Panel */}
           <div style={{ 
-            width: '100%', maxWidth: '600px', backgroundColor: 'white', height: '100%', 
+            width: '100%', maxWidth: '600px', backgroundColor: 'white', height: '100%', maxHeight: '100%',
             boxShadow: '-4px 0 15px rgba(0,0,0,0.1)', display: 'flex', flexDirection: 'column',
             animation: 'slideIn 0.3s ease-out forwards'
           }}>

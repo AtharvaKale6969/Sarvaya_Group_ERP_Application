@@ -166,7 +166,7 @@ export default function PayrollGroup() {
           
           {/* Drawer Panel */}
           <div style={{ 
-            width: '100%', maxWidth: '600px', backgroundColor: 'white', height: '100%', 
+            width: '100%', maxWidth: '600px', backgroundColor: 'white', height: '100%', maxHeight: '100%',
             boxShadow: '-4px 0 15px rgba(0,0,0,0.1)', display: 'flex', flexDirection: 'column',
             animation: 'slideIn 0.3s ease-out forwards'
           }}>
@@ -259,7 +259,7 @@ export default function PayrollGroup() {
         <div style={{ position: 'fixed', inset: 0, backgroundColor: 'rgba(0,0,0,0.5)', zIndex: 100, display: 'flex', justifyContent: 'flex-end' }}>
           
           <div style={{ 
-            width: '100%', maxWidth: '500px', backgroundColor: 'white', height: '100%', 
+            width: '100%', maxWidth: '500px', backgroundColor: 'white', height: '100%', maxHeight: '100%',
             boxShadow: '-4px 0 15px rgba(0,0,0,0.1)', display: 'flex', flexDirection: 'column',
             animation: 'slideIn 0.3s ease-out forwards'
           }}>
