@@ -141,7 +141,7 @@ export default function HRAdminWrapper() {
         
         {/* Sidebar */}
         <aside className={`sidebar ${isMobileMenuOpen ? 'open' : ''}`} style={{ 
-          width: '16rem', backgroundColor: 'var(--card-bg)', 
+          width: '16rem', backgroundColor: 'var(--sidebar-bg)', 
           borderRight: '1px solid var(--border-color)', display: 'flex', 
           flexDirection: 'column', paddingTop: '1.5rem', overflowY: 'auto' 
         }}>
