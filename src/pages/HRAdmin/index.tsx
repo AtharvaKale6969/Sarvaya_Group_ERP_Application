@@ -151,7 +151,7 @@ export default function HRAdminWrapper() {
             </div>
             <h2 style={{ fontSize: '1.25rem', fontWeight: '600', margin: 0, color: 'var(--text-emerald)' }}>Helix Synapse</h2>
           </div>
-          <nav style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', flex: 1, padding: '0 1rem' }}>
+          <nav style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', flex: 1, padding: '0 0.5rem' }}>
             {navItems.map((item, index) => {
               
               if (item.isHeader) {
@@ -161,7 +161,7 @@ export default function HRAdminWrapper() {
                     paddingTop: index === 0 ? '0' : '1.5rem',
                     borderTop: index === 0 ? 'none' : '1px solid #e5e7eb',
                     marginBottom: '0.5rem', 
-                    paddingLeft: '1rem', 
+                    paddingLeft: '0.5rem', 
                     fontSize: '0.75rem', 
                     fontWeight: '700', 
                     color: '#9ca3af', 
@@ -188,7 +188,7 @@ export default function HRAdminWrapper() {
                       onClick={() => toggleMenu(item.name)}
                       style={{
                         display: 'flex', alignItems: 'center', gap: '0.75rem',
-                        padding: '0.875rem 1rem', borderRadius: '12px', border: 'none',
+                        padding: '0.75rem 0.75rem', borderRadius: '12px', border: 'none',
                         backgroundColor: 'transparent',
                         color: isActive ? 'var(--text-emerald)' : 'var(--text-muted)', fontWeight: isActive ? '600' : '500', cursor: 'pointer', textAlign: 'left', transition: 'all 0.2s ease', width: '100%', justifyContent: 'space-between', fontSize: '0.9rem', fontFamily: 'inherit'
                       }}
@@ -203,7 +203,7 @@ export default function HRAdminWrapper() {
                     </button>
                     
                     {isOpen && (
-                      <div style={{ display: 'flex', flexDirection: 'column', marginLeft: '2.5rem', marginTop: '0.5rem', gap: '0.25rem' }}>
+                      <div style={{ display: 'flex', flexDirection: 'column', marginLeft: '2rem', marginTop: '0.25rem', gap: '0.25rem' }}>
                         {item.children.map((subItem: any) => {
                           const isSubActive = location.pathname === subItem.path;
                           return (
@@ -211,8 +211,8 @@ export default function HRAdminWrapper() {
                               key={subItem.path} 
                               to={subItem.path}
                               style={{
-                                padding: '0.625rem 1rem', textDecoration: 'none',
-                                background: isSubActive ? 'var(--text-emerald)' : 'transparent', color: isSubActive ? 'white' : 'var(--text-main)', fontWeight: isSubActive ? '600' : '400', fontSize: '0.9rem', transition: 'all 0.2s ease', boxShadow: isSubActive ? '0 4px 12px rgba(35, 127, 112, 0.2)' : 'none', borderRadius: '8px', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis'
+                                padding: '0.625rem 0.75rem', textDecoration: 'none',
+                                background: isSubActive ? 'var(--text-emerald)' : 'transparent', color: isSubActive ? 'white' : 'var(--text-main)', fontWeight: isSubActive ? '600' : '400', fontSize: '0.85rem', transition: 'all 0.2s ease', boxShadow: isSubActive ? '0 4px 12px rgba(35, 127, 112, 0.2)' : 'none', borderRadius: '8px', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis'
                               }}
                              onClick={() => setIsMobileMenuOpen(false)}>
                               {subItem.name}
@@ -231,7 +231,7 @@ export default function HRAdminWrapper() {
                   to={item.path || ''}
                   style={{
                     display: 'flex', alignItems: 'center', gap: '0.75rem',
-                    padding: '0.875rem 1rem', borderRadius: '12px', textDecoration: 'none',
+                    padding: '0.75rem 0.75rem', borderRadius: '12px', textDecoration: 'none',
                     background: isActive ? 'var(--text-emerald)' : 'transparent', color: isActive ? 'white' : 'var(--text-main)', fontWeight: isActive ? '600' : '400', transition: 'all 0.2s ease', fontSize: '0.9rem', boxShadow: isActive ? '0 4px 12px rgba(35, 127, 112, 0.2)' : 'none'
                   }}
                  onClick={() => setIsMobileMenuOpen(false)}>
