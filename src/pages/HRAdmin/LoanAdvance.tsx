@@ -171,7 +171,7 @@ export default function LoanAdvance() {
               <th style={{ padding: '0.875rem 1rem', fontSize: '0.75rem', fontWeight: '600', color: '#1e3a8a', whiteSpace: 'nowrap' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.25rem' }}>
                   Loan Count
-                  <Info size={14} color="#64748b" style={{ cursor: 'pointer' }} title="Number of active/past loans" />
+                  <Info size={14} color="#64748b" style={{ cursor: 'pointer' }}  />
                 </div>
               </th>
               <th style={{ padding: '0.875rem 1rem', fontSize: '0.75rem', fontWeight: '600', color: '#1e3a8a', whiteSpace: 'nowrap' }}>
@@ -243,7 +243,7 @@ export default function LoanAdvance() {
                     <button 
                       onClick={() => setSelectedLoan(row)}
                       style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#0ea5e9' }} 
-                      title="View Loan Details"
+                      
                     >
                       <Eye size={18} />
                     </button>
