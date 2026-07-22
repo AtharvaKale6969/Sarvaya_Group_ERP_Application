@@ -135,7 +135,8 @@ export default function Roster() {
 
       {/* Spreadsheet Table Container */}
       <div ref={spreadsheetRef} style={{ border: '1px solid #e5e7eb', borderRadius: '4px', overflow: 'auto', flex: 1, backgroundColor: '#f9fafb' }}>
-        <table style={{ width: '100%', borderCollapse: 'collapse', minWidth: '1500px', backgroundColor: 'white' }}>
+        <div className="table-responsive-wrapper" style={{ overflowX: 'auto', width: '100%' }}>
+<table style={{ width: '100%', borderCollapse: 'collapse', minWidth: '1500px', backgroundColor: 'white' }}>
           <thead style={{ position: 'sticky', top: 0, zIndex: 10 }}>
             {/* Top Header Row */}
             <tr style={{ backgroundColor: '#e0f2fe' }}>
@@ -214,6 +215,7 @@ export default function Roster() {
             )}
           </tbody>
         </table>
+</div>
       </div>
 
       {/* Footer / Pagination */}

@@ -41,7 +41,8 @@ export default function ManageBranch() {
       {/* Table Container */}
       <div style={{ backgroundColor: 'white', border: '1px solid #e5e7eb', borderRadius: '8px', overflow: 'hidden' }}>
         <div style={{ overflowX: 'auto' }}>
-          <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left' }}>
+          <div className="table-responsive-wrapper" style={{ overflowX: 'auto', width: '100%' }}>
+<table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left' }}>
             <thead>
               <tr style={{ backgroundColor: '#eff6ff', borderBottom: '1px solid #e5e7eb' }}>
                 <th style={{ padding: '0.75rem 1rem', fontSize: '0.75rem', fontWeight: '600', color: '#374151' }}>
@@ -85,6 +86,7 @@ export default function ManageBranch() {
               ))}
             </tbody>
           </table>
+</div>
         </div>
 
         {/* Pagination */}
@@ -298,7 +300,8 @@ export default function ManageBranch() {
               </div>
 
               <div style={{ border: '1px solid #e5e7eb', borderRadius: '8px', overflow: 'hidden' }}>
-                <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left' }}>
+                <div className="table-responsive-wrapper" style={{ overflowX: 'auto', width: '100%' }}>
+<table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left' }}>
                   <thead style={{ backgroundColor: '#f9fafb', borderBottom: '1px solid #e5e7eb' }}>
                     <tr>
                       <th style={{ padding: '0.75rem 1rem', fontSize: '0.75rem', fontWeight: '600', color: '#4b5563', whiteSpace: 'nowrap' }}>Employee ID</th>
@@ -349,6 +352,7 @@ export default function ManageBranch() {
                     )}
                   </tbody>
                 </table>
+</div>
               </div>
 
             </div>

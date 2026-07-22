@@ -149,7 +149,8 @@ export default function DailyPunchReport() {
 
       {/* Table Section with Horizontal Scroll */}
       <div style={{ overflowX: 'auto', padding: '1.5rem', minHeight: '400px' }}>
-        <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', minWidth: '1600px' }}>
+        <div className="table-responsive-wrapper" style={{ overflowX: 'auto', width: '100%' }}>
+<table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', minWidth: '1600px' }}>
           <thead style={{ backgroundColor: '#f0f9ff', borderBottom: '2px solid #e0f2fe' }}>
             <tr>
               {/* Fixed Columns */}
@@ -217,6 +218,7 @@ export default function DailyPunchReport() {
             ))}
           </tbody>
         </table>
+</div>
       </div>
     </div>
   );

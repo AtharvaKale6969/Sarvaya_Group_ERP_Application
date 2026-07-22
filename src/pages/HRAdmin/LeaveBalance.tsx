@@ -121,7 +121,8 @@ export default function LeaveBalance() {
 
       {/* Table */}
       <div style={{ border: '1px solid #e5e7eb', borderRadius: '8px', overflow: 'hidden', flex: 1 }}>
-        <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left' }}>
+        <div className="table-responsive-wrapper" style={{ overflowX: 'auto', width: '100%' }}>
+<table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left' }}>
           <thead>
             <tr style={{ backgroundColor: '#e0f2fe' }}>
               <th style={{ padding: '0.75rem 1rem', width: '40px' }}>
@@ -182,6 +183,7 @@ export default function LeaveBalance() {
             })}
           </tbody>
         </table>
+</div>
       </div>
 
       {/* Pagination Footer */}

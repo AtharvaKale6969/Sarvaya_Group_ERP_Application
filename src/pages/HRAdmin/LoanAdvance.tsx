@@ -147,7 +147,8 @@ export default function LoanAdvance() {
 
       {/* Table section */}
       <div style={{ overflowX: 'auto', padding: '1.5rem', minHeight: '400px' }}>
-        <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left' }}>
+        <div className="table-responsive-wrapper" style={{ overflowX: 'auto', width: '100%' }}>
+<table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left' }}>
           <thead style={{ backgroundColor: '#e0f2fe', borderRadius: '8px' }}>
             <tr>
               <th style={{ padding: '0.875rem 1rem', fontSize: '0.75rem', fontWeight: '600', color: '#1e3a8a', whiteSpace: 'nowrap', borderRadius: '6px 0 0 6px' }}>
@@ -253,6 +254,7 @@ export default function LoanAdvance() {
             )}
           </tbody>
         </table>
+</div>
       </div>
 
       {/* Details Drawer */}
@@ -304,7 +306,8 @@ export default function LoanAdvance() {
                 <h4 style={{ margin: 0, fontSize: '1rem', color: '#374151' }}>Loan History ({selectedLoan.loanCount})</h4>
               </div>
               <div style={{ border: '1px solid #e5e7eb', borderRadius: '8px', overflow: 'hidden' }}>
-                <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left' }}>
+                <div className="table-responsive-wrapper" style={{ overflowX: 'auto', width: '100%' }}>
+<table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left' }}>
                   <thead style={{ backgroundColor: '#f9fafb', borderBottom: '1px solid #e5e7eb' }}>
                     <tr>
                       <th style={{ padding: '0.75rem 1rem', fontSize: '0.75rem', fontWeight: '600', color: '#4b5563' }}>Disbursed On</th>
@@ -348,6 +351,7 @@ export default function LoanAdvance() {
                     ))}
                   </tbody>
                 </table>
+</div>
               </div>
             </div>
           </div>

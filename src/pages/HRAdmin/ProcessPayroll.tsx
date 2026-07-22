@@ -110,7 +110,8 @@ export default function ProcessPayroll() {
 
       {/* Spreadsheet Table */}
       <div style={{ flex: 1, overflow: 'auto', position: 'relative' }}>
-        <table style={{ width: 'max-content', borderCollapse: 'collapse', textAlign: 'center', minWidth: '100%' }}>
+        <div className="table-responsive-wrapper" style={{ overflowX: 'auto', width: '100%' }}>
+<table style={{ width: 'max-content', borderCollapse: 'collapse', textAlign: 'center', minWidth: '100%' }}>
           <thead style={{ position: 'sticky', top: 0, zIndex: 20, backgroundColor: '#f9fafb', boxShadow: '0 1px 2px rgba(0,0,0,0.05)' }}>
             <tr>
               <th style={{ padding: '1rem 0.75rem', fontSize: '0.75rem', fontWeight: '600', color: '#111827', borderRight: '1px solid #e5e7eb', borderBottom: '1px solid #e5e7eb', position: 'sticky', left: 0, zIndex: 21, backgroundColor: '#f9fafb', textAlign: 'left', minWidth: '120px' }}><ThContent title="Employee ID" sortable /></th>
@@ -198,6 +199,7 @@ export default function ProcessPayroll() {
             )}
           </tbody>
         </table>
+</div>
       </div>
 
       {/* Preview Overlay Drawer */}
@@ -229,7 +231,8 @@ export default function ProcessPayroll() {
                 </div>
                 
                 <div style={{ border: '1px solid #e5e7eb', borderRadius: '8px', overflow: 'hidden' }}>
-                  <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', fontSize: '0.75rem' }}>
+                  <div className="table-responsive-wrapper" style={{ overflowX: 'auto', width: '100%' }}>
+<table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', fontSize: '0.75rem' }}>
                     <thead style={{ backgroundColor: '#f9fafb', borderBottom: '1px solid #e5e7eb' }}>
                       <tr>
                         <th style={{ padding: '0.75rem 1rem', fontWeight: '600', color: '#111827' }}>Heads</th>
@@ -265,6 +268,7 @@ export default function ProcessPayroll() {
                       )}
                     </tbody>
                   </table>
+</div>
                 </div>
               </div>
 
@@ -278,7 +282,8 @@ export default function ProcessPayroll() {
                 </div>
                 
                 <div style={{ border: '1px solid #e5e7eb', borderRadius: '8px', overflow: 'hidden' }}>
-                  <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', fontSize: '0.75rem' }}>
+                  <div className="table-responsive-wrapper" style={{ overflowX: 'auto', width: '100%' }}>
+<table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', fontSize: '0.75rem' }}>
                     <thead style={{ backgroundColor: '#f9fafb', borderBottom: '1px solid #e5e7eb' }}>
                       <tr>
                         <th style={{ padding: '0.75rem 1rem', fontWeight: '600', color: '#111827' }}>Heads</th>
@@ -306,6 +311,7 @@ export default function ProcessPayroll() {
                       </tr>
                     </tbody>
                   </table>
+</div>
                 </div>
               </div>
 
@@ -319,7 +325,8 @@ export default function ProcessPayroll() {
                 </div>
                 
                 <div style={{ border: '1px solid #e5e7eb', borderRadius: '8px', overflow: 'hidden' }}>
-                  <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', fontSize: '0.75rem' }}>
+                  <div className="table-responsive-wrapper" style={{ overflowX: 'auto', width: '100%' }}>
+<table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', fontSize: '0.75rem' }}>
                     <thead style={{ backgroundColor: '#f9fafb', borderBottom: '1px solid #e5e7eb' }}>
                       <tr>
                         <th style={{ padding: '0.75rem 1rem', fontWeight: '600', color: '#111827' }}>Heads</th>
@@ -347,6 +354,7 @@ export default function ProcessPayroll() {
                       </tr>
                     </tbody>
                   </table>
+</div>
                 </div>
               </div>
 
@@ -360,7 +368,8 @@ export default function ProcessPayroll() {
                 </div>
                 
                 <div style={{ border: '1px solid #e5e7eb', borderRadius: '8px', overflow: 'hidden' }}>
-                  <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', fontSize: '0.75rem' }}>
+                  <div className="table-responsive-wrapper" style={{ overflowX: 'auto', width: '100%' }}>
+<table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', fontSize: '0.75rem' }}>
                     <thead style={{ backgroundColor: '#f9fafb', borderBottom: '1px solid #e5e7eb' }}>
                       <tr>
                         <th style={{ padding: '0.75rem 1rem', fontWeight: '600', color: '#111827' }}>Heads</th>
@@ -388,6 +397,7 @@ export default function ProcessPayroll() {
                       </tr>
                     </tbody>
                   </table>
+</div>
                 </div>
               </div>
 

@@ -209,7 +209,8 @@ export default function AttendancePermission() {
       {/* Table section */}
       <div style={{ overflowX: 'auto', padding: '1.5rem', minHeight: '400px' }}>
         <div style={{ backgroundColor: '#e0f2fe', height: '40px', borderRadius: '6px 6px 0 0', width: '100%' }}></div>
-        <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', marginTop: '-40px' }}>
+        <div className="table-responsive-wrapper" style={{ overflowX: 'auto', width: '100%' }}>
+<table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', marginTop: '-40px' }}>
           <thead style={{ backgroundColor: '#e0f2fe', borderRadius: '8px' }}>
             <tr>
               <th style={{ padding: '0.875rem 1rem', width: '40px', borderRadius: '6px 0 0 6px' }}>
@@ -312,6 +313,7 @@ export default function AttendancePermission() {
             ))}
           </tbody>
         </table>
+</div>
       </div>
 
       {/* Footer / Pagination */}

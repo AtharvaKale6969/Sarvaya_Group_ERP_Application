@@ -130,7 +130,8 @@ export default function Dashboard() {
 
         {/* Table */}
         <div style={{ overflowX: 'auto' }}>
-          <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left' }}>
+          <div className="table-responsive-wrapper" style={{ overflowX: 'auto', width: '100%' }}>
+<table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left' }}>
             <thead style={{ backgroundColor: '#f9fafb', borderTop: '1px solid #e5e7eb', borderBottom: '1px solid #e5e7eb' }}>
               <tr>
                 {['Employee ID', 'Employee Name', 'Organization', 'Department', 'Designation', 'First Punch', 'Last Punch', 'Total Working Hours'].map(header => (
@@ -155,6 +156,7 @@ export default function Dashboard() {
               ))}
             </tbody>
           </table>
+</div>
         </div>
         
         <div style={{ padding: '0.75rem 1.5rem', borderTop: '1px solid #e5e7eb', textAlign: 'right', backgroundColor: '#f9fafb', borderBottomLeftRadius: '8px', borderBottomRightRadius: '8px' }}>
@@ -172,7 +174,8 @@ export default function Dashboard() {
         <div style={{ flex: 1, backgroundColor: 'white', borderRadius: '8px', border: '1px solid #e5e7eb', boxShadow: '0 1px 2px rgba(0,0,0,0.05)', padding: '1.5rem' }}>
           <h3 style={{ fontSize: '1rem', fontWeight: '600', color: '#374151', margin: '0 0 1rem 0' }}>Today's Shift Wise Attendance Summary</h3>
           <div style={{ overflowX: 'auto' }}>
-            <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', fontSize: '0.875rem' }}>
+            <div className="table-responsive-wrapper" style={{ overflowX: 'auto', width: '100%' }}>
+<table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', fontSize: '0.875rem' }}>
               <thead style={{ backgroundColor: '#eff6ff' }}>
                 <tr>
                   <th style={{ padding: '0.75rem 1rem', fontWeight: '600', color: '#1e40af', borderRadius: '6px 0 0 6px' }}>Shift</th>
@@ -196,13 +199,15 @@ export default function Dashboard() {
                 </tr>
               </tbody>
             </table>
+</div>
           </div>
         </div>
 
         <div style={{ flex: 1, backgroundColor: 'white', borderRadius: '8px', border: '1px solid #e5e7eb', boxShadow: '0 1px 2px rgba(0,0,0,0.05)', padding: '1.5rem' }}>
           <h3 style={{ fontSize: '1rem', fontWeight: '600', color: '#374151', margin: '0 0 1rem 0' }}>Today's Department Wise Attendance Summary</h3>
           <div style={{ overflowX: 'auto' }}>
-            <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', fontSize: '0.875rem' }}>
+            <div className="table-responsive-wrapper" style={{ overflowX: 'auto', width: '100%' }}>
+<table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', fontSize: '0.875rem' }}>
               <thead style={{ backgroundColor: '#eff6ff' }}>
                 <tr>
                   <th style={{ padding: '0.75rem 1rem', fontWeight: '600', color: '#1e40af', borderRadius: '6px 0 0 6px' }}>Department</th>
@@ -226,6 +231,7 @@ export default function Dashboard() {
                 </tr>
               </tbody>
             </table>
+</div>
           </div>
         </div>
       </div>

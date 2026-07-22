@@ -118,7 +118,8 @@ export default function AssignPayrollGroup() {
 
       {/* Table section */}
       <div style={{ overflowX: 'auto', padding: '0 1.5rem', minHeight: '400px', marginTop: '0.5rem' }}>
-        <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left' }}>
+        <div className="table-responsive-wrapper" style={{ overflowX: 'auto', width: '100%' }}>
+<table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left' }}>
           <thead style={{ backgroundColor: '#f0f9ff', borderRadius: '8px', border: '1px solid #e0f2fe' }}>
             <tr>
               <th style={{ padding: '0.875rem 1rem', width: '40px' }}>
@@ -206,6 +207,7 @@ export default function AssignPayrollGroup() {
             ))}
           </tbody>
         </table>
+</div>
       </div>
 
       {/* Footer / Pagination */}

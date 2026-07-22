@@ -75,7 +75,8 @@ export default function ShiftWiseReport() {
 
       {/* Table Section */}
       <div style={{ overflowX: 'auto', padding: '1.5rem', minHeight: '400px' }}>
-        <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left' }}>
+        <div className="table-responsive-wrapper" style={{ overflowX: 'auto', width: '100%' }}>
+<table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left' }}>
           <thead style={{ backgroundColor: '#e0f2fe', borderRadius: '8px' }}>
             <tr>
               <th style={{ padding: '0.875rem 1rem', fontSize: '0.75rem', fontWeight: '600', color: '#1e3a8a', whiteSpace: 'nowrap', borderRadius: '6px 0 0 6px' }}>
@@ -154,6 +155,7 @@ export default function ShiftWiseReport() {
             ))}
           </tbody>
         </table>
+</div>
       </div>
 
       {/* Pagination Footer */}

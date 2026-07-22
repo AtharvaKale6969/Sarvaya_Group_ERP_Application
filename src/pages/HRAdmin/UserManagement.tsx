@@ -125,7 +125,8 @@ export default function UserManagement() {
 
       {/* Table section */}
       <div style={{ overflowX: 'auto', padding: '0 1.5rem 1.5rem 1.5rem' }}>
-        <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left' }}>
+        <div className="table-responsive-wrapper" style={{ overflowX: 'auto', width: '100%' }}>
+<table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left' }}>
           <thead style={{ backgroundColor: '#f9fafb', borderBottom: '2px solid #e5e7eb' }}>
             <tr>
               <th style={{ padding: '0.875rem 1rem', fontSize: '0.75rem', fontWeight: '600', color: '#6b7280', textTransform: 'uppercase' }}>Employee ID</th>
@@ -178,6 +179,7 @@ export default function UserManagement() {
             ))}
           </tbody>
         </table>
+</div>
       </div>
 
       {/* Edit User Modal */}

@@ -274,7 +274,8 @@ export default function ApprovalRequests() {
 
       {/* Table */}
       <div style={{ border: '1px solid #e5e7eb', borderRadius: '8px', overflow: 'hidden', flex: 1, display: 'flex', flexDirection: 'column' }}>
-        <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left' }}>
+        <div className="table-responsive-wrapper" style={{ overflowX: 'auto', width: '100%' }}>
+<table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left' }}>
           <thead>
             <tr style={{ backgroundColor: '#f9fafb', borderBottom: '1px solid #e5e7eb' }}>
               <th style={{ padding: '1rem', width: '40px' }}>
@@ -414,6 +415,7 @@ export default function ApprovalRequests() {
             ))}
           </tbody>
         </table>
+</div>
       </div>
 
       {/* Pagination Footer */}

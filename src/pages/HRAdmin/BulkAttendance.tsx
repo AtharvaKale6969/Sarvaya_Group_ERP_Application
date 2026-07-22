@@ -130,7 +130,8 @@ export default function BulkAttendance() {
 
       {/* Excel Table Wrapper */}
       <div style={{ flex: 1, overflow: 'auto', position: 'relative' }}>
-        <table style={{ width: 'max-content', borderCollapse: 'collapse', textAlign: 'left', minWidth: '100%' }}>
+        <div className="table-responsive-wrapper" style={{ overflowX: 'auto', width: '100%' }}>
+<table style={{ width: 'max-content', borderCollapse: 'collapse', textAlign: 'left', minWidth: '100%' }}>
           <thead style={{ position: 'sticky', top: 0, zIndex: 10, backgroundColor: '#eff6ff' }}>
             
             {/* Top Header Row */}
@@ -234,6 +235,7 @@ export default function BulkAttendance() {
             ))}
           </tbody>
         </table>
+</div>
       </div>
     </div>
   );

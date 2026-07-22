@@ -62,7 +62,8 @@ export default function ActivityLogs() {
 
       {/* Table section */}
       <div style={{ overflowX: 'auto', padding: '1.5rem', minHeight: '400px' }}>
-        <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', minWidth: '1400px' }}>
+        <div className="table-responsive-wrapper" style={{ overflowX: 'auto', width: '100%' }}>
+<table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', minWidth: '1400px' }}>
           <thead style={{ backgroundColor: '#f0f9ff', borderBottom: '2px solid #e0f2fe' }}>
             <tr>
               {[
@@ -109,6 +110,7 @@ export default function ActivityLogs() {
             ))}
           </tbody>
         </table>
+</div>
       </div>
     </div>
   );

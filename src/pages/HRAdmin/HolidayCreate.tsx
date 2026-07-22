@@ -142,7 +142,8 @@ export default function HolidayCreate() {
 
         {/* Detail Table */}
         <div style={{ border: '1px solid #e5e7eb', borderRadius: '8px', overflow: 'hidden', flex: 1 }}>
-          <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left' }}>
+          <div className="table-responsive-wrapper" style={{ overflowX: 'auto', width: '100%' }}>
+<table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left' }}>
             <thead>
               <tr style={{ backgroundColor: '#eff6ff' }}>
                 <th style={{ padding: '1rem', fontSize: '0.75rem', fontWeight: '600', color: '#1e3a8a' }}>
@@ -174,6 +175,7 @@ export default function HolidayCreate() {
               )}
             </tbody>
           </table>
+</div>
         </div>
 
         {/* Detail Pagination Footer */}
@@ -249,7 +251,8 @@ export default function HolidayCreate() {
 
         {/* Table */}
         <div style={{ border: '1px solid #e5e7eb', borderRadius: '8px', overflow: 'hidden', flex: 1, display: 'flex', flexDirection: 'column' }}>
-          <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left' }}>
+          <div className="table-responsive-wrapper" style={{ overflowX: 'auto', width: '100%' }}>
+<table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left' }}>
             <thead>
               <tr style={{ backgroundColor: '#eff6ff' }}>
                 <th style={{ padding: '1rem', fontSize: '0.75rem', fontWeight: '600', color: '#1e3a8a', width: '30%' }}>
@@ -304,6 +307,7 @@ export default function HolidayCreate() {
               </tbody>
             )}
           </table>
+</div>
           
           {!isEditing && (
             <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', gap: '0.75rem', color: '#1e3a8a', minHeight: '300px' }}>
@@ -451,7 +455,8 @@ export default function HolidayCreate() {
 
       {/* Table */}
       <div style={{ border: '1px solid #e5e7eb', borderRadius: '8px', overflow: 'hidden', flex: 1 }}>
-        <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left' }}>
+        <div className="table-responsive-wrapper" style={{ overflowX: 'auto', width: '100%' }}>
+<table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left' }}>
           <thead>
             <tr style={{ backgroundColor: '#eff6ff' }}>
               <th style={{ padding: '1rem', fontSize: '0.75rem', fontWeight: '600', color: '#1e3a8a' }}>
@@ -536,6 +541,7 @@ export default function HolidayCreate() {
             ))}
           </tbody>
         </table>
+</div>
       </div>
 
       {/* Pagination Footer */}
