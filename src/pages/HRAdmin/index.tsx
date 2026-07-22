@@ -241,29 +241,31 @@ export default function HRAdminWrapper() {
             })}
           </nav>
 
-          <button 
-            onClick={signOut}
-            style={{
-              display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.75rem',
-              padding: '0.875rem 1rem',
-              borderRadius: '12px',
-              background: 'var(--surface-bg)',
-              color: 'var(--text-main)',
-              fontWeight: '500',
-              cursor: 'pointer',
-              marginTop: 'auto',
-              marginBottom: '1.5rem',
-              marginLeft: '1rem',
-              marginRight: '1rem',
-              border: '1px solid var(--border-light)',
-              transition: 'background 0.2s ease'
-            }}
-            onMouseOver={(e) => e.currentTarget.style.background = 'var(--accent-sage)'}
-            onMouseOut={(e) => e.currentTarget.style.background = 'var(--surface-bg)'}
-          >
-            <LogOut size={20} />
-            Sign Out
-          </button>
+          <div style={{ marginTop: 'auto', paddingTop: '3rem' }}>
+            <button 
+              onClick={signOut}
+              style={{
+                display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.75rem',
+                width: 'calc(100% - 2rem)',
+                padding: '0.875rem 1rem',
+                borderRadius: '12px',
+                background: 'var(--surface-bg)',
+                color: 'var(--text-main)',
+                fontWeight: '500',
+                cursor: 'pointer',
+                marginBottom: '1.5rem',
+                marginLeft: '1rem',
+                marginRight: '1rem',
+                border: '1px solid var(--border-light)',
+                transition: 'background 0.2s ease'
+              }}
+              onMouseOver={(e) => e.currentTarget.style.background = 'var(--accent-sage)'}
+              onMouseOut={(e) => e.currentTarget.style.background = 'var(--surface-bg)'}
+            >
+              <LogOut size={20} />
+              Sign Out
+            </button>
+          </div>
         </aside>
 
         {/* Main Content Area */}
