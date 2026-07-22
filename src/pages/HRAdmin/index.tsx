@@ -193,10 +193,13 @@ export default function HRAdminWrapper() {
                         color: isActive ? 'var(--text-emerald)' : 'var(--text-muted)', fontWeight: isActive ? '600' : '500', cursor: 'pointer', textAlign: 'left', transition: 'all 0.2s ease', width: '100%', justifyContent: 'space-between', fontSize: '1rem', fontFamily: 'inherit'
                       }}
                     >
-                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', whiteSpace: 'nowrap' }}>
-                        {item.icon} <span style={{ whiteSpace: 'nowrap' }}>{item.name}</span>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', flex: 1, minWidth: 0 }}>
+                        <div style={{ flexShrink: 0, display: 'flex' }}>{item.icon}</div> 
+                        <span style={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{item.name}</span>
                       </div>
-                      {isOpen ? <ChevronDown size={16} /> : <ChevronRight size={16} />}
+                      <div style={{ flexShrink: 0, display: 'flex' }}>
+                        {isOpen ? <ChevronDown size={16} /> : <ChevronRight size={16} />}
+                      </div>
                     </button>
                     
                     {isOpen && (
@@ -209,7 +212,7 @@ export default function HRAdminWrapper() {
                               to={subItem.path}
                               style={{
                                 padding: '0.625rem 1rem', textDecoration: 'none',
-                                background: isSubActive ? 'var(--text-emerald)' : 'transparent', color: isSubActive ? 'white' : 'var(--text-main)', fontWeight: isSubActive ? '600' : '400', fontSize: '0.9rem', transition: 'all 0.2s ease', boxShadow: isSubActive ? '0 4px 12px rgba(35, 127, 112, 0.2)' : 'none', borderRadius: '8px'
+                                background: isSubActive ? 'var(--text-emerald)' : 'transparent', color: isSubActive ? 'white' : 'var(--text-main)', fontWeight: isSubActive ? '600' : '400', fontSize: '0.9rem', transition: 'all 0.2s ease', boxShadow: isSubActive ? '0 4px 12px rgba(35, 127, 112, 0.2)' : 'none', borderRadius: '8px', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis'
                               }}
                              onClick={() => setIsMobileMenuOpen(false)}>
                               {subItem.name}
@@ -229,11 +232,11 @@ export default function HRAdminWrapper() {
                   style={{
                     display: 'flex', alignItems: 'center', gap: '0.75rem',
                     padding: '0.875rem 1rem', borderRadius: '12px', textDecoration: 'none',
-                    background: isActive ? 'var(--text-emerald)' : 'transparent', color: isActive ? 'white' : 'var(--text-main)', fontWeight: isActive ? '600' : '400', transition: 'all 0.2s ease', fontSize: '1rem', boxShadow: isActive ? '0 4px 12px rgba(35, 127, 112, 0.2)' : 'none', whiteSpace: 'nowrap'
+                    background: isActive ? 'var(--text-emerald)' : 'transparent', color: isActive ? 'white' : 'var(--text-main)', fontWeight: isActive ? '600' : '400', transition: 'all 0.2s ease', fontSize: '1rem', boxShadow: isActive ? '0 4px 12px rgba(35, 127, 112, 0.2)' : 'none'
                   }}
                  onClick={() => setIsMobileMenuOpen(false)}>
-                  {item.icon}
-                  <span style={{ whiteSpace: 'nowrap' }}>{item.name}</span>
+                  <div style={{ flexShrink: 0, display: 'flex' }}>{item.icon}</div>
+                  <span style={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis', flex: 1 }}>{item.name}</span>
                 </Link>
               );
             })}
