@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { 
   X, User, MapPin, Phone, Mail, Briefcase, Calendar, 
-  CheckCircle, FileText, Download, Building, CreditCard, ChevronRight, Award
+  CheckCircle, FileText, Download, Building, CreditCard, ChevronRight, Award, Eye, EyeOff
 } from 'lucide-react';
 
 interface EmployeeProfileModalProps {
@@ -18,6 +18,7 @@ interface EmployeeProfileModalProps {
 
 export default function EmployeeProfileModal({ profile, onClose }: EmployeeProfileModalProps) {
   const [activeTab, setActiveTab] = useState('Overview');
+  const [showPayrollDetails, setShowPayrollDetails] = useState(false);
 
   if (!profile) return null;
 
@@ -281,21 +282,39 @@ export default function EmployeeProfileModal({ profile, onClose }: EmployeeProfi
                 )}
                 {activeTab === 'Payroll' && (
                   <>
+                    <div style={{ padding: '1rem', border: '1px solid #e2e8f0', borderRadius: '8px', gridColumn: 'span 2', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                      <span style={{ fontSize: '0.875rem', fontWeight: '500', color: '#1e293b' }}>View Confidential Data</span>
+                      <button 
+                        onClick={() => setShowPayrollDetails(!showPayrollDetails)}
+                        style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', padding: '0.5rem 0.75rem', border: '1px solid #e2e8f0', borderRadius: '6px', background: 'white', color: '#64748b', cursor: 'pointer', fontSize: '0.75rem', fontWeight: '600', transition: 'all 0.2s' }}
+                      >
+                        {showPayrollDetails ? <EyeOff size={16} /> : <Eye size={16} />}
+                        {showPayrollDetails ? 'Hide Details' : 'Show Details'}
+                      </button>
+                    </div>
                     <div style={{ padding: '1rem', border: '1px solid #e2e8f0', borderRadius: '8px' }}>
                       <p style={{ margin: 0, fontSize: '0.75rem', color: '#64748b' }}>Bank Account</p>
-                      <p style={{ margin: '0.25rem 0 0 0', fontSize: '0.875rem', fontWeight: '500', color: '#1e293b' }}>{extendedData.bank}</p>
+                      <p style={{ margin: '0.25rem 0 0 0', fontSize: '0.875rem', fontWeight: '500', color: '#1e293b' }}>
+                        {showPayrollDetails ? 'HDFC Bank (50100234567890)' : extendedData.bank}
+                      </p>
                     </div>
                     <div style={{ padding: '1rem', border: '1px solid #e2e8f0', borderRadius: '8px' }}>
                       <p style={{ margin: 0, fontSize: '0.75rem', color: '#64748b' }}>PAN Number</p>
-                      <p style={{ margin: '0.25rem 0 0 0', fontSize: '0.875rem', fontWeight: '500', color: '#1e293b' }}>{extendedData.pan}</p>
+                      <p style={{ margin: '0.25rem 0 0 0', fontSize: '0.875rem', fontWeight: '500', color: '#1e293b' }}>
+                        {showPayrollDetails ? extendedData.pan : '**********'}
+                      </p>
                     </div>
                     <div style={{ padding: '1rem', border: '1px solid #e2e8f0', borderRadius: '8px' }}>
                       <p style={{ margin: 0, fontSize: '0.75rem', color: '#64748b' }}>UAN</p>
-                      <p style={{ margin: '0.25rem 0 0 0', fontSize: '0.875rem', fontWeight: '500', color: '#1e293b' }}>{extendedData.uan}</p>
+                      <p style={{ margin: '0.25rem 0 0 0', fontSize: '0.875rem', fontWeight: '500', color: '#1e293b' }}>
+                        {showPayrollDetails ? extendedData.uan : '************'}
+                      </p>
                     </div>
                     <div style={{ padding: '1rem', border: '1px solid #e2e8f0', borderRadius: '8px' }}>
                       <p style={{ margin: 0, fontSize: '0.75rem', color: '#64748b' }}>PF Number</p>
-                      <p style={{ margin: '0.25rem 0 0 0', fontSize: '0.875rem', fontWeight: '500', color: '#1e293b' }}>{extendedData.pfNumber}</p>
+                      <p style={{ margin: '0.25rem 0 0 0', fontSize: '0.875rem', fontWeight: '500', color: '#1e293b' }}>
+                        {showPayrollDetails ? extendedData.pfNumber : '**********************'}
+                      </p>
                     </div>
                   </>
                 )}
