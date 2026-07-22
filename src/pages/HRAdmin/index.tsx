@@ -123,17 +123,15 @@ export default function HRAdminWrapper() {
 
         {/* Right Side: Profile */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
-           <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', paddingLeft: '1.5rem', borderLeft: '1px solid var(--border-light)' }}>
-             <div style={{ textAlign: 'right' }}>
-               <div style={{ fontSize: '0.85rem', fontWeight: '600', color: 'var(--text-main)', lineHeight: 1.2 }}>{user?.email?.split('@')[0]}</div>
-               <div style={{ fontSize: '0.75rem', color: 'var(--text-emerald)', fontWeight: '500' }}>Active</div>
-             </div>
-             <Link to="/profile" style={{ textDecoration: 'none' }}>
-               <div style={{ width: '36px', height: '36px', borderRadius: '50%', background: 'var(--text-emerald)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', fontWeight: 'bold', fontSize: '0.9rem', boxShadow: '0 2px 8px rgba(35, 127, 112, 0.2)' }}>
-                 {user?.email?.charAt(0).toUpperCase()}
-               </div>
-             </Link>
-           </div>
+          <Link to="/profile" style={{ display: 'flex', alignItems: 'center', gap: '1rem', textDecoration: 'none', paddingLeft: '1.5rem', borderLeft: '1px solid var(--border-light)' }}>
+            <div style={{ textAlign: 'right', display: 'flex', flexDirection: 'column' }}>
+              <span style={{ fontSize: '0.9rem', fontWeight: '600', color: 'var(--text-heading)', lineHeight: '1.2' }}>{user?.email?.split('@')[0]}</span>
+              <span style={{ fontSize: '0.75rem', color: 'var(--text-emerald)' }}>Active</span>
+            </div>
+            <div style={{ width: '40px', height: '40px', borderRadius: '50%', background: 'var(--text-emerald)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', fontWeight: 'bold' }}>
+              {user?.email?.charAt(0).toUpperCase()}
+            </div>
+          </Link>
         </div>
       </header>
 
@@ -243,31 +241,29 @@ export default function HRAdminWrapper() {
             })}
           </nav>
 
-          <div style={{ padding: '0 1rem 1.5rem' }}>
-            <button 
-              onClick={signOut}
-              style={{
-                display: 'flex', alignItems: 'center', gap: '0.75rem',
-                width: '100%', padding: '0.75rem 1rem', borderRadius: '8px',
-                border: '1px solid var(--border-color)', backgroundColor: 'transparent',
-                color: 'var(--text-main)', fontWeight: '500', cursor: 'pointer',
-                transition: 'all 0.2s ease', justifyContent: 'center'
-              }}
-              onMouseOver={(e) => {
-                e.currentTarget.style.backgroundColor = '#fee2e2';
-                e.currentTarget.style.color = '#ef4444';
-                e.currentTarget.style.borderColor = '#fecaca';
-              }}
-              onMouseOut={(e) => {
-                e.currentTarget.style.backgroundColor = 'transparent';
-                e.currentTarget.style.color = 'var(--text-main)';
-                e.currentTarget.style.borderColor = 'var(--border-color)';
-              }}
-            >
-              <LogOut size={18} />
-              Sign Out
-            </button>
-          </div>
+          <button 
+            onClick={signOut}
+            style={{
+              display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.75rem',
+              padding: '0.875rem 1rem',
+              borderRadius: '12px',
+              background: 'var(--surface-bg)',
+              color: 'var(--text-main)',
+              fontWeight: '500',
+              cursor: 'pointer',
+              marginTop: 'auto',
+              marginBottom: '1.5rem',
+              marginLeft: '1rem',
+              marginRight: '1rem',
+              border: '1px solid var(--border-light)',
+              transition: 'background 0.2s ease'
+            }}
+            onMouseOver={(e) => e.currentTarget.style.background = 'var(--accent-sage)'}
+            onMouseOut={(e) => e.currentTarget.style.background = 'var(--surface-bg)'}
+          >
+            <LogOut size={20} />
+            Sign Out
+          </button>
         </aside>
 
         {/* Main Content Area */}
