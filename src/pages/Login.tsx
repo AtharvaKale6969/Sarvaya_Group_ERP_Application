@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { supabase } from '../lib/supabase';
 import { useNavigate } from 'react-router-dom';
 import { LogIn, Building2 } from 'lucide-react';
+import { useAuthStore } from '../store/useAuthStore';
 
 export default function Login() {
   const [email, setEmail] = useState('');
@@ -9,23 +10,28 @@ export default function Login() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const navigate = useNavigate();
+  const { setUser, fetchUserRoles } = useAuthStore();
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
     setError('');
 
-    const { error } = await supabase.auth.signInWithPassword({
+    const { data, error } = await supabase.auth.signInWithPassword({
       email,
       password,
     });
 
     if (error) {
       setError(error.message);
+      setLoading(false);
     } else {
+      if (data.session) {
+        setUser(data.session.user);
+        await fetchUserRoles();
+      }
       navigate('/home');
     }
-    setLoading(false);
   };
 
   return (
