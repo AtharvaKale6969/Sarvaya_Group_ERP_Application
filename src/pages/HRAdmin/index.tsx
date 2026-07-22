@@ -190,7 +190,7 @@ export default function HRAdminWrapper() {
                         display: 'flex', alignItems: 'center', gap: '0.75rem',
                         padding: '0.875rem 1rem', borderRadius: '12px', border: 'none',
                         backgroundColor: 'transparent',
-                        color: isActive ? 'var(--text-emerald)' : 'var(--text-muted)', fontWeight: isActive ? '600' : '500', cursor: 'pointer', textAlign: 'left', transition: 'all 0.2s ease', width: '100%', justifyContent: 'space-between', fontSize: '1rem', fontFamily: 'inherit'
+                        color: isActive ? 'var(--text-emerald)' : 'var(--text-muted)', fontWeight: isActive ? '600' : '500', cursor: 'pointer', textAlign: 'left', transition: 'all 0.2s ease', width: '100%', justifyContent: 'space-between', fontSize: '0.9rem', fontFamily: 'inherit'
                       }}
                     >
                       <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', flex: 1, minWidth: 0 }}>
@@ -232,7 +232,7 @@ export default function HRAdminWrapper() {
                   style={{
                     display: 'flex', alignItems: 'center', gap: '0.75rem',
                     padding: '0.875rem 1rem', borderRadius: '12px', textDecoration: 'none',
-                    background: isActive ? 'var(--text-emerald)' : 'transparent', color: isActive ? 'white' : 'var(--text-main)', fontWeight: isActive ? '600' : '400', transition: 'all 0.2s ease', fontSize: '1rem', boxShadow: isActive ? '0 4px 12px rgba(35, 127, 112, 0.2)' : 'none'
+                    background: isActive ? 'var(--text-emerald)' : 'transparent', color: isActive ? 'white' : 'var(--text-main)', fontWeight: isActive ? '600' : '400', transition: 'all 0.2s ease', fontSize: '0.9rem', boxShadow: isActive ? '0 4px 12px rgba(35, 127, 112, 0.2)' : 'none'
                   }}
                  onClick={() => setIsMobileMenuOpen(false)}>
                   <div style={{ flexShrink: 0, display: 'flex' }}>{item.icon}</div>
