@@ -90,7 +90,7 @@ export default function HRAdminWrapper() {
           <Menu size={24} />
         </button>
         <span style={{ marginLeft: '0.75rem', fontWeight: '700', color: 'var(--text-emerald)', fontSize: '1.2rem', flex: 1 }}>Helix Synapse</span>
-        <Link to="/profile" style={{ textDecoration: 'none' }}>
+        <Link to="/hr-admin/profile" style={{ textDecoration: 'none' }}>
           <div style={{ width: '32px', height: '32px', borderRadius: '50%', background: 'var(--text-emerald)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', fontWeight: 'bold', fontSize: '0.85rem' }}>
             {user?.email?.charAt(0).toUpperCase()}
           </div>
@@ -123,7 +123,7 @@ export default function HRAdminWrapper() {
 
         {/* Right Side: Profile */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
-          <Link to="/profile" style={{ display: 'flex', alignItems: 'center', gap: '1rem', textDecoration: 'none', paddingLeft: '1.5rem', borderLeft: '1px solid var(--border-light)' }}>
+          <Link to="/hr-admin/profile" style={{ display: 'flex', alignItems: 'center', gap: '1rem', textDecoration: 'none', paddingLeft: '1.5rem', borderLeft: '1px solid var(--border-light)' }}>
             <div style={{ textAlign: 'right', display: 'flex', flexDirection: 'column' }}>
               <span style={{ fontSize: '0.9rem', fontWeight: '600', color: 'var(--text-heading)', lineHeight: '1.2' }}>{user?.email?.split('@')[0]}</span>
               <span style={{ fontSize: '0.75rem', color: 'var(--text-emerald)' }}>Active</span>

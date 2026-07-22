@@ -145,6 +145,7 @@ function App() {
               <Route path="org-wise-punch" element={<HRAdminOrgWisePunchReport />} />
               <Route path="muster-report" element={<HRAdminMusterReport />} />
               <Route path="activity-logs" element={<HRAdminActivityLogs />} />
+              <Route path="profile" element={<Profile />} />
               <Route index element={<Navigate to="dashboard" replace />} />
             </Route>
           </Route>
