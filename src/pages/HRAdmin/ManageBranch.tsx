@@ -129,7 +129,11 @@ export default function ManageBranch() {
             </div>
 
             {/* Drawer Body - Scrollable */}
-            <div style={{ padding: '1.5rem', flex: 1, overflowY: 'auto', overflowX: 'hidden', display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+            <div style={{ padding: '1.5rem', flex: 1, overflowY: 'auto', overflowX: 'hidden' }}>
+              <style>{`
+                .drawer-body-fix > div, .drawer-body-fix > h3 { margin-bottom: 1.25rem; }
+              `}</style>
+              <div className="drawer-body-fix">
               <h3 style={{ fontSize: '0.875rem', fontWeight: '600', color: '#374151', margin: 0 }}>Branch Details</h3>
               
               {/* Logo Upload */}
@@ -291,9 +295,8 @@ export default function ManageBranch() {
             </div>
 
             {/* Body */}
-            <div style={{ padding: '1.5rem', overflowY: 'auto', flex: 1, minHeight: 0, display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-              
-              <div>
+            <div style={{ padding: '1.5rem', overflowY: 'auto', flex: 1 }}>
+              <div style={{ marginBottom: '1rem' }}>
                 <span style={{ border: '1px solid #d1d5db', borderRadius: '6px', padding: '0.375rem 0.75rem', fontSize: '0.875rem', fontWeight: '500', color: '#374151', display: 'inline-block' }}>
                   Active: {viewingEmployees.employees}
                 </span>

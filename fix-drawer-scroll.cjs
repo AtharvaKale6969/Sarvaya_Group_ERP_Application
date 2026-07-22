@@ -8,16 +8,34 @@ files.forEach(file => {
     const filePath = path.join(dir, file);
     let content = fs.readFileSync(filePath, 'utf8');
 
-    // Add maxHeight: '100%' to Drawer Panels
+    // Replace the flex column body with block body
     content = content.replace(
-        /height:\s*'100%',?\s*(\n\s*boxShadow:)/g,
-        "height: '100%', maxHeight: '100%',$1"
+        /<div style=\{\{\s*padding:\s*'1.5rem',\s*overflowY:\s*'auto',\s*flex:\s*1,\s*minHeight:\s*0,\s*display:\s*'flex',\s*flexDirection:\s*'column',\s*gap:\s*'1rem'\s*\}\}>/g,
+        '<div style={{ padding: \'1.5rem\', overflowY: \'auto\', flex: 1 }}>'
+    );
+    
+    // Also without minHeight: 0
+    content = content.replace(
+        /<div style=\{\{\s*padding:\s*'1.5rem',\s*overflowY:\s*'auto',\s*flex:\s*1,\s*display:\s*'flex',\s*flexDirection:\s*'column',\s*gap:\s*'1rem'\s*\}\}>/g,
+        '<div style={{ padding: \'1.5rem\', overflowY: \'auto\', flex: 1 }}>'
     );
 
-    // Some Drawer panels might have different formats
+    // And add marginBottom to the Active count div
     content = content.replace(
-        /backgroundColor:\s*'white',\s*height:\s*'100%',?\s*display:\s*'flex',/g,
-        "backgroundColor: 'white', height: '100%', maxHeight: '100%', display: 'flex',"
+        /<div style=\{\{\s*padding:\s*'1.5rem',\s*overflowY:\s*'auto',\s*flex:\s*1\s*\}\}>\s*<div\s*>/g,
+        '<div style={{ padding: \'1.5rem\', overflowY: \'auto\', flex: 1 }}>\n              <div style={{ marginBottom: \'1rem\' }}>'
+    );
+
+    // ManageBranch "Modify Branch" drawer
+    content = content.replace(
+        /<div style=\{\{\s*padding:\s*'1.5rem',\s*flex:\s*1,\s*overflowY:\s*'auto',\s*overflowX:\s*'hidden',\s*display:\s*'flex',\s*flexDirection:\s*'column',\s*gap:\s*'1.25rem'\s*\}\}>/g,
+        '<div style={{ padding: \'1.5rem\', flex: 1, overflowY: \'auto\', overflowX: \'hidden\' }}>\n              <style>{`\n                .drawer-body-fix > div, .drawer-body-fix > h3 { margin-bottom: 1.25rem; }\n              `}</style>\n              <div className="drawer-body-fix">'
+    );
+
+    // Add closing div for ManageBranch
+    content = content.replace(
+        /<\/div>\n\s*\{\/\*\s*Drawer Footer\s*\*\/\}/g,
+        '  </div>\n            </div>\n\n            {/* Drawer Footer */}'
     );
 
     fs.writeFileSync(filePath, content);
