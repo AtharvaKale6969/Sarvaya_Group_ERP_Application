@@ -158,7 +158,7 @@ export default function HRAdminWrapper() {
                     
                     {isOpen && (
                       <div style={{ display: 'flex', flexDirection: 'column', marginLeft: '2.5rem', marginTop: '0.5rem', gap: '0.25rem' }}>
-                        {item.children.map(subItem => {
+                        {item.children.map((subItem: any) => {
                           const isSubActive = location.pathname === subItem.path;
                           return (
                             <Link 
