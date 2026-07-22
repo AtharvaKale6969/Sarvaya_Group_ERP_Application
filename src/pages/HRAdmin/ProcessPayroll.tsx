@@ -35,7 +35,7 @@ export default function ProcessPayroll() {
   };
 
   const ThContent = ({ title, sortable = false, underline = false, icon = null }: any) => (
-    <div style={{ display: 'flex', alignItems: 'center', gap: '0.25rem', justifyContent: 'center' }}>
+    <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.25rem', justifyContent: 'center' }}>
       <span style={{ textDecoration: underline ? 'underline' : 'none', cursor: underline ? 'pointer' : 'default' }}>{title}</span>
       {sortable && <ArrowUpDown size={12} color="#9ca3af" />}
       {icon}
@@ -53,7 +53,7 @@ export default function ProcessPayroll() {
       {/* Toolbar */}
       <div style={{ display: 'flex', flexDirection: 'column', padding: '1rem 1.5rem', borderBottom: '1px solid #e5e7eb', backgroundColor: '#f9fafb', gap: '0.75rem' }}>
         <div className="header-responsive">
-          <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', alignItems: 'center' }}>
             
             <div style={{ position: 'relative', width: '100%', minWidth: '250px' }}>
               <select 
@@ -73,7 +73,7 @@ export default function ProcessPayroll() {
               </div>
             </div>
 
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', padding: '0.375rem 0.75rem', border: '1px solid #d1d5db', borderRadius: '6px', backgroundColor: 'white', color: '#374151', fontSize: '0.875rem' }}>
+            <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.5rem', padding: '0.375rem 0.75rem', border: '1px solid #d1d5db', borderRadius: '6px', backgroundColor: 'white', color: '#374151', fontSize: '0.875rem' }}>
               <input type="date" defaultValue="2026-07-01" style={{ border: 'none', outline: 'none', color: '#374151', backgroundColor: 'transparent', fontFamily: 'inherit', fontSize: 'inherit' }} />
               <span style={{ color: '#9ca3af' }}>→</span>
               <input type="date" defaultValue="2026-07-21" style={{ border: 'none', outline: 'none', color: '#374151', backgroundColor: 'transparent', fontFamily: 'inherit', fontSize: 'inherit' }} />
@@ -221,7 +221,7 @@ export default function ProcessPayroll() {
               
               {/* Gross Earning Section */}
               <div>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.75rem' }}>
+                <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.75rem' }}>
                   <h3 style={{ margin: 0, fontSize: '1rem', fontWeight: '600', color: '#1f2937' }}>Gross Earning</h3>
                   <button onClick={() => toggleSection('Gross Earning')} style={{ background: 'none', border: 'none', display: 'flex', alignItems: 'center', gap: '0.25rem', fontSize: '0.75rem', color: '#0ea5e9', fontWeight: '500', cursor: 'pointer' }}>
                     {expandedSections['Gross Earning'] ? 'View Less' : 'View More'} {expandedSections['Gross Earning'] ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
@@ -270,7 +270,7 @@ export default function ProcessPayroll() {
 
               {/* Other Earnings Section */}
               <div>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.75rem' }}>
+                <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.75rem' }}>
                   <h3 style={{ margin: 0, fontSize: '1rem', fontWeight: '600', color: '#1f2937' }}>Other Earnings</h3>
                   <button onClick={() => toggleSection('Other Earnings')} style={{ background: 'none', border: 'none', display: 'flex', alignItems: 'center', gap: '0.25rem', fontSize: '0.75rem', color: '#0ea5e9', fontWeight: '500', cursor: 'pointer' }}>
                     {expandedSections['Other Earnings'] ? 'View Less' : 'View More'} {expandedSections['Other Earnings'] ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
@@ -311,7 +311,7 @@ export default function ProcessPayroll() {
 
               {/* Statutory Compliance Section */}
               <div>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.75rem' }}>
+                <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.75rem' }}>
                   <h3 style={{ margin: 0, fontSize: '1rem', fontWeight: '600', color: '#1f2937' }}>Statutory Compliance</h3>
                   <button onClick={() => toggleSection('Statutory Compliance')} style={{ background: 'none', border: 'none', display: 'flex', alignItems: 'center', gap: '0.25rem', fontSize: '0.75rem', color: '#0ea5e9', fontWeight: '500', cursor: 'pointer' }}>
                     {expandedSections['Statutory Compliance'] ? 'View Less' : 'View More'} {expandedSections['Statutory Compliance'] ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
@@ -352,7 +352,7 @@ export default function ProcessPayroll() {
 
               {/* Deductions Section */}
               <div>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.75rem' }}>
+                <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.75rem' }}>
                   <h3 style={{ margin: 0, fontSize: '1rem', fontWeight: '600', color: '#1f2937' }}>Deductions</h3>
                   <button onClick={() => toggleSection('Deductions')} style={{ background: 'none', border: 'none', display: 'flex', alignItems: 'center', gap: '0.25rem', fontSize: '0.75rem', color: '#0ea5e9', fontWeight: '500', cursor: 'pointer' }}>
                     {expandedSections['Deductions'] ? 'View Less' : 'View More'} {expandedSections['Deductions'] ? <ChevronUp size={14} /> : <ChevronDown size={14} />}

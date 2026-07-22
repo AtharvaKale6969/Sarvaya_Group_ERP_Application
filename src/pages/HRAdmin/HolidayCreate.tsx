@@ -122,14 +122,14 @@ export default function HolidayCreate() {
     return (
       <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', backgroundColor: 'white', border: '1px solid #e5e7eb', borderRadius: '8px', boxShadow: '0 1px 3px rgba(0,0,0,0.05)', padding: '1rem', minHeight: '800px' }}>
         {/* Detail View Header */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', paddingBottom: '1rem', borderBottom: '1px solid #e5e7eb' }}>
+        <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '1rem', paddingBottom: '1rem', borderBottom: '1px solid #e5e7eb' }}>
           <button 
             onClick={() => setActiveTemplate(null)}
             style={{ display: 'flex', alignItems: 'center', background: 'none', border: 'none', cursor: 'pointer', color: '#374151', padding: 0 }}
           >
             <ChevronLeft size={20} />
           </button>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+          <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.5rem' }}>
             <span style={{ fontSize: '0.875rem', fontWeight: '500', color: '#6b7280' }}>Template Name*</span>
             <input 
               type="text" 
@@ -146,13 +146,13 @@ export default function HolidayCreate() {
             <thead>
               <tr style={{ backgroundColor: '#eff6ff' }}>
                 <th style={{ padding: '1rem', fontSize: '0.75rem', fontWeight: '600', color: '#1e3a8a' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.25rem' }}>Date <ChevronsUpDown size={14} /></div>
+                  <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.25rem' }}>Date <ChevronsUpDown size={14} /></div>
                 </th>
                 <th style={{ padding: '1rem', fontSize: '0.75rem', fontWeight: '600', color: '#1e3a8a' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.25rem' }}>Day <ChevronsUpDown size={14} /></div>
+                  <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.25rem' }}>Day <ChevronsUpDown size={14} /></div>
                 </th>
                 <th style={{ padding: '1rem', fontSize: '0.75rem', fontWeight: '600', color: '#1e3a8a' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.25rem' }}>Name <ChevronsUpDown size={14} /></div>
+                  <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.25rem' }}>Name <ChevronsUpDown size={14} /></div>
                 </th>
               </tr>
             </thead>
@@ -177,12 +177,12 @@ export default function HolidayCreate() {
         </div>
 
         {/* Detail Pagination Footer */}
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingTop: '1rem', borderTop: '1px solid #e5e7eb' }}>
+        <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center', paddingTop: '1rem', borderTop: '1px solid #e5e7eb' }}>
           <div style={{ fontSize: '0.875rem', color: '#6b7280' }}>
             Showing <span style={{ fontWeight: '600', color: '#374151' }}>{holidayDetails.length === 0 ? 0 : 1}</span> to <span style={{ fontWeight: '600', color: '#374151' }}>{holidayDetails.length}</span> of <span style={{ fontWeight: '600', color: '#374151' }}>{holidayDetails.length}</span> Results
           </div>
           
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+          <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.75rem' }}>
             <div style={{ position: 'relative' }}>
               <select 
                 value={pageSize} 
@@ -216,7 +216,7 @@ export default function HolidayCreate() {
       <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', backgroundColor: 'white', border: '1px solid #e5e7eb', borderRadius: '8px', boxShadow: '0 1px 3px rgba(0,0,0,0.05)', padding: '1rem', minHeight: '800px', position: 'relative' }}>
         
         {/* Header */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', paddingBottom: '1rem', borderBottom: '1px solid #e5e7eb' }}>
+        <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.5rem', paddingBottom: '1rem', borderBottom: '1px solid #e5e7eb' }}>
           <button 
             onClick={() => { setIsCreatingTemplate(false); setIsEditingTemplate(null); }}
             style={{ display: 'flex', alignItems: 'center', background: 'none', border: 'none', cursor: 'pointer', color: '#1e3a8a', padding: 0 }}
@@ -229,8 +229,8 @@ export default function HolidayCreate() {
         </div>
 
         {/* Action Row */}
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingBottom: '1rem', borderBottom: '1px solid #e5e7eb' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+        <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center', paddingBottom: '1rem', borderBottom: '1px solid #e5e7eb' }}>
+          <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.5rem' }}>
             {!isEditing && <span style={{ fontSize: '0.875rem', fontWeight: '500', color: '#6b7280' }}>Template Name*</span>}
             <input 
               type="text" 
@@ -253,13 +253,13 @@ export default function HolidayCreate() {
             <thead>
               <tr style={{ backgroundColor: '#eff6ff' }}>
                 <th style={{ padding: '1rem', fontSize: '0.75rem', fontWeight: '600', color: '#1e3a8a', width: '30%' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.25rem' }}>Date <ChevronsUpDown size={14} /></div>
+                  <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.25rem' }}>Date <ChevronsUpDown size={14} /></div>
                 </th>
                 <th style={{ padding: '1rem', fontSize: '0.75rem', fontWeight: '600', color: '#1e3a8a', width: '25%' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.25rem' }}>Day <ChevronsUpDown size={14} /></div>
+                  <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.25rem' }}>Day <ChevronsUpDown size={14} /></div>
                 </th>
                 <th style={{ padding: '1rem', fontSize: '0.75rem', fontWeight: '600', color: '#1e3a8a', width: '30%' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.25rem' }}>Name <ChevronsUpDown size={14} /></div>
+                  <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.25rem' }}>Name <ChevronsUpDown size={14} /></div>
                 </th>
                 <th style={{ padding: '1rem', fontSize: '0.75rem', fontWeight: '600', color: '#1e3a8a', width: '15%', textAlign: 'center' }}>
                   Action
@@ -281,7 +281,7 @@ export default function HolidayCreate() {
                       <td style={{ padding: '1rem', fontSize: '0.875rem', color: '#374151' }}>{hd.day}</td>
                       <td style={{ padding: '1rem', fontSize: '0.875rem', color: '#374151' }}>{hd.name}</td>
                       <td style={{ padding: '1rem', textAlign: 'center' }}>
-                        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem' }}>
+                        <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'center', gap: '0.5rem' }}>
                           <button 
                             onClick={() => openDrawerForEdit(idx)}
                             style={{ padding: '0.375rem', backgroundColor: 'white', border: '1px solid #d1d5db', borderRadius: '4px', color: '#6b7280', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
@@ -317,12 +317,12 @@ export default function HolidayCreate() {
 
         {/* Footer */}
         {isEditing && (
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingTop: '1rem', borderTop: '1px solid #e5e7eb' }}>
+          <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center', paddingTop: '1rem', borderTop: '1px solid #e5e7eb' }}>
             <div style={{ fontSize: '0.875rem', color: '#6b7280' }}>
               Showing <span style={{ fontWeight: '600', color: '#374151' }}>{holidayDetails.length === 0 ? 0 : 1}</span> to <span style={{ fontWeight: '600', color: '#374151' }}>{holidayDetails.length}</span> of <span style={{ fontWeight: '600', color: '#374151' }}>{holidayDetails.length}</span> Results
             </div>
             
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+            <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.75rem' }}>
               <div style={{ position: 'relative' }}>
                 <select 
                   value={pageSize} 
@@ -429,11 +429,11 @@ export default function HolidayCreate() {
     <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', backgroundColor: 'white', border: '1px solid #e5e7eb', borderRadius: '8px', boxShadow: '0 1px 3px rgba(0,0,0,0.05)', padding: '1rem', minHeight: '800px' }}>
       
       {/* Header */}
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingBottom: '1rem', borderBottom: '1px solid #e5e7eb' }}>
+      <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center', paddingBottom: '1rem', borderBottom: '1px solid #e5e7eb' }}>
         <h2 style={{ fontSize: '1.125rem', fontWeight: '600', margin: 0, color: '#111827' }}>
           Holiday Create
         </h2>
-        <div style={{ display: 'flex', gap: '0.75rem' }}>
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem' }}>
           <button 
             onClick={() => navigate('/hr-admin/holiday-assign')}
             style={{ backgroundColor: 'white', color: '#374151', border: '1px solid #d1d5db', borderRadius: '6px', padding: '0.5rem 1rem', fontSize: '0.875rem', fontWeight: '500', cursor: 'pointer' }}
@@ -455,19 +455,19 @@ export default function HolidayCreate() {
           <thead>
             <tr style={{ backgroundColor: '#eff6ff' }}>
               <th style={{ padding: '1rem', fontSize: '0.75rem', fontWeight: '600', color: '#1e3a8a' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.25rem' }}>Template Name <ChevronsUpDown size={14} /></div>
+                <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.25rem' }}>Template Name <ChevronsUpDown size={14} /></div>
               </th>
               <th style={{ padding: '1rem', fontSize: '0.75rem', fontWeight: '600', color: '#1e3a8a' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.25rem' }}>Holiday Count <ChevronsUpDown size={14} /></div>
+                <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.25rem' }}>Holiday Count <ChevronsUpDown size={14} /></div>
               </th>
               <th style={{ padding: '1rem', fontSize: '0.75rem', fontWeight: '600', color: '#1e3a8a' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.25rem' }}>No. Of Assigned Employee <ChevronsUpDown size={14} /></div>
+                <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.25rem' }}>No. Of Assigned Employee <ChevronsUpDown size={14} /></div>
               </th>
               <th style={{ padding: '1rem', fontSize: '0.75rem', fontWeight: '600', color: '#1e3a8a' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.25rem' }}>Created On <ChevronsUpDown size={14} /></div>
+                <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.25rem' }}>Created On <ChevronsUpDown size={14} /></div>
               </th>
               <th style={{ padding: '1rem', fontSize: '0.75rem', fontWeight: '600', color: '#1e3a8a' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.25rem' }}>Last Modified <ChevronsUpDown size={14} /></div>
+                <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.25rem' }}>Last Modified <ChevronsUpDown size={14} /></div>
               </th>
               <th style={{ padding: '1rem', fontSize: '0.75rem', fontWeight: '600', color: '#1e3a8a' }}>Action</th>
             </tr>
@@ -481,7 +481,7 @@ export default function HolidayCreate() {
                 <td style={{ padding: '1rem', fontSize: '0.875rem', color: '#374151' }}>{tpl.created}</td>
                 <td style={{ padding: '1rem', fontSize: '0.875rem', color: '#374151' }}>{tpl.modified}</td>
                 <td style={{ padding: '1rem' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                  <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.5rem' }}>
                     <button 
                       onClick={() => {
                         setHolidayDetails(tpl.name === 'Optional Holidays' ? [] : defaultHolidays);
@@ -539,12 +539,12 @@ export default function HolidayCreate() {
       </div>
 
       {/* Pagination Footer */}
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingTop: '1rem', borderTop: '1px solid #e5e7eb' }}>
+      <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center', paddingTop: '1rem', borderTop: '1px solid #e5e7eb' }}>
         <div style={{ fontSize: '0.875rem', color: '#6b7280' }}>
           Showing <span style={{ fontWeight: '600', color: '#374151' }}>1</span> to <span style={{ fontWeight: '600', color: '#374151' }}>{templates.length}</span> of <span style={{ fontWeight: '600', color: '#374151' }}>{templates.length}</span> Results
         </div>
         
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+        <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.75rem' }}>
           <div style={{ position: 'relative' }}>
             <select 
               value={pageSize} 
@@ -572,7 +572,7 @@ export default function HolidayCreate() {
           <div style={{ width: '400px', backgroundColor: 'white', borderRadius: '8px', padding: '1.5rem', boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)', display: 'flex', flexDirection: 'column', gap: '1rem', animation: 'fadeIn 0.2s ease-out' }}>
             
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+              <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.75rem' }}>
                 <div style={{ width: '40px', height: '40px', borderRadius: '50%', backgroundColor: '#fef2f2', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                   <Trash2 color="#ef4444" size={20} />
                 </div>
@@ -589,7 +589,7 @@ export default function HolidayCreate() {
               Are you sure you want to delete the <strong>{templates[templateToDelete].name}</strong> template? This action cannot be undone and will affect any assigned employees.
             </p>
             
-            <div style={{ display: 'flex', justifyContent: 'flex-end', gap: '0.75rem' }}>
+            <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'flex-end', gap: '0.75rem' }}>
               <button 
                 onClick={() => setTemplateToDelete(null)} 
                 style={{ padding: '0.5rem 1rem', backgroundColor: 'white', border: '1px solid #d1d5db', borderRadius: '6px', fontSize: '0.875rem', fontWeight: '500', color: '#374151', cursor: 'pointer' }}

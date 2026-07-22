@@ -52,11 +52,11 @@ export default function LeaveCreate() {
     <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', backgroundColor: 'white', border: '1px solid #e5e7eb', borderRadius: '8px', boxShadow: '0 1px 3px rgba(0,0,0,0.05)', padding: '1rem', minHeight: '800px' }}>
       
       {/* Header */}
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingBottom: '1rem', borderBottom: '1px solid #e5e7eb' }}>
+      <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center', paddingBottom: '1rem', borderBottom: '1px solid #e5e7eb' }}>
         <h2 style={{ fontSize: '1.125rem', fontWeight: '600', margin: 0, color: '#111827' }}>
           Leave Create
         </h2>
-        <div style={{ display: 'flex', gap: '0.75rem' }}>
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem' }}>
           <button 
             onClick={handleCreate}
             style={{ backgroundColor: '#0ea5e9', color: 'white', border: 'none', borderRadius: '6px', padding: '0.5rem 1rem', fontSize: '0.875rem', fontWeight: '500', cursor: 'pointer' }}
@@ -72,7 +72,7 @@ export default function LeaveCreate() {
           <thead>
             <tr style={{ backgroundColor: '#e0f2fe' }}>
               <th style={{ padding: '0.75rem 1rem', fontSize: '0.75rem', fontWeight: '600', color: '#1e3a8a', width: '25%' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.25rem' }}>Leave Name <ChevronsUpDown size={14} /></div>
+                <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.25rem' }}>Leave Name <ChevronsUpDown size={14} /></div>
               </th>
               <th style={{ padding: '0.75rem 1rem', fontSize: '0.75rem', fontWeight: '600', color: '#1e3a8a' }}>Alias</th>
               <th style={{ padding: '0.75rem 1rem', fontSize: '0.75rem', fontWeight: '600', color: '#1e3a8a' }}>Auto Allocation</th>
@@ -125,12 +125,12 @@ export default function LeaveCreate() {
       </div>
 
       {/* Pagination Footer */}
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingTop: '1rem', borderTop: '1px solid #e5e7eb' }}>
+      <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center', paddingTop: '1rem', borderTop: '1px solid #e5e7eb' }}>
         <div style={{ fontSize: '0.875rem', color: '#6b7280' }}>
           Showing <span style={{ fontWeight: '600', color: '#374151' }}>1</span> to <span style={{ fontWeight: '600', color: '#374151' }}>{leaves.length}</span> of <span style={{ fontWeight: '600', color: '#374151' }}>{leaves.length}</span> Results
         </div>
         
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+        <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.75rem' }}>
           <div style={{ position: 'relative' }}>
             <select 
               value={pageSize} 
@@ -209,7 +209,7 @@ export default function LeaveCreate() {
                 />
               </div>
 
-              <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'center', marginTop: '0.25rem' }}>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1.5rem', alignItems: 'center', marginTop: '0.25rem' }}>
                 <label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.875rem', color: '#374151', cursor: 'pointer' }}>
                   <input type="radio" name="allocationFreq" defaultChecked={selectedLeave?.allocation?.includes('Month')} style={{ accentColor: '#0ea5e9' }} /> Every Month
                 </label>
@@ -228,7 +228,7 @@ export default function LeaveCreate() {
                 />
               </div>
 
-              <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'center', marginTop: '0.25rem' }}>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1.5rem', alignItems: 'center', marginTop: '0.25rem' }}>
                 <label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.875rem', color: '#374151', cursor: 'pointer' }}>
                   <input type="radio" name="carryForwardFreq" defaultChecked={selectedLeave?.carryForward?.includes('Month')} style={{ accentColor: '#0ea5e9' }} /> End Of Every Month
                 </label>
@@ -239,7 +239,7 @@ export default function LeaveCreate() {
               
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.375rem', marginTop: '0.5rem' }}>
                 <label style={{ fontSize: '0.75rem', fontWeight: '500', color: '#374151' }}>Encashment Of Leave</label>
-                <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'center' }}>
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1.5rem', alignItems: 'center' }}>
                   <label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.875rem', color: '#374151', cursor: 'pointer' }}>
                     <input type="radio" name="encashment" defaultChecked={true} style={{ accentColor: '#0ea5e9' }} /> Off
                   </label>
@@ -266,7 +266,7 @@ export default function LeaveCreate() {
         <div style={{ position: 'fixed', inset: 0, backgroundColor: 'rgba(0,0,0,0.5)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 1100 }}>
           <div style={{ backgroundColor: 'white', borderRadius: '8px', width: '100%', maxWidth: '400px', padding: '1.5rem', display: 'flex', flexDirection: 'column', gap: '1.5rem', boxShadow: '0 10px 25px rgba(0,0,0,0.1)' }}>
             
-            <div style={{ display: 'flex', alignItems: 'flex-start', gap: '1rem' }}>
+            <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'flex-start', gap: '1rem' }}>
               <div style={{ backgroundColor: '#fee2e2', color: '#ef4444', padding: '0.75rem', borderRadius: '50%' }}>
                 <Trash2 size={24} />
               </div>
@@ -278,7 +278,7 @@ export default function LeaveCreate() {
               </div>
             </div>
 
-            <div style={{ display: 'flex', justifyContent: 'flex-end', gap: '0.75rem', marginTop: '0.5rem' }}>
+            <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'flex-end', gap: '0.75rem', marginTop: '0.5rem' }}>
               <button 
                 onClick={() => setIsDeleteModalOpen(false)} 
                 style={{ padding: '0.5rem 1rem', backgroundColor: 'white', border: '1px solid #d1d5db', borderRadius: '6px', color: '#374151', fontSize: '0.875rem', fontWeight: '500', cursor: 'pointer' }}

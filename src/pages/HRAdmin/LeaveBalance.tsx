@@ -102,11 +102,11 @@ export default function LeaveBalance() {
     <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', backgroundColor: 'white', border: '1px solid #e5e7eb', borderRadius: '8px', boxShadow: '0 1px 3px rgba(0,0,0,0.05)', padding: '1rem', minHeight: '800px' }}>
       
       {/* Header */}
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingBottom: '1rem', borderBottom: '1px solid #e5e7eb' }}>
+      <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center', paddingBottom: '1rem', borderBottom: '1px solid #e5e7eb' }}>
         <h2 style={{ fontSize: '1.125rem', fontWeight: '600', margin: 0, color: '#111827' }}>
           Leave Balance
         </h2>
-        <div style={{ display: 'flex', gap: '0.75rem' }}>
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem' }}>
           <button style={{ backgroundColor: 'white', color: '#374151', border: '1px solid #d1d5db', borderRadius: '6px', padding: '0.5rem 1rem', fontSize: '0.875rem', fontWeight: '500', cursor: 'pointer' }}>
             Bulk Leave Update
           </button>
@@ -133,19 +133,19 @@ export default function LeaveBalance() {
                 />
               </th>
               <th style={{ padding: '0.75rem 1rem', fontSize: '0.75rem', fontWeight: '600', color: '#1e3a8a' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.25rem' }}>Employee ID <ChevronsUpDown size={14} /></div>
+                <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.25rem' }}>Employee ID <ChevronsUpDown size={14} /></div>
               </th>
               <th style={{ padding: '0.75rem 1rem', fontSize: '0.75rem', fontWeight: '600', color: '#1e3a8a' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.25rem' }}>Employee Name <ChevronsUpDown size={14} /></div>
+                <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.25rem' }}>Employee Name <ChevronsUpDown size={14} /></div>
               </th>
               <th style={{ padding: '0.75rem 1rem', fontSize: '0.75rem', fontWeight: '600', color: '#1e3a8a' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.25rem' }}>Organization <ChevronsUpDown size={14} /></div>
+                <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.25rem' }}>Organization <ChevronsUpDown size={14} /></div>
               </th>
               <th style={{ padding: '0.75rem 1rem', fontSize: '0.75rem', fontWeight: '600', color: '#1e3a8a' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.25rem' }}>Department <ChevronsUpDown size={14} /></div>
+                <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.25rem' }}>Department <ChevronsUpDown size={14} /></div>
               </th>
               <th style={{ padding: '0.75rem 1rem', fontSize: '0.75rem', fontWeight: '600', color: '#1e3a8a' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.25rem' }}>Designation <ChevronsUpDown size={14} /></div>
+                <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.25rem' }}>Designation <ChevronsUpDown size={14} /></div>
               </th>
               <th style={{ padding: '0.75rem 1rem', fontSize: '0.75rem', fontWeight: '600', color: '#1e3a8a', textAlign: 'center' }}>Optional Holidays</th>
               <th style={{ padding: '0.75rem 1rem', fontSize: '0.75rem', fontWeight: '600', color: '#1e3a8a', textAlign: 'center' }}>Privilege Leave</th>
@@ -185,12 +185,12 @@ export default function LeaveBalance() {
       </div>
 
       {/* Pagination Footer */}
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingTop: '1rem', borderTop: '1px solid #e5e7eb' }}>
+      <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center', paddingTop: '1rem', borderTop: '1px solid #e5e7eb' }}>
         <div style={{ fontSize: '0.875rem', color: '#6b7280' }}>
           Showing <span style={{ fontWeight: '600', color: '#374151' }}>1</span> to <span style={{ fontWeight: '600', color: '#374151' }}>10</span> of <span style={{ fontWeight: '600', color: '#374151' }}>19</span> Results
         </div>
         
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+        <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.75rem' }}>
           <div style={{ position: 'relative' }}>
             <select 
               value={pageSize} 

@@ -29,7 +29,7 @@ export default function ManageBranch() {
   return (
     <div style={{ padding: '1.5rem', backgroundColor: '#f9fafb', minHeight: '100vh' }}>
       {/* Header */}
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem', backgroundColor: 'white', padding: '1rem', borderRadius: '8px', border: '1px solid #e5e7eb' }}>
+      <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem', backgroundColor: 'white', padding: '1rem', borderRadius: '8px', border: '1px solid #e5e7eb' }}>
         <h1 style={{ fontSize: '1.125rem', fontWeight: '600', color: '#111827', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
           <ChevronDown size={20} style={{ transform: 'rotate(90deg)', color: '#6b7280' }} /> Manage Branch
         </h1>
@@ -45,16 +45,16 @@ export default function ManageBranch() {
             <thead>
               <tr style={{ backgroundColor: '#eff6ff', borderBottom: '1px solid #e5e7eb' }}>
                 <th style={{ padding: '0.75rem 1rem', fontSize: '0.75rem', fontWeight: '600', color: '#374151' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.25rem' }}>Location Name <ChevronsUpDown size={14} color="#9ca3af" /></div>
+                  <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.25rem' }}>Location Name <ChevronsUpDown size={14} color="#9ca3af" /></div>
                 </th>
                 <th style={{ padding: '0.75rem 1rem', fontSize: '0.75rem', fontWeight: '600', color: '#374151' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.25rem' }}>Allowed Radius (Meter) <ChevronsUpDown size={14} color="#9ca3af" /></div>
+                  <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.25rem' }}>Allowed Radius (Meter) <ChevronsUpDown size={14} color="#9ca3af" /></div>
                 </th>
                 <th style={{ padding: '0.75rem 1rem', fontSize: '0.75rem', fontWeight: '600', color: '#374151' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.25rem' }}>Assigned Employees <ChevronsUpDown size={14} color="#9ca3af" /></div>
+                  <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.25rem' }}>Assigned Employees <ChevronsUpDown size={14} color="#9ca3af" /></div>
                 </th>
                 <th style={{ padding: '0.75rem 1rem', fontSize: '0.75rem', fontWeight: '600', color: '#374151' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.25rem' }}>Created On <ChevronsUpDown size={14} color="#9ca3af" /></div>
+                  <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.25rem' }}>Created On <ChevronsUpDown size={14} color="#9ca3af" /></div>
                 </th>
                 <th style={{ padding: '0.75rem 1rem', fontSize: '0.75rem', fontWeight: '600', color: '#374151', textAlign: 'center' }}>Actions</th>
               </tr>
@@ -88,12 +88,12 @@ export default function ManageBranch() {
         </div>
 
         {/* Pagination */}
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '1rem', borderTop: '1px solid #e5e7eb' }}>
+        <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center', padding: '1rem', borderTop: '1px solid #e5e7eb' }}>
           <div style={{ fontSize: '0.875rem', color: '#6b7280' }}>
             Showing 1 to {branches.length} of {branches.length} Results
           </div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', border: '1px solid #d1d5db', borderRadius: '6px', padding: '0.25rem 0.5rem' }}>
+          <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '1rem' }}>
+            <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.5rem', border: '1px solid #d1d5db', borderRadius: '6px', padding: '0.25rem 0.5rem' }}>
               <select 
                 value={pageSize}
                 onChange={(e) => setPageSize(Number(e.target.value))}
@@ -104,7 +104,7 @@ export default function ManageBranch() {
                 <option value={50}>50 / Page</option>
               </select>
             </div>
-            <div style={{ display: 'flex', gap: '0.25rem' }}>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.25rem' }}>
               <button style={{ padding: '0.375rem 0.75rem', border: '1px solid #d1d5db', backgroundColor: 'white', color: '#9ca3af', borderRadius: '6px', fontSize: '0.875rem', cursor: 'not-allowed' }}>Previous</button>
               <button style={{ padding: '0.375rem 0.75rem', border: 'none', backgroundColor: '#0ea5e9', color: 'white', borderRadius: '6px', fontSize: '0.875rem', cursor: 'pointer' }}>1</button>
               <button style={{ padding: '0.375rem 0.75rem', border: '1px solid #d1d5db', backgroundColor: 'white', color: '#9ca3af', borderRadius: '6px', fontSize: '0.875rem', cursor: 'not-allowed' }}>Next</button>
@@ -242,7 +242,7 @@ export default function ManageBranch() {
                 </div>
                 <div style={{ backgroundColor: 'white', padding: '1rem', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
                   <span style={{ fontSize: '0.75rem', fontWeight: '600', color: '#334155' }}>Choose any of Options below</span>
-                  <div style={{ display: 'flex', gap: '0.75rem' }}>
+                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem' }}>
                     <button style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', padding: '0.625rem', border: '1px solid #d1d5db', borderRadius: '6px', backgroundColor: 'white', color: '#0f172a', fontSize: '0.875rem', fontWeight: '500', cursor: 'pointer' }}>
                       <Smartphone size={16} /> Android/iPhone
                     </button>
@@ -276,7 +276,7 @@ export default function ManageBranch() {
           }}>
             
             {/* Header */}
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '1.25rem 1.5rem', backgroundColor: '#f0f9ff', borderBottom: '1px solid #e0f2fe' }}>
+            <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center', padding: '1.25rem 1.5rem', backgroundColor: '#f0f9ff', borderBottom: '1px solid #e0f2fe' }}>
               <h3 style={{ margin: 0, fontSize: '1.125rem', fontWeight: '600', color: '#0369a1' }}>
                 {viewingEmployees.name} - Employees
               </h3>
@@ -324,7 +324,7 @@ export default function ManageBranch() {
                             {['Atharva Kale', 'Himanshu Dhote', 'Vedant Lonare', 'Pratik Wankhede'][idx % 4]}
                           </td>
                           <td style={{ padding: '0.75rem 1rem', fontSize: '0.875rem' }}>
-                            <div style={{ display: 'flex', alignItems: 'center', gap: '0.375rem' }}>
+                            <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.375rem' }}>
                               <div style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: '#10b981' }}></div>
                               <span style={{ color: '#10b981', fontWeight: '500' }}>Active</span>
                             </div>

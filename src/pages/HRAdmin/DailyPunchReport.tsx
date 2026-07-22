@@ -107,7 +107,7 @@ export default function DailyPunchReport() {
 
       {/* Top Filter Bar */}
       <div style={{ padding: '1rem 1.5rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid #e5e7eb' }}>
-        <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', alignItems: 'center' }}>
           <div style={{ position: 'relative', display: 'flex', alignItems: 'center', border: '1px solid #d1d5db', borderRadius: '6px', padding: '0.375rem 0.75rem', backgroundColor: 'white' }}>
             <span style={{ fontSize: '0.875rem', color: '#4b5563', marginRight: '0.5rem' }}>01 Jul 2026</span>
             <span style={{ fontSize: '0.875rem', color: '#9ca3af', marginRight: '0.5rem' }}>→</span>
@@ -137,7 +137,7 @@ export default function DailyPunchReport() {
           </button>
         </div>
 
-        <div style={{ display: 'flex', gap: '0.5rem' }}>
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
           <button onClick={() => alert('Exporting to Excel...')} style={{ backgroundColor: 'white', color: '#374151', border: '1px solid #d1d5db', padding: '0.375rem 1rem', borderRadius: '6px', fontSize: '0.875rem', fontWeight: '500', cursor: 'pointer' }}>
             Export Excel
           </button>
@@ -154,19 +154,19 @@ export default function DailyPunchReport() {
             <tr>
               {/* Fixed Columns */}
               <th style={{ padding: '0.875rem 1rem', fontSize: '0.75rem', fontWeight: '600', color: '#1e3a8a', whiteSpace: 'nowrap', borderRight: '1px solid #e0f2fe' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.25rem', cursor: 'pointer' }}>
+                <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.25rem', cursor: 'pointer' }}>
                   Employee ID
                   <ChevronsUpDown size={12} color="#94a3b8" />
                 </div>
               </th>
               <th style={{ padding: '0.875rem 1rem', fontSize: '0.75rem', fontWeight: '600', color: '#1e3a8a', whiteSpace: 'nowrap', borderRight: '1px solid #e0f2fe' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.25rem', cursor: 'pointer' }}>
+                <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.25rem', cursor: 'pointer' }}>
                   Employee Name
                   <ChevronsUpDown size={12} color="#94a3b8" />
                 </div>
               </th>
               <th style={{ padding: '0.875rem 1rem', fontSize: '0.75rem', fontWeight: '600', color: '#1e3a8a', whiteSpace: 'nowrap', borderRight: '1px solid #e0f2fe' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.25rem', cursor: 'pointer' }}>
+                <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.25rem', cursor: 'pointer' }}>
                   Org
                   <ChevronsUpDown size={12} color="#94a3b8" />
                 </div>
@@ -202,7 +202,7 @@ export default function DailyPunchReport() {
                   const data = getPunchData(empIdx, dayIdx);
                   return (
                     <td key={dayIdx} style={{ padding: '1rem', fontSize: '0.75rem', color: '#4b5563', borderRight: '1px solid #f3f4f6', textAlign: 'center', verticalAlign: 'top' }}>
-                      <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: '0.5rem' }}>
+                      <div style={{ display: 'flex', flexWrap: 'wrap', flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: '0.5rem' }}>
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem', textAlign: 'center' }}>
                           <span style={{ color: data.in === '-' ? '#9ca3af' : '#1e40af', fontWeight: '500' }}>{data.in}</span>
                           {data.out && <span style={{ color: '#047857', fontWeight: '500' }}>{data.out}</span>}

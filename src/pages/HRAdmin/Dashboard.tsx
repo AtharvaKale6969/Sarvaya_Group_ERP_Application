@@ -72,7 +72,7 @@ export default function Dashboard() {
         {/* Header & Tabs */}
         <div className="header-responsive" style={{ padding: '1.25rem 1.5rem', borderBottom: '1px solid #e5e7eb' }}>
           <h2 style={{ fontSize: '1rem', fontWeight: '600', margin: 0, color: '#374151' }}>Quick Attendance Summary</h2>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', padding: '0.25rem 0.75rem', border: '1px solid #e5e7eb', borderRadius: '6px', fontSize: '0.875rem', color: '#4b5563', position: 'relative' }}>
+          <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.5rem', padding: '0.25rem 0.75rem', border: '1px solid #e5e7eb', borderRadius: '6px', fontSize: '0.875rem', color: '#4b5563', position: 'relative' }}>
             <Calendar size={16} /> 
             <input 
               type="date" 

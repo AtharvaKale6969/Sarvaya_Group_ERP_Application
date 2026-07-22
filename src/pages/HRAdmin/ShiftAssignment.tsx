@@ -47,7 +47,7 @@ export default function ShiftAssignment() {
       {/* Header section */}
       <div className="header-responsive" style={{ padding: '1.25rem 1.5rem', borderBottom: '1px solid #e5e7eb' }}>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+          <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.5rem' }}>
             <Link to="/hr-admin/shifts" style={{ color: '#111827', display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
               <ChevronLeft size={20} />
             </Link>
@@ -55,7 +55,7 @@ export default function ShiftAssignment() {
               Assign Shifts To Employees
             </h2>
           </div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginLeft: '2rem', fontSize: '0.875rem', color: '#6b7280' }}>
+          <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '1rem', marginLeft: '2rem', fontSize: '0.875rem', color: '#6b7280' }}>
             <span>Assigned: <span style={{ color: '#374151', fontWeight: '500' }}>19</span></span>
             <span style={{ width: '1px', height: '12px', backgroundColor: '#d1d5db' }}></span>
             <span>Unassigned: <span style={{ color: '#374151', fontWeight: '500' }}>0</span></span>
@@ -84,37 +84,37 @@ export default function ShiftAssignment() {
                 />
               </th>
               <th style={{ padding: '0.75rem 1rem', fontSize: '0.75rem', fontWeight: '600', color: '#1e3a8a', whiteSpace: 'nowrap' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.25rem', cursor: 'pointer' }}>
+                <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.25rem', cursor: 'pointer' }}>
                   Employee ID
                   <ChevronsUpDown size={12} color="#94a3b8" />
                 </div>
               </th>
               <th style={{ padding: '0.75rem 1rem', fontSize: '0.75rem', fontWeight: '600', color: '#1e3a8a', whiteSpace: 'nowrap' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.25rem', cursor: 'pointer' }}>
+                <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.25rem', cursor: 'pointer' }}>
                   Employee Name
                   <ChevronsUpDown size={12} color="#94a3b8" />
                 </div>
               </th>
               <th style={{ padding: '0.75rem 1rem', fontSize: '0.75rem', fontWeight: '600', color: '#1e3a8a', whiteSpace: 'nowrap' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.25rem', cursor: 'pointer' }}>
+                <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.25rem', cursor: 'pointer' }}>
                   Branch
                   <ChevronsUpDown size={12} color="#94a3b8" />
                 </div>
               </th>
               <th style={{ padding: '0.75rem 1rem', fontSize: '0.75rem', fontWeight: '600', color: '#1e3a8a', whiteSpace: 'nowrap' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.25rem', cursor: 'pointer' }}>
+                <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.25rem', cursor: 'pointer' }}>
                   Department
                   <ChevronsUpDown size={12} color="#94a3b8" />
                 </div>
               </th>
               <th style={{ padding: '0.75rem 1rem', fontSize: '0.75rem', fontWeight: '600', color: '#1e3a8a', whiteSpace: 'nowrap' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.25rem', cursor: 'pointer' }}>
+                <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.25rem', cursor: 'pointer' }}>
                   Designation
                   <ChevronsUpDown size={12} color="#94a3b8" />
                 </div>
               </th>
               <th style={{ padding: '0.75rem 1rem', fontSize: '0.75rem', fontWeight: '600', color: '#1e3a8a', whiteSpace: 'nowrap' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.25rem', cursor: 'pointer' }}>
+                <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.25rem', cursor: 'pointer' }}>
                   Shifts
                   <ChevronsUpDown size={12} color="#94a3b8" />
                 </div>
@@ -183,12 +183,12 @@ export default function ShiftAssignment() {
       </div>
 
       {/* Footer / Pagination */}
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '1.25rem 1.5rem', borderTop: '1px solid #e5e7eb' }}>
+      <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center', padding: '1.25rem 1.5rem', borderTop: '1px solid #e5e7eb' }}>
         <div style={{ fontSize: '0.875rem', color: '#6b7280' }}>
           Showing <span style={{ fontWeight: '600', color: '#374151' }}>1</span> to <span style={{ fontWeight: '600', color: '#374151' }}>10</span> of <span style={{ fontWeight: '600', color: '#374151' }}>19</span> Results
         </div>
         
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+        <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.75rem' }}>
           <div style={{ position: 'relative' }}>
             <select 
               value={pageSize} 

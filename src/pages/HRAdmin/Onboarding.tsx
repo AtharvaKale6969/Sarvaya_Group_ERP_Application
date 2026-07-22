@@ -77,13 +77,13 @@ export default function Onboarding() {
       </div>
 
       {/* Progress Steps */}
-      <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1rem' }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: step >= 1 ? '#0ea5e9' : '#9ca3af' }}>
+      <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '1rem', marginBottom: '1rem' }}>
+        <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.5rem', color: step >= 1 ? '#0ea5e9' : '#9ca3af' }}>
           <div style={{ width: '2rem', height: '2rem', borderRadius: '50%', backgroundColor: step >= 1 ? '#e0f2fe' : '#f3f4f6', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: '600', fontSize: '0.875rem' }}>1</div>
           <span style={{ fontWeight: '500', fontSize: '0.875rem' }}>Personal Details</span>
         </div>
         <div style={{ flex: 1, height: '2px', backgroundColor: step >= 2 ? '#0ea5e9' : '#e5e7eb' }}></div>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: step >= 2 ? '#0ea5e9' : '#9ca3af' }}>
+        <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.5rem', color: step >= 2 ? '#0ea5e9' : '#9ca3af' }}>
           <div style={{ width: '2rem', height: '2rem', borderRadius: '50%', backgroundColor: step >= 2 ? '#e0f2fe' : '#f3f4f6', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: '600', fontSize: '0.875rem' }}>2</div>
           <span style={{ fontWeight: '500', fontSize: '0.875rem' }}>Employment Details</span>
         </div>

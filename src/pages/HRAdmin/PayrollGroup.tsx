@@ -25,7 +25,7 @@ export default function PayrollGroup() {
           Payroll Group <span style={{ color: '#0ea5e9' }}>({groups.length})</span>
         </h2>
         
-        <div style={{ display: 'flex', gap: '0.75rem' }}>
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem' }}>
           <button style={{ backgroundColor: 'white', color: '#374151', border: '1px solid #d1d5db', padding: '0.5rem 1rem', borderRadius: '6px', fontSize: '0.875rem', fontWeight: '500', cursor: 'pointer' }}>
             Assign Group
           </button>
@@ -44,24 +44,24 @@ export default function PayrollGroup() {
           <thead style={{ backgroundColor: '#e0f2fe', borderRadius: '8px' }}>
             <tr>
               <th style={{ padding: '0.875rem 1rem', fontSize: '0.75rem', fontWeight: '600', color: '#1e3a8a', whiteSpace: 'nowrap', borderRadius: '6px 0 0 6px' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.25rem', cursor: 'pointer' }}>
+                <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.25rem', cursor: 'pointer' }}>
                   Group Name
                   <ChevronsUpDown size={12} color="#94a3b8" />
                 </div>
               </th>
               <th style={{ padding: '0.875rem 1rem', fontSize: '0.75rem', fontWeight: '600', color: '#1e3a8a', whiteSpace: 'nowrap' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.25rem', cursor: 'pointer' }}>
+                <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.25rem', cursor: 'pointer' }}>
                   Employee Count
                 </div>
               </th>
               <th style={{ padding: '0.875rem 1rem', fontSize: '0.75rem', fontWeight: '600', color: '#1e3a8a', whiteSpace: 'nowrap' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.25rem', cursor: 'pointer' }}>
+                <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.25rem', cursor: 'pointer' }}>
                   Created On
                   <ChevronsUpDown size={12} color="#94a3b8" />
                 </div>
               </th>
               <th style={{ padding: '0.875rem 1rem', fontSize: '0.75rem', fontWeight: '600', color: '#1e3a8a', whiteSpace: 'nowrap' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.25rem', cursor: 'pointer' }}>
+                <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.25rem', cursor: 'pointer' }}>
                   Last Edited On
                   <ChevronsUpDown size={12} color="#94a3b8" />
                 </div>
@@ -102,12 +102,12 @@ export default function PayrollGroup() {
       </div>
 
       {/* Footer / Pagination */}
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '1.25rem 1.5rem', borderTop: '1px solid #e5e7eb' }}>
+      <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center', padding: '1.25rem 1.5rem', borderTop: '1px solid #e5e7eb' }}>
         <div style={{ fontSize: '0.875rem', color: '#6b7280' }}>
           Showing <span style={{ fontWeight: '600', color: '#374151' }}>{groups.length === 0 ? 0 : ((currentPage - 1) * pageSize) + 1}</span> to <span style={{ fontWeight: '600', color: '#374151' }}>{Math.min(currentPage * pageSize, groups.length)}</span> of <span style={{ fontWeight: '600', color: '#374151' }}>{groups.length}</span> Results
         </div>
         
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+        <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.75rem' }}>
           <div style={{ position: 'relative' }}>
             <select 
               value={pageSize} 
@@ -170,7 +170,7 @@ export default function PayrollGroup() {
           }}>
             
             {/* Header */}
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '1.25rem 1.5rem', backgroundColor: '#f0f9ff', borderBottom: '1px solid #e0f2fe' }}>
+            <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center', padding: '1.25rem 1.5rem', backgroundColor: '#f0f9ff', borderBottom: '1px solid #e0f2fe' }}>
               <h3 style={{ margin: 0, fontSize: '1.125rem', fontWeight: '600', color: '#0369a1' }}>
                 {selectedGroupForDrawer.name} - Employees
               </h3>
@@ -218,7 +218,7 @@ export default function PayrollGroup() {
                             {['Atharva Kale', 'Himanshu Dhote', 'Vedant Lonare', 'Pratik Wankhede'][idx % 4]}
                           </td>
                           <td style={{ padding: '0.75rem 1rem', fontSize: '0.875rem' }}>
-                            <div style={{ display: 'flex', alignItems: 'center', gap: '0.375rem' }}>
+                            <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.375rem' }}>
                               <div style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: '#10b981' }}></div>
                               <span style={{ color: '#10b981', fontWeight: '500' }}>Active</span>
                             </div>
@@ -261,7 +261,7 @@ export default function PayrollGroup() {
           }}>
             
             {/* Header */}
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '1.25rem 1.5rem', backgroundColor: '#f0f9ff', borderBottom: '1px solid #e0f2fe' }}>
+            <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center', padding: '1.25rem 1.5rem', backgroundColor: '#f0f9ff', borderBottom: '1px solid #e0f2fe' }}>
               <h3 style={{ margin: 0, fontSize: '1.125rem', fontWeight: '600', color: '#0f172a' }}>
                 New Payroll Group
               </h3>

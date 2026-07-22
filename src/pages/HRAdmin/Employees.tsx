@@ -92,7 +92,7 @@ export default function Employees() {
           Total Active Employees <span style={{ color: '#0ea5e9' }}>{employees.filter(e => e.status === 'Active').length}</span>
         </h2>
         
-        <div style={{ display: 'flex', gap: '0.75rem' }}>
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem' }}>
           <button 
             onClick={openAddModal}
             style={{ backgroundColor: '#0ea5e9', color: 'white', border: 'none', padding: '0.5rem 1rem', borderRadius: '6px', fontSize: '0.875rem', fontWeight: '500', cursor: 'pointer' }}
@@ -146,7 +146,7 @@ export default function Employees() {
                 { label: 'Tags', sortable: true },
               ].map((col) => (
                 <th key={col.label} style={{ padding: '0.875rem 1rem', fontSize: '0.75rem', fontWeight: '600', color: '#1e3a8a', whiteSpace: 'nowrap' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.25rem', cursor: col.sortable ? 'pointer' : 'default' }}>
+                  <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.25rem', cursor: col.sortable ? 'pointer' : 'default' }}>
                     {col.label}
                     {col.sortable && <ChevronsUpDown size={12} color="#94a3b8" />}
                   </div>
@@ -218,12 +218,12 @@ export default function Employees() {
       </div>
 
       {/* Footer / Pagination */}
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '1.25rem 1.5rem', borderTop: '1px solid #e5e7eb' }}>
+      <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center', padding: '1.25rem 1.5rem', borderTop: '1px solid #e5e7eb' }}>
         <div style={{ fontSize: '0.875rem', color: '#6b7280' }}>
           Showing <span style={{ fontWeight: '600', color: '#374151' }}>{employees.length === 0 ? 0 : ((currentPage - 1) * pageSize) + 1}</span> to <span style={{ fontWeight: '600', color: '#374151' }}>{Math.min(currentPage * pageSize, employees.length)}</span> of <span style={{ fontWeight: '600', color: '#374151' }}>{employees.length}</span> Results
         </div>
         
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+        <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.75rem' }}>
           <div style={{ position: 'relative' }}>
             <select 
               value={pageSize} 
@@ -331,7 +331,7 @@ export default function Employees() {
               </div>
             </div>
 
-            <div style={{ display: 'flex', justifyContent: 'flex-end', gap: '0.75rem', marginTop: '1rem' }}>
+            <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'flex-end', gap: '0.75rem', marginTop: '1rem' }}>
               <button onClick={() => setIsAddModalOpen(false)} style={{ padding: '0.5rem 1rem', border: '1px solid #d1d5db', borderRadius: '4px', background: 'white', color: '#374151', cursor: 'pointer', fontWeight: '500', fontSize: '0.875rem' }}>Cancel</button>
               <button onClick={() => setIsAddModalOpen(false)} style={{ padding: '0.5rem 1rem', border: 'none', borderRadius: '4px', background: '#0ea5e9', color: 'white', cursor: 'pointer', fontWeight: '500', fontSize: '0.875rem' }}>
                 {editingEmployee ? 'Save Changes' : 'Save Employee'}
@@ -398,7 +398,7 @@ export default function Employees() {
               </p>
             </div>
 
-            <div style={{ display: 'flex', justifyContent: 'center', gap: '0.75rem' }}>
+            <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '0.75rem' }}>
               <button onClick={() => setDeletingEmployee(null)} style={{ flex: 1, padding: '0.5rem 1rem', border: '1px solid #d1d5db', borderRadius: '4px', background: 'white', color: '#374151', cursor: 'pointer', fontWeight: '500', fontSize: '0.875rem' }}>No, Keep it</button>
               <button onClick={handleDelete} style={{ flex: 1, padding: '0.5rem 1rem', border: 'none', borderRadius: '4px', background: '#ef4444', color: 'white', cursor: 'pointer', fontWeight: '500', fontSize: '0.875rem' }}>Yes, Delete</button>
             </div>

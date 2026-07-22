@@ -185,7 +185,7 @@ export default function ApprovalRequests() {
       </div>
 
       {/* Tabs */}
-      <div style={{ display: 'flex', gap: '1.5rem', borderBottom: '1px solid #e5e7eb', marginBottom: '1rem' }}>
+      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1.5rem', borderBottom: '1px solid #e5e7eb', marginBottom: '1rem' }}>
         <button 
           onClick={() => setActiveTab('Pending')}
           style={{ 
@@ -237,7 +237,7 @@ export default function ApprovalRequests() {
       </div>
 
       {/* Filters */}
-      <div style={{ display: 'flex', gap: '1rem', marginBottom: '1rem' }}>
+      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', marginBottom: '1rem' }}>
         <div style={{ position: 'relative', width: '200px' }}>
           <select 
             value={selectedType}
@@ -304,7 +304,7 @@ export default function ApprovalRequests() {
                   
                   {/* Type Column */}
                   <td style={{ padding: '1.25rem 1rem' }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+                    <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.75rem' }}>
                       <div style={{ width: '36px', height: '36px', borderRadius: '50%', backgroundColor: row.type === 'Attendance' ? '#eff6ff' : '#fef3c7', display: 'flex', justifyContent: 'center', alignItems: 'center', color: row.type === 'Attendance' ? '#3b82f6' : '#f59e0b' }}>
                         {row.type === 'Attendance' ? <Calendar size={18} /> : <TreePine size={18} />}
                       </div>
@@ -336,12 +336,12 @@ export default function ApprovalRequests() {
                         <span style={{ fontSize: '0.875rem', fontWeight: '500', color: '#374151' }}>{row.detailsData.date}</span>
                       </div>
                     ) : (
-                      <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
+                      <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '1.5rem' }}>
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '0.125rem' }}>
                           <span style={{ fontSize: '0.75rem', color: '#6b7280' }}>From</span>
                           <span style={{ fontSize: '0.875rem', fontWeight: '500', color: '#374151' }}>{row.detailsData.from}</span>
                         </div>
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#9ca3af', fontSize: '0.75rem' }}>
+                        <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.5rem', color: '#9ca3af', fontSize: '0.75rem' }}>
                           <span style={{ borderTop: '1px dashed #d1d5db', width: '24px' }}></span>
                           <span style={{ fontWeight: '500', color: '#0ea5e9' }}>{row.detailsData.duration}</span>
                           <span style={{ borderTop: '1px dashed #d1d5db', width: '24px' }}></span>
@@ -356,7 +356,7 @@ export default function ApprovalRequests() {
 
                   {/* Actions Column */}
                   <td style={{ padding: '1.25rem 1rem' }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                    <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.5rem' }}>
                       <button 
                         onClick={() => toggleExpand(row.id)}
                         style={{ display: 'flex', alignItems: 'center', gap: '0.375rem', padding: '0.375rem 0.75rem', backgroundColor: 'white', border: '1px solid #d1d5db', borderRadius: '4px', fontSize: '0.75rem', color: '#374151', cursor: 'pointer' }}
@@ -417,12 +417,12 @@ export default function ApprovalRequests() {
       </div>
 
       {/* Pagination Footer */}
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingTop: '1rem' }}>
+      <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center', paddingTop: '1rem' }}>
         <div style={{ fontSize: '0.875rem', color: '#6b7280' }}>
           Showing <span style={{ fontWeight: '600', color: '#374151' }}>{filteredData.length > 0 ? 1 : 0}</span> to <span style={{ fontWeight: '600', color: '#374151' }}>{filteredData.length}</span> Results
         </div>
         
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+        <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.75rem' }}>
           <div style={{ position: 'relative' }}>
             <select style={{ appearance: 'none', border: '1px solid #d1d5db', borderRadius: '6px', padding: '0.375rem 2.5rem 0.375rem 0.75rem', fontSize: '0.875rem', color: '#374151', cursor: 'pointer', backgroundColor: 'white' , maxWidth: '100%', textOverflow: 'ellipsis', overflow: 'hidden', whiteSpace: 'nowrap' }}>
               <option value="10">10 / Page</option>

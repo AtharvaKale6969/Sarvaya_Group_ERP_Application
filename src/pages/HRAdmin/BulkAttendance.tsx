@@ -80,8 +80,8 @@ export default function BulkAttendance() {
       </div>
 
       {/* Toolbar */}
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '1rem 1.5rem', borderBottom: '1px solid #e5e7eb', backgroundColor: '#f9fafb' }}>
-        <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
+      <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center', padding: '1rem 1.5rem', borderBottom: '1px solid #e5e7eb', backgroundColor: '#f9fafb' }}>
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', alignItems: 'center' }}>
           
           <button style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', padding: '0.5rem 1rem', border: '1px solid #d1d5db', borderRadius: '6px', backgroundColor: 'white', color: '#374151', fontSize: '0.875rem' }}>
             01 Jul 2026 <span style={{ color: '#9ca3af' }}>→</span> 20 Jul 2026 <Calendar size={16} color="#9ca3af" />
@@ -105,7 +105,7 @@ export default function BulkAttendance() {
           </button>
         </div>
 
-        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+        <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '1rem' }}>
           <button style={{ background: 'none', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', color: '#6b7280' }}>
             <Info size={18} />
           </button>
@@ -148,27 +148,27 @@ export default function BulkAttendance() {
             {/* Sub Header Row */}
             <tr style={{ borderBottom: '1px solid #d1d5db' }}>
               <th style={{ padding: '0.75rem', fontSize: '0.75rem', fontWeight: '600', color: '#374151', borderRight: '1px solid #e5e7eb', width: '100px', position: 'sticky', left: 0, zIndex: 11, backgroundColor: '#f9fafb' }}>
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between' }}>
                   Employee ID
                 </div>
               </th>
               <th style={{ padding: '0.75rem', fontSize: '0.75rem', fontWeight: '600', color: '#374151', borderRight: '1px solid #d1d5db', width: '160px', position: 'sticky', left: '100px', zIndex: 11, backgroundColor: '#f9fafb' }}>
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between' }}>
                   Employee Name
                 </div>
               </th>
               <th style={{ padding: '0.75rem', fontSize: '0.75rem', fontWeight: '600', color: '#374151', borderRight: '1px solid #e5e7eb', width: '180px', position: 'sticky', left: '260px', zIndex: 11, backgroundColor: '#f9fafb' }}>
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between' }}>
                   Organization
                 </div>
               </th>
               <th style={{ padding: '0.75rem', fontSize: '0.75rem', fontWeight: '600', color: '#374151', borderRight: '1px solid #e5e7eb', width: '150px', position: 'sticky', left: '440px', zIndex: 11, backgroundColor: '#f9fafb' }}>
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between' }}>
                   Department
                 </div>
               </th>
               <th style={{ padding: '0.75rem', fontSize: '0.75rem', fontWeight: '600', color: '#374151', borderRight: '1px solid #d1d5db', width: '200px', position: 'sticky', left: '590px', zIndex: 11, backgroundColor: '#f9fafb' }}>
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between' }}>
                   Designation
                 </div>
               </th>
@@ -201,7 +201,7 @@ export default function BulkAttendance() {
                   <td key={cIdx} style={{ padding: 0, borderRight: '1px solid #e5e7eb', minWidth: '60px', height: '40px', position: 'relative' }}>
                     {activeCell?.rowId === row.id && activeCell?.colIdx === cIdx ? (
                       <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', minWidth: '70px', zIndex: 50, backgroundColor: 'white', border: '1px solid #3b82f6', boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)', display: 'flex', flexDirection: 'column' }}>
-                        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0.5rem', borderBottom: '1px solid #e5e7eb', cursor: 'pointer' }} onClick={() => setActiveCell(null)}>
+                        <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', padding: '0.5rem', borderBottom: '1px solid #e5e7eb', cursor: 'pointer' }} onClick={() => setActiveCell(null)}>
                           <span style={{ fontSize: '0.75rem', fontWeight: '600', color: getStatusColor(val) }}>{getCleanVal(val)}</span>
                           <ChevronDown size={12} color="#9ca3af" style={{ transform: 'rotate(180deg)' }} />
                         </div>

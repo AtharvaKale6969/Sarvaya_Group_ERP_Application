@@ -78,17 +78,17 @@ export default function Roster() {
     <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', backgroundColor: 'white', border: '1px solid #e5e7eb', borderRadius: '8px', boxShadow: '0 1px 3px rgba(0,0,0,0.05)', padding: '1rem', height: '100%', minHeight: '800px' }}>
       
       {/* Header */}
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingBottom: '1rem', borderBottom: '1px solid #e5e7eb' }}>
+      <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center', paddingBottom: '1rem', borderBottom: '1px solid #e5e7eb' }}>
         <h2 style={{ fontSize: '1.25rem', fontWeight: '600', margin: 0, color: '#111827' }}>
           Roster Spreadsheet
         </h2>
       </div>
 
       {/* Toolbar */}
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '0.5rem 0' }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+      <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center', padding: '0.5rem 0' }}>
+        <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '1rem' }}>
           {/* Date Picker */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', border: '1px solid #d1d5db', borderRadius: '6px', padding: '0.375rem 0.5rem', fontSize: '0.875rem', color: '#374151', backgroundColor: 'white' }}>
+          <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.5rem', border: '1px solid #d1d5db', borderRadius: '6px', padding: '0.375rem 0.5rem', fontSize: '0.875rem', color: '#374151', backgroundColor: 'white' }}>
             <input type="date" defaultValue="2026-07-23" style={{ border: 'none', outline: 'none', backgroundColor: 'transparent', color: '#374151', fontSize: '0.875rem' }} />
             <span style={{ color: '#9ca3af' }}>→</span>
             <input type="date" defaultValue="2026-07-30" style={{ border: 'none', outline: 'none', backgroundColor: 'transparent', color: '#374151', fontSize: '0.875rem' }} />
@@ -117,7 +117,7 @@ export default function Roster() {
           </button>
         </div>
 
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+        <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.75rem' }}>
           <button style={{ backgroundColor: 'white', color: '#374151', border: '1px solid #d1d5db', borderRadius: '6px', padding: '0.5rem 1rem', fontSize: '0.875rem', fontWeight: '500', cursor: 'pointer' }}>
             Save
           </button>
@@ -217,12 +217,12 @@ export default function Roster() {
       </div>
 
       {/* Footer / Pagination */}
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingTop: '1rem', borderTop: '1px solid #e5e7eb' }}>
+      <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center', paddingTop: '1rem', borderTop: '1px solid #e5e7eb' }}>
         <div style={{ fontSize: '0.875rem', color: '#6b7280' }}>
           Showing <span style={{ fontWeight: '600', color: '#374151' }}>{employees.length === 0 ? 0 : 1}</span> to <span style={{ fontWeight: '600', color: '#374151' }}>{Math.min(employees.length, pageSize)}</span> of <span style={{ fontWeight: '600', color: '#374151' }}>{employees.length}</span> Results
         </div>
         
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+        <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.75rem' }}>
           <div style={{ position: 'relative' }}>
             <select 
               value={pageSize} 

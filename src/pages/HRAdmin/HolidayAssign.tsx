@@ -53,7 +53,7 @@ export default function HolidayAssign() {
     <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', backgroundColor: 'white', border: '1px solid #e5e7eb', borderRadius: '8px', boxShadow: '0 1px 3px rgba(0,0,0,0.05)', padding: '1rem', minHeight: '800px' }}>
       
       {/* Header */}
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingBottom: '1rem', borderBottom: '1px solid #e5e7eb' }}>
+      <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center', paddingBottom: '1rem', borderBottom: '1px solid #e5e7eb' }}>
         <h2 style={{ fontSize: '1rem', fontWeight: '600', color: '#1e3a8a', margin: 0 }}>Holiday Assign</h2>
         <button 
           disabled={selectedEmployees.length === 0}
@@ -88,22 +88,22 @@ export default function HolidayAssign() {
                 />
               </th>
               <th style={{ padding: '1rem', fontSize: '0.75rem', fontWeight: '600', color: '#1e3a8a' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.25rem' }}>Employee ID <ChevronsUpDown size={14} /></div>
+                <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.25rem' }}>Employee ID <ChevronsUpDown size={14} /></div>
               </th>
               <th style={{ padding: '1rem', fontSize: '0.75rem', fontWeight: '600', color: '#1e3a8a' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.25rem' }}>Employee Name <ChevronsUpDown size={14} /></div>
+                <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.25rem' }}>Employee Name <ChevronsUpDown size={14} /></div>
               </th>
               <th style={{ padding: '1rem', fontSize: '0.75rem', fontWeight: '600', color: '#1e3a8a' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.25rem' }}>Organization <ChevronsUpDown size={14} /></div>
+                <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.25rem' }}>Organization <ChevronsUpDown size={14} /></div>
               </th>
               <th style={{ padding: '1rem', fontSize: '0.75rem', fontWeight: '600', color: '#1e3a8a' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.25rem' }}>Department <ChevronsUpDown size={14} /></div>
+                <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.25rem' }}>Department <ChevronsUpDown size={14} /></div>
               </th>
               <th style={{ padding: '1rem', fontSize: '0.75rem', fontWeight: '600', color: '#1e3a8a' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.25rem' }}>Designation <ChevronsUpDown size={14} /></div>
+                <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.25rem' }}>Designation <ChevronsUpDown size={14} /></div>
               </th>
               <th style={{ padding: '1rem', fontSize: '0.75rem', fontWeight: '600', color: '#1e3a8a' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.25rem' }}>Template Assigned <ChevronsUpDown size={14} /></div>
+                <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.25rem' }}>Template Assigned <ChevronsUpDown size={14} /></div>
               </th>
             </tr>
           </thead>
@@ -131,12 +131,12 @@ export default function HolidayAssign() {
       </div>
 
       {/* Pagination Footer */}
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingTop: '1rem', borderTop: '1px solid #e5e7eb' }}>
+      <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center', paddingTop: '1rem', borderTop: '1px solid #e5e7eb' }}>
         <div style={{ fontSize: '0.875rem', color: '#6b7280' }}>
           Showing <span style={{ fontWeight: '600', color: '#374151' }}>1</span> to <span style={{ fontWeight: '600', color: '#374151' }}>10</span> of <span style={{ fontWeight: '600', color: '#374151' }}>19</span> Results
         </div>
         
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+        <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.75rem' }}>
           <div style={{ position: 'relative' }}>
             <select 
               value={pageSize} 

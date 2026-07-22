@@ -126,16 +126,16 @@ export default function AttendancePermission() {
           Attendance Permission
         </h2>
         
-        <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'center' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1.5rem', alignItems: 'center' }}>
+          <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.75rem' }}>
             <span style={{ fontSize: '0.75rem', fontWeight: '600', color: '#4b5563' }}>Mobile Attendance</span>
             <SegmentedControl value={mobileAttendance} onChange={handleMobileAttendanceGlobal} />
           </div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+          <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.75rem' }}>
             <span style={{ fontSize: '0.75rem', fontWeight: '600', color: '#4b5563' }}>Geo Fencing</span>
             <SegmentedControl value={geoFencing} onChange={handleGeoFencingGlobal} />
           </div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+          <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.75rem' }}>
             <span style={{ fontSize: '0.75rem', fontWeight: '600', color: '#4b5563' }}>Auto Punch Out</span>
             <SegmentedControl value={autoPunchOut} onChange={handleAutoPunchOutGlobal} />
           </div>
@@ -143,7 +143,7 @@ export default function AttendancePermission() {
       </div>
 
       {/* Filters Row */}
-      <div style={{ display: 'flex', gap: '1.5rem', padding: '1rem 1.5rem', borderBottom: '1px solid #e5e7eb' }}>
+      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1.5rem', padding: '1rem 1.5rem', borderBottom: '1px solid #e5e7eb' }}>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '0.375rem', flex: 1, maxWidth: '250px' }}>
           <label style={{ fontSize: '0.75rem', color: '#6b7280', fontWeight: '500' }}>Choose Organization</label>
           <div style={{ position: 'relative' }}>
@@ -228,7 +228,7 @@ export default function AttendancePermission() {
                 { label: 'Designation', sortable: true },
               ].map((col) => (
                 <th key={col.label} style={{ padding: '0.875rem 1rem', fontSize: '0.75rem', fontWeight: '600', color: '#1e3a8a', whiteSpace: 'nowrap' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.25rem', cursor: col.sortable ? 'pointer' : 'default' }}>
+                  <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.25rem', cursor: col.sortable ? 'pointer' : 'default' }}>
                     {col.label}
                     {col.sortable && <ChevronDown size={12} color="#94a3b8" />}
                   </div>
@@ -260,17 +260,17 @@ export default function AttendancePermission() {
                 <td style={{ padding: '1rem', fontSize: '0.75rem', color: '#6b7280' }}>{emp.role}</td>
                 
                 <td style={{ padding: '1rem', fontSize: '0.75rem', color: '#6b7280' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.375rem' }}>
+                  <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.375rem' }}>
                     <Fingerprint size={14} color="#9ca3af" /> Fingerprint
                   </div>
                 </td>
                 <td style={{ padding: '1rem', fontSize: '0.75rem', color: '#6b7280' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.375rem' }}>
+                  <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.375rem' }}>
                     <Monitor size={14} color="#9ca3af" /> Hardware Device
                   </div>
                 </td>
                 <td style={{ padding: '1rem', fontSize: '0.75rem', color: '#6b7280' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.375rem' }}>
+                  <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.375rem' }}>
                     <Smartphone size={14} color="#9ca3af" /> Mobile App
                   </div>
                 </td>
@@ -315,12 +315,12 @@ export default function AttendancePermission() {
       </div>
 
       {/* Footer / Pagination */}
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '1.25rem 1.5rem', borderTop: '1px solid #e5e7eb' }}>
+      <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center', padding: '1.25rem 1.5rem', borderTop: '1px solid #e5e7eb' }}>
         <div style={{ fontSize: '0.875rem', color: '#6b7280' }}>
           Showing <span style={{ fontWeight: '600', color: '#374151' }}>{employees.length === 0 ? 0 : ((currentPage - 1) * pageSize) + 1}</span> to <span style={{ fontWeight: '600', color: '#374151' }}>{Math.min(currentPage * pageSize, employees.length)}</span> of <span style={{ fontWeight: '600', color: '#374151' }}>{employees.length}</span> Results
         </div>
         
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+        <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.75rem' }}>
           <div style={{ position: 'relative' }}>
             <select 
               value={pageSize} 

@@ -112,13 +112,13 @@ export default function HRAdminWrapper() {
         padding: '1rem 2rem', borderBottom: '1px solid var(--border-color)', 
         background: 'var(--sidebar-bg)', zIndex: 20 
       }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', width: '14rem' }}>
+        <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.75rem', width: '14rem' }}>
           <img src="/logo.png" alt="Logo" style={{ width: '2.5rem', height: '2.5rem', objectFit: 'contain', borderRadius: '8px' }} />
           <h2 style={{ fontSize: '1.25rem', margin: 0, fontWeight: '700', color: 'var(--primary)' }}>HR PAYROLL</h2>
         </div>
 
-        <div style={{ display: 'flex', gap: '3rem', alignItems: 'center' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', paddingLeft: '1.5rem', borderLeft: '1px solid var(--border-color)' }}>
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '3rem', alignItems: 'center' }}>
+          <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '1rem', paddingLeft: '1.5rem', borderLeft: '1px solid var(--border-color)' }}>
             <div style={{ textAlign: 'right', display: 'flex', flexDirection: 'column' }}>
               <span style={{ fontSize: '0.875rem', fontWeight: '600', color: 'var(--text-color)', lineHeight: 1.2 }}>
                 {user?.email?.split('@')[0]}
@@ -182,7 +182,7 @@ export default function HRAdminWrapper() {
                         color: isActive ? 'var(--text-emerald)' : 'var(--text-muted)', fontWeight: isActive ? '600' : '500', cursor: 'pointer', textAlign: 'left', transition: 'all 0.2s ease', width: '100%', justifyContent: 'space-between', fontSize: '1rem', fontFamily: 'inherit'
                       }}
                     >
-                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+                      <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.75rem' }}>
                         {item.icon} {item.name}
                       </div>
                       {isOpen ? <ChevronDown size={16} /> : <ChevronRight size={16} />}

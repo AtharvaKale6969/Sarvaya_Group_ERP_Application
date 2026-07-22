@@ -163,7 +163,7 @@ export default function HRApproval() {
               <tr key={req.id} style={{ borderBottom: '1px solid #f3f4f6', transition: 'background-color 0.2s', cursor: 'pointer' }} onClick={() => openReviewModal(req)}>
                 <td style={{ padding: '1rem', fontSize: '0.875rem', color: '#374151', fontWeight: '500' }}>{req.id}</td>
                 <td style={{ padding: '1rem', fontSize: '0.875rem', color: '#111827' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+                  <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.75rem' }}>
                     <div style={{ width: '2rem', height: '2rem', borderRadius: '50%', backgroundColor: '#e0f2fe', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#0ea5e9', fontWeight: '600' }}>
                       {req.firstName.charAt(0)}{req.lastName.charAt(0)}
                     </div>
@@ -200,7 +200,7 @@ export default function HRApproval() {
         <div style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, backgroundColor: 'rgba(0,0,0,0.5)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 100 }}>
           <div style={{ backgroundColor: 'white', borderRadius: '12px', width: '100%', maxWidth: '800px', maxHeight: '90vh', overflowY: 'auto', display: 'flex', flexDirection: 'column' }}>
             
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '1.25rem 1.5rem', borderBottom: '1px solid #e5e7eb', position: 'sticky', top: 0, backgroundColor: 'white', zIndex: 10 }}>
+            <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center', padding: '1.25rem 1.5rem', borderBottom: '1px solid #e5e7eb', position: 'sticky', top: 0, backgroundColor: 'white', zIndex: 10 }}>
               <h3 style={{ fontSize: '1.125rem', fontWeight: '600', margin: 0, color: '#111827' }}>Review Onboarding Request - {selectedRequest.id}</h3>
               <button onClick={closeReviewModal} style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#9ca3af' }}>
                 <X size={20} />
@@ -287,7 +287,7 @@ export default function HRApproval() {
                           <span style={{ fontSize: '0.75rem', fontWeight: '600', color: '#64748b', maxWidth: '180px', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', display: 'block' }} title={access.org}>{access.org}</span>
                           <span style={{ fontSize: '1rem', fontWeight: '600', color: '#0f172a', wordBreak: 'break-word' }}>{access.dept}</span>
                         </div>
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', flexShrink: 0 }}>
+                        <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '1rem', flexShrink: 0 }}>
                           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '0.25rem' }}>
                             <span style={{ fontSize: '0.75rem', color: '#64748b' }}>Assigned Role</span>
                             <span style={{ fontSize: '0.875rem', fontWeight: '600', backgroundColor: '#f0fdf4', color: '#166534', padding: '0.25rem 0.75rem', borderRadius: '9999px', border: '1px solid #bbf7d0' }}>
@@ -358,7 +358,7 @@ export default function HRApproval() {
                       </select>
                     </div>
 
-                    <div style={{ display: 'flex', gap: '1rem', marginTop: '0.5rem' }}>
+                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', marginTop: '0.5rem' }}>
                       <button 
                         onClick={() => setIsAddingAccess(false)}
                         style={{ flex: 1, padding: '0.75rem', backgroundColor: 'white', border: '1px solid #cbd5e1', borderRadius: '6px', color: '#475569', fontWeight: '600', cursor: 'pointer' }}

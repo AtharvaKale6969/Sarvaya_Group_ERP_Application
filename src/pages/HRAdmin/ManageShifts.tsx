@@ -32,7 +32,7 @@ export default function ManageShifts() {
           Shifts <span style={{ color: '#0ea5e9' }}>({shifts.length})</span>
         </h2>
         
-        <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'center' }}>
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem', alignItems: 'center' }}>
           <button 
             onClick={() => {
               setIsAdvancedShift(!isAdvancedShift);
@@ -70,7 +70,7 @@ export default function ManageShifts() {
           <thead style={{ backgroundColor: '#e0f2fe', borderRadius: '8px' }}>
             <tr>
               <th style={{ padding: '0.875rem 0.75rem', fontSize: '0.75rem', fontWeight: '600', color: '#1e3a8a', whiteSpace: 'nowrap', borderRadius: '6px 0 0 6px' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.25rem', cursor: 'pointer' }}>
+                <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.25rem', cursor: 'pointer' }}>
                   Shift Name
                   <ChevronsUpDown size={12} color="#94a3b8" />
                 </div>
@@ -81,13 +81,13 @@ export default function ManageShifts() {
                 </th>
               ))}
               <th style={{ padding: '0.875rem 0.75rem', fontSize: '0.75rem', fontWeight: '600', color: '#1e3a8a', whiteSpace: 'nowrap' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.25rem', cursor: 'pointer', justifyContent: 'center' }}>
+                <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.25rem', cursor: 'pointer', justifyContent: 'center' }}>
                   Assigned
                   <ChevronsUpDown size={12} color="#94a3b8" />
                 </div>
               </th>
               <th style={{ padding: '0.875rem 0.75rem', fontSize: '0.75rem', fontWeight: '600', color: '#1e3a8a', whiteSpace: 'nowrap' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.25rem', cursor: 'pointer', justifyContent: 'center' }}>
+                <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.25rem', cursor: 'pointer', justifyContent: 'center' }}>
                   Created On
                   <ChevronsUpDown size={12} color="#94a3b8" />
                 </div>
@@ -101,7 +101,7 @@ export default function ManageShifts() {
             {shifts.map((shift) => (
               <tr key={shift.id} style={{ borderBottom: '1px solid #f3f4f6' }}>
                 <td style={{ padding: '1rem 0.75rem', fontSize: '0.875rem', color: '#374151', fontWeight: '500', whiteSpace: 'nowrap' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                  <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.5rem' }}>
                     {shift.name}
                     {shift.isDefault && (
                       <span style={{ fontSize: '0.7rem', fontWeight: '600', color: '#0ea5e9', backgroundColor: '#e0f2fe', padding: '0.125rem 0.375rem', borderRadius: '4px' }}>
@@ -161,12 +161,12 @@ export default function ManageShifts() {
       </div>
 
       {/* Footer / Pagination */}
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '1.25rem 1.5rem', borderTop: '1px solid #e5e7eb' }}>
+      <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center', padding: '1.25rem 1.5rem', borderTop: '1px solid #e5e7eb' }}>
         <div style={{ fontSize: '0.875rem', color: '#6b7280' }}>
           Showing <span style={{ fontWeight: '600', color: '#374151' }}>1</span> to <span style={{ fontWeight: '600', color: '#374151' }}>3</span> of <span style={{ fontWeight: '600', color: '#374151' }}>3</span> Results
         </div>
         
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+        <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.75rem' }}>
           <div style={{ position: 'relative' }}>
             <select 
               value={pageSize} 
@@ -225,12 +225,12 @@ export default function ManageShifts() {
                 <input type="text" defaultValue={editingShift?.name || ''} placeholder="E.g., Morning Shift" style={{ padding: '0.625rem', border: '1px solid #d1d5db', borderRadius: '6px', fontSize: '0.875rem', outline: 'none' }} />
               </div>
               
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+              <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.5rem' }}>
                 <input type="checkbox" id="isDefault" defaultChecked={editingShift?.isDefault || false} style={{ width: '1rem', height: '1rem', cursor: 'pointer' }} />
                 <label htmlFor="isDefault" style={{ fontSize: '0.875rem', color: '#374151', cursor: 'pointer' }}>Set as Default Shift</label>
               </div>
               
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+              <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.5rem' }}>
                 <input type="checkbox" id="sameTiming" defaultChecked={true} style={{ width: '1rem', height: '1rem', cursor: 'pointer' }} />
                 <label htmlFor="sameTiming" style={{ fontSize: '0.875rem', color: '#374151', cursor: 'pointer' }}>Apply same timing for all days</label>
               </div>
