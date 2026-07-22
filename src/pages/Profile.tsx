@@ -129,11 +129,11 @@ export default function Profile() {
             ) : null}
 
             <h2 style={{ fontSize: '1.75rem', fontWeight: '700', margin: '0 0 0.25rem 0' }}>
-              {profile.full_name || 'System Admin'}
+              {profile.full_name || user?.email?.split('@')[0] || 'User Profile'}
             </h2>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'rgba(255,255,255,0.8)', fontSize: '0.9rem', fontWeight: '500' }}>
               <Shield size={14} />
-              {primaryRole?.name || 'E-Commerce Ops Manager'}
+              {primaryRole?.name || 'Standard User'}
             </div>
           </div>
         </div>
@@ -197,7 +197,7 @@ export default function Profile() {
               />
             ) : (
               <p style={{ color: 'var(--text-main)', fontSize: '0.95rem', lineHeight: '1.6', margin: 0 }}>
-                {profile.bio || 'As the E-Commerce Operations Manager, I oversee the seamless execution of daily platform activities, from inventory forecasting to order fulfillment. Passionate about scaling processes and building resilient supply chains that drive customer satisfaction and bottom-line growth.'}
+                {profile.bio || 'Please update your professional biography.'}
               </p>
             )}
           </div>
@@ -214,7 +214,7 @@ export default function Profile() {
             <div style={cardStyle}>
               <Building size={20} color="#f59e0b" style={{ marginBottom: '1.5rem' }} />
               <span style={labelStyle}>Department</span>
-              <div style={{ fontSize: '1.25rem', fontWeight: '700', color: 'var(--text-heading)', margin: '0.25rem 0' }}>Logistics & Ops</div>
+              <div style={{ fontSize: '1.25rem', fontWeight: '700', color: 'var(--text-heading)', margin: '0.25rem 0' }}>{primaryRole?.name || 'Operations'}</div>
               <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>Headquarters</div>
             </div>
           </div>
