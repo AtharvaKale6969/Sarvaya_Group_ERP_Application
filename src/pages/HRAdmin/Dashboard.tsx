@@ -41,7 +41,7 @@ export default function Dashboard() {
       <h1 style={{ fontSize: '1.5rem', fontWeight: 'bold', margin: 0, color: 'var(--text-color)' }}>Dashboard</h1>
       
       {/* KPI Cards */}
-      <div style={{ display: 'flex', gap: '1rem' }}>
+      <div className="responsive-cards">
         {kpis.map((kpi, idx) => (
           <div key={idx} style={{ 
             flex: 1, backgroundColor: 'white', borderRadius: '8px', 
@@ -83,7 +83,7 @@ export default function Dashboard() {
           </div>
         </div>
 
-        <div style={{ padding: '0 1.5rem', borderBottom: '1px solid #e5e7eb', display: 'flex', gap: '2rem' }}>
+        <div style={{ padding: '0 1.5rem', borderBottom: '1px solid #e5e7eb', display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
           {attendanceTabs.map(tab => (
             <button 
               key={tab.name} 
@@ -113,7 +113,7 @@ export default function Dashboard() {
         </div>
 
         {/* Stats Blocks */}
-        <div style={{ padding: '1.5rem', display: 'flex', gap: '1rem' }}>
+        <div className="responsive-cards" style={{ padding: '1.5rem' }}>
           {summaryStats.map(stat => (
             <div key={stat.label} style={{
               flex: 1, border: '1px solid #e5e7eb', borderRadius: '8px', padding: '1rem',
@@ -168,7 +168,7 @@ export default function Dashboard() {
       </div>
 
       {/* Bottom Summary Cards */}
-      <div style={{ display: 'flex', gap: '1.5rem' }}>
+      <div className="responsive-stack">
         <div style={{ flex: 1, backgroundColor: 'white', borderRadius: '8px', border: '1px solid #e5e7eb', boxShadow: '0 1px 2px rgba(0,0,0,0.05)', padding: '1.5rem' }}>
           <h3 style={{ fontSize: '1rem', fontWeight: '600', color: '#374151', margin: '0 0 1rem 0' }}>Today's Shift Wise Attendance Summary</h3>
           <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', fontSize: '0.875rem' }}>

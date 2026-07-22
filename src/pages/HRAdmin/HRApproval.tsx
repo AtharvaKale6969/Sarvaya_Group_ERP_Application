@@ -380,7 +380,7 @@ export default function HRApproval() {
               <button onClick={handleReject} style={{ backgroundColor: 'white', color: '#ef4444', border: '1px solid #fca5a5', padding: '0.5rem 1.25rem', borderRadius: '6px', fontSize: '0.875rem', fontWeight: '500', cursor: 'pointer' }}>
                 Reject
               </button>
-              <div style={{ display: 'flex', gap: '1rem' }}>
+              <div className="responsive-cards">
                 <button onClick={closeReviewModal} style={{ backgroundColor: 'white', color: '#374151', border: '1px solid #d1d5db', padding: '0.5rem 1.25rem', borderRadius: '6px', fontSize: '0.875rem', fontWeight: '500', cursor: 'pointer' }}>
                   Cancel
                 </button>

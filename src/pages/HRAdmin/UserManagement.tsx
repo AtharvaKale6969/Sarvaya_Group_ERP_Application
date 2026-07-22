@@ -109,7 +109,7 @@ export default function UserManagement() {
           User Management <span style={{ color: '#0ea5e9' }}>{users.length}</span>
         </h2>
         
-        <div style={{ display: 'flex', gap: '1rem' }}>
+        <div className="responsive-cards">
           <div style={{ position: 'relative', width: '100%', maxWidth: '300px' }}>
             <Search size={16} color="#9ca3af" style={{ position: 'absolute', left: '0.75rem', top: '50%', transform: 'translateY(-50%)' }} />
             <input 
