@@ -142,7 +142,7 @@ export default function HRAdminWrapper() {
         <aside className={`sidebar ${isMobileMenuOpen ? 'open' : ''}`} style={{ 
           width: '16rem', backgroundColor: 'var(--sidebar-bg)', 
           borderRight: '1px solid var(--border-color)', display: 'flex', 
-          flexDirection: 'column', paddingTop: '1.5rem', overflowY: 'auto' 
+          flexDirection: 'column', paddingTop: '2.5rem', overflowY: 'auto' 
         }}>
           <div className="mobile-only" style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.5rem', paddingLeft: '1rem' }}>
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
