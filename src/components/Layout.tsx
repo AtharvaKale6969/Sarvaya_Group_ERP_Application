@@ -74,8 +74,7 @@ export default function Layout() {
       {/* Mobile Hamburger Header */}
       <div className="mobile-only" style={{
         position: 'fixed', top: 0, left: 0, right: 0, height: '4rem',
-        background: 'rgba(255,255,255,0.9)', backdropFilter: 'blur(12px)',
-        WebkitBackdropFilter: 'blur(12px)',
+        background: '#FFFFFF',
         display: 'flex', alignItems: 'center', padding: '0 1rem',
         borderBottom: '1px solid var(--border-light)', zIndex: 50,
         boxShadow: '0 4px 12px rgba(0,0,0,0.03)'

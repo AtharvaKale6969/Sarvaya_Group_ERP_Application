@@ -192,3 +192,9 @@ input:focus {
     flex-direction: row;
   }
 }
+
+@media (max-width: 768px) {
+  .dashboard-bg {
+    padding-top: 4rem;
+  }
+}
