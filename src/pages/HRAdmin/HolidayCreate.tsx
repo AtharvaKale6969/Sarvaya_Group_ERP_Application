@@ -135,7 +135,7 @@ export default function HolidayCreate() {
               type="text" 
               value={activeTemplate} 
               readOnly
-              style={{ padding: '0.5rem 0.75rem', border: '1px solid #e5e7eb', borderRadius: '6px', fontSize: '0.875rem', color: '#111827', outline: 'none', width: '250px' }}
+              style={{ padding: '0.5rem 0.75rem', border: '1px solid #e5e7eb', borderRadius: '6px', fontSize: '0.875rem', color: '#111827', outline: 'none', width: '100%', minWidth: '250px' }}
             />
           </div>
         </div>
@@ -236,7 +236,7 @@ export default function HolidayCreate() {
               type="text" 
               defaultValue={templateName}
               placeholder="Write Template Name Here"
-              style={{ padding: '0.5rem 0.75rem', border: '1px solid #d1d5db', borderRadius: '4px', fontSize: '0.875rem', outline: 'none', width: '250px' }}
+              style={{ padding: '0.5rem 0.75rem', border: '1px solid #d1d5db', borderRadius: '4px', fontSize: '0.875rem', outline: 'none', width: '100%', minWidth: '250px' }}
             />
           </div>
           <button 

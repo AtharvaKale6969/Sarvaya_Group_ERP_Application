@@ -52,10 +52,10 @@ export default function ProcessPayroll() {
 
       {/* Toolbar */}
       <div style={{ display: 'flex', flexDirection: 'column', padding: '1rem 1.5rem', borderBottom: '1px solid #e5e7eb', backgroundColor: '#f9fafb', gap: '0.75rem' }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+        <div className="header-responsive">
           <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
             
-            <div style={{ position: 'relative', width: '250px' }}>
+            <div style={{ position: 'relative', width: '100%', minWidth: '250px' }}>
               <select 
                 value={payrollType}
                 onChange={(e) => setPayrollType(e.target.value)}

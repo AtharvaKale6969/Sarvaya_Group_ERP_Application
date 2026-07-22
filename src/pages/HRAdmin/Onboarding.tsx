@@ -98,7 +98,7 @@ export default function Onboarding() {
               <User size={18} color="#0ea5e9" /> Personal Information
             </h3>
             
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem' }}>
+            <div className="responsive-grid">
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                 <label style={{ fontSize: '0.875rem', fontWeight: '500', color: '#374151' }}>First Name *</label>
                 <input required type="text" name="firstName" value={formData.firstName} onChange={handleChange} placeholder="e.g. John" style={{ padding: '0.625rem 1rem', border: '1px solid #d1d5db', borderRadius: '6px', fontSize: '0.875rem', outline: 'none', transition: 'border-color 0.2s' }} />
@@ -109,7 +109,7 @@ export default function Onboarding() {
               </div>
             </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem' }}>
+            <div className="responsive-grid">
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                 <label style={{ fontSize: '0.875rem', fontWeight: '500', color: '#374151' }}>Email Address *</label>
                 <div style={{ position: 'relative' }}>
@@ -126,7 +126,7 @@ export default function Onboarding() {
               </div>
             </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem' }}>
+            <div className="responsive-grid">
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                 <label style={{ fontSize: '0.875rem', fontWeight: '500', color: '#374151' }}>Date of Birth</label>
                 <input type="date" name="dob" value={formData.dob} onChange={handleChange} style={{ padding: '0.625rem 1rem', border: '1px solid #d1d5db', borderRadius: '6px', fontSize: '0.875rem', outline: 'none', fontFamily: 'inherit' }} />
@@ -154,10 +154,10 @@ export default function Onboarding() {
               <Briefcase size={18} color="#0ea5e9" /> Employment Information
             </h3>
 
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem' }}>
+            <div className="responsive-grid">
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                 <label style={{ fontSize: '0.875rem', fontWeight: '500', color: '#374151' }}>Organization *</label>
-                <select required name="org" value={formData.org} onChange={handleChange} style={{ padding: '0.625rem 1rem', border: '1px solid #d1d5db', borderRadius: '6px', fontSize: '0.875rem', outline: 'none', backgroundColor: 'white', appearance: 'auto' }}>
+                <select required name="org" value={formData.org} onChange={handleChange} style={{ padding: '0.625rem 1rem', border: '1px solid #d1d5db', borderRadius: '6px', fontSize: '0.875rem', outline: 'none', backgroundColor: 'white', appearance: 'auto' , maxWidth: '100%', textOverflow: 'ellipsis', overflow: 'hidden', whiteSpace: 'nowrap' }}>
                   <option value="Plastroots Waste Management & Solutions Private Limited">Plastroots Waste Management & Solutions Private Limited</option>
                   <option value="Plastroots Foundation">Plastroots Foundation</option>
                   <option value="Shetahit Farm Solutions Private Limited">Shetahit Farm Solutions Private Limited</option>
@@ -168,7 +168,7 @@ export default function Onboarding() {
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                 <label style={{ fontSize: '0.875rem', fontWeight: '500', color: '#374151' }}>Department *</label>
-                <select required name="dept" value={formData.dept} onChange={handleChange} style={{ padding: '0.625rem 1rem', border: '1px solid #d1d5db', borderRadius: '6px', fontSize: '0.875rem', outline: 'none', backgroundColor: 'white', appearance: 'auto' }}>
+                <select required name="dept" value={formData.dept} onChange={handleChange} style={{ padding: '0.625rem 1rem', border: '1px solid #d1d5db', borderRadius: '6px', fontSize: '0.875rem', outline: 'none', backgroundColor: 'white', appearance: 'auto' , maxWidth: '100%', textOverflow: 'ellipsis', overflow: 'hidden', whiteSpace: 'nowrap' }}>
                   {formData.org.includes('Plastroots Waste') && <><option>RMT</option><option>Government Services</option><option>Corporate Compliance</option></>}
                   {formData.org.includes('Foundation') && <><option>CSR</option><option>IEC</option><option>RRC</option></>}
                   {formData.org.includes('Shetahit') && <><option>FVF</option><option>MPD</option></>}
@@ -179,7 +179,7 @@ export default function Onboarding() {
               </div>
             </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem' }}>
+            <div className="responsive-grid">
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                 <label style={{ fontSize: '0.875rem', fontWeight: '500', color: '#374151' }}>Designation *</label>
                 <input required type="text" name="designation" value={formData.designation} onChange={handleChange} placeholder="e.g. Executive Analyst" style={{ padding: '0.625rem 1rem', border: '1px solid #d1d5db', borderRadius: '6px', fontSize: '0.875rem', outline: 'none' }} />
@@ -190,7 +190,7 @@ export default function Onboarding() {
               </div>
             </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem' }}>
+            <div className="responsive-grid">
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                 <label style={{ fontSize: '0.875rem', fontWeight: '500', color: '#374151' }}>Date of Joining *</label>
                 <input required type="date" name="doj" value={formData.doj} onChange={handleChange} style={{ padding: '0.625rem 1rem', border: '1px solid #d1d5db', borderRadius: '6px', fontSize: '0.875rem', outline: 'none', fontFamily: 'inherit' }} />

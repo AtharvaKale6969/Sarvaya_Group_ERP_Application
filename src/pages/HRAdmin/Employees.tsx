@@ -87,7 +87,7 @@ export default function Employees() {
     <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', backgroundColor: 'white', border: '1px solid #e5e7eb', borderRadius: '8px', boxShadow: '0 1px 3px rgba(0,0,0,0.05)', position: 'relative' }}>
       
       {/* Header section */}
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '1.25rem 1.5rem', borderBottom: '1px solid #e5e7eb' }}>
+      <div className="header-responsive" style={{ padding: '1.25rem 1.5rem', borderBottom: '1px solid #e5e7eb' }}>
         <h2 style={{ fontSize: '1.125rem', fontWeight: '600', margin: 0, color: '#374151', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
           Total Active Employees <span style={{ color: '#0ea5e9' }}>{employees.filter(e => e.status === 'Active').length}</span>
         </h2>
@@ -278,7 +278,7 @@ export default function Employees() {
       {isAddModalOpen && (
         <div style={{ position: 'fixed', inset: 0, backgroundColor: 'rgba(0,0,0,0.5)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 50 }}>
           <div style={{ backgroundColor: 'white', borderRadius: '8px', width: '100%', maxWidth: '500px', padding: '1.5rem', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+            <div className="header-responsive">
               <h3 style={{ margin: 0, fontSize: '1.25rem', fontWeight: '600', color: '#111827' }}>
                 {editingEmployee ? 'Edit Employee' : 'Add New Employee'}
               </h3>
@@ -288,7 +288,7 @@ export default function Employees() {
             </div>
             
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+              <div className="responsive-grid">
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                   <label style={{ fontSize: '0.875rem', fontWeight: '500', color: '#374151' }}>Employee ID</label>
                   <input type="text" defaultValue={editingEmployee?.id || ''} placeholder="e.g. EMP045" style={{ padding: '0.5rem', border: '1px solid #d1d5db', borderRadius: '4px', fontSize: '0.875rem' }} />
@@ -301,17 +301,17 @@ export default function Employees() {
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                 <label style={{ fontSize: '0.875rem', fontWeight: '500', color: '#374151' }}>Master Branch</label>
-                <select defaultValue={editingEmployee?.branch || 'Plastroots Waste Management & Solutions Private Limited Pvt Ltd'} style={{ padding: '0.5rem', border: '1px solid #d1d5db', borderRadius: '4px', fontSize: '0.875rem', backgroundColor: 'white' }}>
+                <select defaultValue={editingEmployee?.branch || 'Plastroots Waste Management & Solutions Private Limited Pvt Ltd'} style={{ padding: '0.5rem', border: '1px solid #d1d5db', borderRadius: '4px', fontSize: '0.875rem', backgroundColor: 'white' , maxWidth: '100%', textOverflow: 'ellipsis', overflow: 'hidden', whiteSpace: 'nowrap' }}>
                   <option>Plastroots Waste Management & Solutions Private Limited</option>
                   <option>Geoclaim Energy Private Limited</option>
                   <option>Shetahit Farm Solutions Private Limited</option>
                 </select>
               </div>
 
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+              <div className="responsive-grid">
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                   <label style={{ fontSize: '0.875rem', fontWeight: '500', color: '#374151' }}>Department</label>
-                  <select defaultValue={editingEmployee?.dept || 'RM'} style={{ padding: '0.5rem', border: '1px solid #d1d5db', borderRadius: '4px', fontSize: '0.875rem', backgroundColor: 'white' }}>
+                  <select defaultValue={editingEmployee?.dept || 'RM'} style={{ padding: '0.5rem', border: '1px solid #d1d5db', borderRadius: '4px', fontSize: '0.875rem', backgroundColor: 'white' , maxWidth: '100%', textOverflow: 'ellipsis', overflow: 'hidden', whiteSpace: 'nowrap' }}>
                     <option>RM</option>
                     <option>Data</option>
                     <option>Finance</option>

@@ -167,7 +167,7 @@ export default function ManageBranch() {
                 <input type="text" placeholder="Please Enter Landmark" style={{ padding: '0.625rem', border: '1px solid #d1d5db', borderRadius: '6px', fontSize: '0.875rem', outline: 'none' }} />
               </div>
 
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+              <div className="responsive-grid">
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '0.375rem' }}>
                   <label style={{ fontSize: '0.75rem', fontWeight: '500', color: '#374151' }}>Pin Code</label>
                   <input type="text" placeholder="e.g. 440025" style={{ padding: '0.625rem', border: '1px solid #d1d5db', borderRadius: '6px', fontSize: '0.875rem', outline: 'none' }} />
@@ -175,7 +175,7 @@ export default function ManageBranch() {
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '0.375rem' }}>
                   <label style={{ fontSize: '0.75rem', fontWeight: '500', color: '#374151' }}>City</label>
                   <div style={{ position: 'relative' }}>
-                    <select style={{ width: '100%', padding: '0.625rem', border: '1px solid #d1d5db', borderRadius: '6px', fontSize: '0.875rem', appearance: 'none', outline: 'none', backgroundColor: 'white' }}>
+                    <select style={{ width: '100%', padding: '0.625rem', border: '1px solid #d1d5db', borderRadius: '6px', fontSize: '0.875rem', appearance: 'none', outline: 'none', backgroundColor: 'white' , maxWidth: '100%', textOverflow: 'ellipsis', overflow: 'hidden', whiteSpace: 'nowrap' }}>
                       <option>Nagpur</option>
                     </select>
                     <ChevronDown size={14} style={{ position: 'absolute', right: '0.75rem', top: '50%', transform: 'translateY(-50%)', color: '#6b7280', pointerEvents: 'none' }} />
@@ -183,11 +183,11 @@ export default function ManageBranch() {
                 </div>
               </div>
 
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+              <div className="responsive-grid">
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '0.375rem' }}>
                   <label style={{ fontSize: '0.75rem', fontWeight: '500', color: '#374151' }}>State</label>
                   <div style={{ position: 'relative' }}>
-                    <select style={{ width: '100%', padding: '0.625rem', border: '1px solid #d1d5db', borderRadius: '6px', fontSize: '0.875rem', appearance: 'none', outline: 'none', backgroundColor: 'white' }}>
+                    <select style={{ width: '100%', padding: '0.625rem', border: '1px solid #d1d5db', borderRadius: '6px', fontSize: '0.875rem', appearance: 'none', outline: 'none', backgroundColor: 'white' , maxWidth: '100%', textOverflow: 'ellipsis', overflow: 'hidden', whiteSpace: 'nowrap' }}>
                       <option>Maharashtra</option>
                     </select>
                     <ChevronDown size={14} style={{ position: 'absolute', right: '0.75rem', top: '50%', transform: 'translateY(-50%)', color: '#6b7280', pointerEvents: 'none' }} />
@@ -196,7 +196,7 @@ export default function ManageBranch() {
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '0.375rem' }}>
                   <label style={{ fontSize: '0.75rem', fontWeight: '500', color: '#374151' }}>Country</label>
                   <div style={{ position: 'relative' }}>
-                    <select style={{ width: '100%', padding: '0.625rem', border: '1px solid #d1d5db', borderRadius: '6px', fontSize: '0.875rem', appearance: 'none', outline: 'none', backgroundColor: 'white' }}>
+                    <select style={{ width: '100%', padding: '0.625rem', border: '1px solid #d1d5db', borderRadius: '6px', fontSize: '0.875rem', appearance: 'none', outline: 'none', backgroundColor: 'white' , maxWidth: '100%', textOverflow: 'ellipsis', overflow: 'hidden', whiteSpace: 'nowrap' }}>
                       <option>India</option>
                     </select>
                     <ChevronDown size={14} style={{ position: 'absolute', right: '0.75rem', top: '50%', transform: 'translateY(-50%)', color: '#6b7280', pointerEvents: 'none' }} />
@@ -207,7 +207,7 @@ export default function ManageBranch() {
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.375rem' }}>
                 <label style={{ fontSize: '0.75rem', fontWeight: '500', color: '#374151' }}>Industry Type</label>
                 <div style={{ position: 'relative' }}>
-                  <select style={{ width: '100%', padding: '0.625rem', border: '1px solid #d1d5db', borderRadius: '6px', fontSize: '0.875rem', appearance: 'none', outline: 'none', backgroundColor: 'white' }}>
+                  <select style={{ width: '100%', padding: '0.625rem', border: '1px solid #d1d5db', borderRadius: '6px', fontSize: '0.875rem', appearance: 'none', outline: 'none', backgroundColor: 'white' , maxWidth: '100%', textOverflow: 'ellipsis', overflow: 'hidden', whiteSpace: 'nowrap' }}>
                     <option>Please select industry type</option>
                   </select>
                   <ChevronDown size={14} style={{ position: 'absolute', right: '0.75rem', top: '50%', transform: 'translateY(-50%)', color: '#6b7280', pointerEvents: 'none' }} />
@@ -218,7 +218,7 @@ export default function ManageBranch() {
               
               <h3 style={{ fontSize: '0.875rem', fontWeight: '600', color: '#111827', margin: '0 0 0.5rem 0' }}>Geo Fencing Details</h3>
               
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+              <div className="responsive-grid">
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '0.375rem' }}>
                   <label style={{ fontSize: '0.75rem', fontWeight: '500', color: '#374151' }}>Latitude <span style={{ color: '#ef4444' }}>*</span></label>
                   <input type="text" placeholder="Please Enter Latitude" style={{ width: '100%', boxSizing: 'border-box', padding: '0.625rem', border: '1px solid #d1d5db', borderRadius: '6px', fontSize: '0.875rem', outline: 'none' }} />

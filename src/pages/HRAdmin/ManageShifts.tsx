@@ -27,7 +27,7 @@ export default function ManageShifts() {
     <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', backgroundColor: 'white', border: '1px solid #e5e7eb', borderRadius: '8px', boxShadow: '0 1px 3px rgba(0,0,0,0.05)', position: 'relative' }}>
       
       {/* Header section */}
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '1.25rem 1.5rem', borderBottom: '1px solid #e5e7eb' }}>
+      <div className="header-responsive" style={{ padding: '1.25rem 1.5rem', borderBottom: '1px solid #e5e7eb' }}>
         <h2 style={{ fontSize: '1.125rem', fontWeight: '600', margin: 0, color: '#374151', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
           Shifts <span style={{ color: '#0ea5e9' }}>({shifts.length})</span>
         </h2>
@@ -235,7 +235,7 @@ export default function ManageShifts() {
                 <label htmlFor="sameTiming" style={{ fontSize: '0.875rem', color: '#374151', cursor: 'pointer' }}>Apply same timing for all days</label>
               </div>
 
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+              <div className="responsive-grid">
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '0.375rem' }}>
                   <label style={{ fontSize: '0.75rem', fontWeight: '500', color: '#374151' }}>Start Time <span style={{ color: '#ef4444' }}>*</span></label>
                   <input type="time" defaultValue={editingShift?.startTime === 'N/A' ? '' : '10:00'} style={{ padding: '0.625rem', border: '1px solid #d1d5db', borderRadius: '6px', fontSize: '0.875rem', outline: 'none' }} />
@@ -281,7 +281,7 @@ export default function ManageShifts() {
             <div style={{ padding: '1.5rem', display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.375rem' }}>
                 <label style={{ fontSize: '0.75rem', fontWeight: '500', color: '#374151' }}>Select Shift <span style={{ color: '#ef4444' }}>*</span></label>
-                <select style={{ padding: '0.625rem', border: '1px solid #d1d5db', borderRadius: '6px', fontSize: '0.875rem', outline: 'none', backgroundColor: 'white' }}>
+                <select style={{ padding: '0.625rem', border: '1px solid #d1d5db', borderRadius: '6px', fontSize: '0.875rem', outline: 'none', backgroundColor: 'white' , maxWidth: '100%', textOverflow: 'ellipsis', overflow: 'hidden', whiteSpace: 'nowrap' }}>
                   <option value="">Select a shift</option>
                   <option value="1">Default Shift</option>
                   <option value="2">Daily Shift</option>
@@ -289,10 +289,10 @@ export default function ManageShifts() {
                 </select>
               </div>
 
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+              <div className="responsive-grid">
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '0.375rem' }}>
                   <label style={{ fontSize: '0.75rem', fontWeight: '500', color: '#374151' }}>Select Organization</label>
-                  <select style={{ padding: '0.625rem', border: '1px solid #d1d5db', borderRadius: '6px', fontSize: '0.875rem', outline: 'none', backgroundColor: 'white' }}>
+                  <select style={{ padding: '0.625rem', border: '1px solid #d1d5db', borderRadius: '6px', fontSize: '0.875rem', outline: 'none', backgroundColor: 'white' , maxWidth: '100%', textOverflow: 'ellipsis', overflow: 'hidden', whiteSpace: 'nowrap' }}>
                     <option value="">All Organizations</option>
                     <option value="1">Plastroots</option>
                     <option value="2">Geoclaim</option>
@@ -300,7 +300,7 @@ export default function ManageShifts() {
                 </div>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '0.375rem' }}>
                   <label style={{ fontSize: '0.75rem', fontWeight: '500', color: '#374151' }}>Select Department</label>
-                  <select style={{ padding: '0.625rem', border: '1px solid #d1d5db', borderRadius: '6px', fontSize: '0.875rem', outline: 'none', backgroundColor: 'white' }}>
+                  <select style={{ padding: '0.625rem', border: '1px solid #d1d5db', borderRadius: '6px', fontSize: '0.875rem', outline: 'none', backgroundColor: 'white' , maxWidth: '100%', textOverflow: 'ellipsis', overflow: 'hidden', whiteSpace: 'nowrap' }}>
                     <option value="">All Departments</option>
                     <option value="1">Finance</option>
                     <option value="2">HR</option>
@@ -351,7 +351,7 @@ export default function ManageShifts() {
                 <input type="time" defaultValue="09:00" style={{ padding: '0.625rem', border: '1px solid #d1d5db', borderRadius: '6px', fontSize: '0.875rem', outline: 'none' }} />
               </div>
 
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+              <div className="responsive-grid">
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '0.375rem' }}>
                   <label style={{ fontSize: '0.75rem', fontWeight: '500', color: '#374151' }}>Minimum for Half Day</label>
                   <input type="time" defaultValue="04:30" style={{ padding: '0.625rem', border: '1px solid #d1d5db', borderRadius: '6px', fontSize: '0.875rem', outline: 'none' }} />
