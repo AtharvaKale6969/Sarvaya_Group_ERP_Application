@@ -259,6 +259,7 @@ export default function ManageBranch() {
                 </div>
               </div>
             </div>
+            </div>
 
             {/* Drawer Footer */}
             <div style={{ padding: '1rem 1.5rem', borderTop: '1px solid #e5e7eb', display: 'flex', justifyContent: 'flex-end', backgroundColor: '#eff6ff' }}>
