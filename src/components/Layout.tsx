@@ -55,7 +55,7 @@ export default function Layout() {
       ]
     }] : []),
     ...(hasTracksheets ? [{ name: 'Tracksheets', path: '/tracksheets', icon: <FileText size={20} /> }] : []),
-    ...(isHR ? [{ name: 'Admin', path: '/hr-admin/dashboard', icon: <Users size={20} /> }] : []),
+    ...(isHR ? [{ name: 'HR Admin Portal', path: '/hr-admin/dashboard', icon: <Shield size={20} /> }] : []),
     ...(user?.email === 'admin@test01.com' ? [
       {
         name: 'Admin Management',
