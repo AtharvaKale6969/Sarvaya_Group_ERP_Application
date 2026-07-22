@@ -55,17 +55,17 @@ export default function EmployeeProfileModal({ profile, onClose }: EmployeeProfi
   };
 
   return (
-    <div style={{ position: 'fixed', inset: 0, backgroundColor: 'rgba(0,0,0,0.6)', zIndex: 1100, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '2rem' }}>
+    <div className="profile-modal-overlay" style={{ position: 'fixed', inset: 0, backgroundColor: 'rgba(0,0,0,0.6)', zIndex: 1100, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '2rem' }}>
       
       {/* Modal Container */}
-      <div style={{ 
+      <div className="profile-modal-container" style={{ 
         backgroundColor: 'white', borderRadius: '16px', width: '100%', maxWidth: '900px', 
         height: '90vh', display: 'flex', flexDirection: 'column', overflow: 'hidden',
         boxShadow: '0 25px 50px -12px rgba(0,0,0,0.25)', animation: 'fadeIn 0.2s ease-out'
       }}>
         
         {/* Header Section */}
-        <div style={{ padding: '2rem', backgroundColor: '#f8fafc', borderBottom: '1px solid #e2e8f0', display: 'flex', gap: '1.5rem', position: 'relative' }}>
+        <div className="profile-header" style={{ padding: '2rem', backgroundColor: '#f8fafc', borderBottom: '1px solid #e2e8f0', display: 'flex', gap: '1.5rem', position: 'relative' }}>
           <button 
             onClick={onClose}
             style={{ position: 'absolute', top: '1rem', right: '1rem', background: 'white', border: '1px solid #e2e8f0', borderRadius: '50%', padding: '0.5rem', cursor: 'pointer', color: '#64748b', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 1px 2px rgba(0,0,0,0.05)' }}
@@ -78,7 +78,7 @@ export default function EmployeeProfileModal({ profile, onClose }: EmployeeProfi
           </div>
           
           <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: '0.5rem' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', flexWrap: 'wrap' }}>
+            <div className="profile-header-info" style={{ display: 'flex', alignItems: 'center', gap: '1rem', flexWrap: 'wrap' }}>
               <h2 style={{ margin: 0, fontSize: '1.75rem', fontWeight: '700', color: '#0f172a' }}>{profile.name}</h2>
               <span style={{ padding: '0.25rem 0.75rem', backgroundColor: profile.status === 'Active' ? '#dcfce7' : '#fee2e2', color: profile.status === 'Active' ? '#166534' : '#991b1b', borderRadius: '999px', fontSize: '0.75rem', fontWeight: '600' }}>
                 {profile.status}
@@ -88,7 +88,7 @@ export default function EmployeeProfileModal({ profile, onClose }: EmployeeProfi
               </span>
             </div>
             
-            <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', color: '#475569', fontSize: '0.875rem' }}>
+            <div className="profile-header-stats" style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', color: '#475569', fontSize: '0.875rem' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.375rem' }}>
                 <Award size={16} color="#94a3b8" />
                 <span style={{ fontWeight: '500' }}>{profile.id}</span>
@@ -106,7 +106,7 @@ export default function EmployeeProfileModal({ profile, onClose }: EmployeeProfi
         </div>
 
         {/* Navigation Tabs */}
-        <div style={{ display: 'flex', borderBottom: '1px solid #e2e8f0', backgroundColor: 'white', padding: '0 1.5rem' }}>
+        <div className="profile-tabs-container" style={{ display: 'flex', borderBottom: '1px solid #e2e8f0', backgroundColor: 'white', padding: '0 1.5rem' }}>
           {tabs.map(tab => (
             <button
               key={tab}
@@ -129,7 +129,7 @@ export default function EmployeeProfileModal({ profile, onClose }: EmployeeProfi
         </div>
 
         {/* Scrollable Content Area */}
-        <div style={{ flex: 1, overflowY: 'auto', padding: '2rem', backgroundColor: '#f8fafc' }}>
+        <div className="profile-content-area" style={{ flex: 1, overflowY: 'auto', padding: '2rem', backgroundColor: '#f8fafc' }}>
           
           {/* OVERVIEW TAB */}
           {activeTab === 'Overview' && (
@@ -292,7 +292,7 @@ export default function EmployeeProfileModal({ profile, onClose }: EmployeeProfi
                 This section contains the comprehensive {activeTab.toLowerCase()} data for the employee collected during onboarding.
               </p>
               
-              <div style={{ marginTop: '2rem', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', textAlign: 'left', maxWidth: '600px', marginInline: 'auto' }}>
+              <div className="profile-grid" style={{ marginTop: '2rem', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', textAlign: 'left', maxWidth: '600px', marginInline: 'auto' }}>
                 {activeTab === 'Personal Info' && (
                   <>
                     <div style={{ padding: '1rem', border: '1px solid #e2e8f0', borderRadius: '8px' }}>
@@ -374,6 +374,50 @@ export default function EmployeeProfileModal({ profile, onClose }: EmployeeProfi
         @keyframes fadeIn {
           from { opacity: 0; transform: scale(0.95); }
           to { opacity: 1; transform: scale(1); }
+        }
+        
+        .profile-tabs-container {
+          overflow-x: auto;
+          white-space: nowrap;
+          -webkit-overflow-scrolling: touch;
+        }
+
+        .profile-tabs-container::-webkit-scrollbar {
+          display: none;
+        }
+
+        @media (max-width: 768px) {
+          .profile-modal-overlay {
+            padding: 1rem !important;
+          }
+          .profile-modal-container {
+            height: 100vh !important;
+            max-height: 100vh !important;
+            border-radius: 0 !important;
+          }
+          .profile-header {
+            flex-direction: column !important;
+            align-items: center !important;
+            text-align: center !important;
+            padding: 1.5rem 1rem !important;
+          }
+          .profile-header-info {
+            justify-content: center !important;
+          }
+          .profile-header-stats {
+            flex-wrap: wrap !important;
+            justify-content: center !important;
+            gap: 0.75rem !important;
+          }
+          .profile-tabs-container {
+            padding: 0 1rem !important;
+          }
+          .profile-content-area {
+            padding: 1.5rem 1rem !important;
+          }
+          .profile-grid {
+            grid-template-columns: 1fr !important;
+          }
         }
       `}</style>
     </div>
