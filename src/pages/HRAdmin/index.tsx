@@ -87,10 +87,10 @@ export default function HRAdminWrapper() {
         borderBottom: '1px solid var(--border-light)', zIndex: 50,
         boxShadow: '0 4px 12px rgba(0,0,0,0.03)'
       }}>
-        <button onClick={() => setIsMobileMenuOpen(true)} style={{ background: 'none', border: 'none', color: 'var(--text-emerald)', cursor: 'pointer', padding: '0.5rem', display: 'flex', alignItems: 'center' }}>
+        <button onClick={() => setIsMobileMenuOpen(true)} style={{ background: 'none', border: 'none', color: 'var(--text-emerald)', cursor: 'pointer', padding: '0.625rem 1rem', display: 'flex', alignItems: 'center' }}>
           <Menu size={24} />
         </button>
-        <span style={{ marginLeft: '0.75rem', fontWeight: '700', color: 'var(--text-emerald)', fontSize: '1.2rem', flex: 1 }}>HR Payroll</span>
+        <span style={{ marginLeft: '0.75rem', fontWeight: '700', color: 'var(--text-emerald)', fontSize: '1.2rem', flex: 1 }}>Helix Synapse</span>
         <Link to="/profile" style={{ textDecoration: 'none' }}>
           <div style={{ width: '32px', height: '32px', borderRadius: '50%', background: 'var(--text-emerald)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', fontWeight: 'bold', fontSize: '0.85rem' }}>
             {user?.email?.charAt(0).toUpperCase()}
@@ -111,7 +111,7 @@ export default function HRAdminWrapper() {
       <header className="desktop-only" style={{ 
         display: 'flex', alignItems: 'center', justifyContent: 'space-between', 
         padding: '1rem 2rem', borderBottom: '1px solid var(--border-color)', 
-        backgroundColor: 'var(--card-bg)', zIndex: 20 
+        background: 'var(--sidebar-bg)', zIndex: 20 
       }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', width: '14rem' }}>
           <img src="/logo.png" alt="Logo" style={{ width: '2.5rem', height: '2.5rem', objectFit: 'contain', borderRadius: '8px' }} />
@@ -146,12 +146,18 @@ export default function HRAdminWrapper() {
           borderRight: '1px solid var(--border-color)', display: 'flex', 
           flexDirection: 'column', paddingTop: '1.5rem', overflowY: 'auto' 
         }}>
+          <div className="mobile-only" style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.5rem', paddingLeft: '1rem' }}>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+               <img src="/logo.png" alt="Helix Synapse Logo" style={{ width: '48px', height: '48px', objectFit: 'contain', borderRadius: '8px' }} />
+            </div>
+            <h2 style={{ fontSize: '1.25rem', fontWeight: '600', margin: 0, color: 'var(--text-emerald)' }}>Helix Synapse</h2>
+          </div>
           <nav style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', flex: 1, padding: '0 1rem' }}>
             {navItems.map((item, index) => {
               
               if (item.isHeader) {
                 return (
-                  <div key={`header-${index}`} style={{ marginTop: index === 0 ? '0' : '1.5rem', marginBottom: '0.5rem', paddingLeft: '1rem', fontSize: '0.75rem', fontWeight: '700', color: '#94a3b8', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                  <div key={`header-${index}`} style={{ marginTop: index === 0 ? '0' : '1.5rem', marginBottom: '0.5rem', paddingLeft: '1rem', fontSize: '0.75rem', fontWeight: '700', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
                     {item.name}
                   </div>
                 );
@@ -174,10 +180,7 @@ export default function HRAdminWrapper() {
                         display: 'flex', alignItems: 'center', gap: '0.75rem',
                         padding: '0.875rem 1rem', borderRadius: '12px', border: 'none',
                         backgroundColor: 'transparent',
-                        color: isActive ? 'var(--primary)' : 'var(--text-muted)',
-                        fontWeight: isActive ? '600' : '500', cursor: 'pointer',
-                        textAlign: 'left', transition: 'all 0.2s', width: '100%',
-                        justifyContent: 'space-between', fontSize: '0.875rem'
+                        color: isActive ? 'var(--text-emerald)' : 'var(--text-muted)', fontWeight: isActive ? '600' : '500', cursor: 'pointer', textAlign: 'left', transition: 'all 0.2s ease', width: '100%', justifyContent: 'space-between', fontSize: '1rem', fontFamily: 'inherit'
                       }}
                     >
                       <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
@@ -195,10 +198,8 @@ export default function HRAdminWrapper() {
                               key={subItem.path} 
                               to={subItem.path}
                               style={{
-                                padding: '0.5rem', textDecoration: 'none',
-                                color: isSubActive ? 'var(--text-color)' : 'var(--text-muted)',
-                                fontWeight: isSubActive ? '600' : '500',
-                                fontSize: '0.875rem', transition: 'all 0.2s'
+                                padding: '0.625rem 1rem', textDecoration: 'none',
+                                background: isSubActive ? 'var(--text-emerald)' : 'transparent', color: isSubActive ? 'white' : 'var(--text-main)', fontWeight: isSubActive ? '600' : '400', fontSize: '0.9rem', transition: 'all 0.2s ease', boxShadow: isSubActive ? '0 4px 12px rgba(35, 127, 112, 0.2)' : 'none', borderRadius: '8px'
                               }}
                              onClick={() => setIsMobileMenuOpen(false)}>
                               {subItem.name}
@@ -218,10 +219,7 @@ export default function HRAdminWrapper() {
                   style={{
                     display: 'flex', alignItems: 'center', gap: '0.75rem',
                     padding: '0.875rem 1rem', borderRadius: '12px', textDecoration: 'none',
-                    backgroundColor: isActive ? 'rgba(0, 163, 114, 0.05)' : 'transparent',
-                    color: isActive ? 'var(--primary)' : 'var(--text-muted)',
-                    fontWeight: isActive ? '600' : '500', transition: 'all 0.2s',
-                    fontSize: '0.875rem'
+                    background: isActive ? 'var(--text-emerald)' : 'transparent', color: isActive ? 'white' : 'var(--text-main)', fontWeight: isActive ? '600' : '400', transition: 'all 0.2s ease', fontSize: '1rem', boxShadow: isActive ? '0 4px 12px rgba(35, 127, 112, 0.2)' : 'none'
                   }}
                  onClick={() => setIsMobileMenuOpen(false)}>
                   {item.icon}
