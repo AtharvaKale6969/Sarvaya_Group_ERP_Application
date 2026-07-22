@@ -171,58 +171,62 @@ export default function Dashboard() {
       <div className="responsive-stack">
         <div style={{ flex: 1, backgroundColor: 'white', borderRadius: '8px', border: '1px solid #e5e7eb', boxShadow: '0 1px 2px rgba(0,0,0,0.05)', padding: '1.5rem' }}>
           <h3 style={{ fontSize: '1rem', fontWeight: '600', color: '#374151', margin: '0 0 1rem 0' }}>Today's Shift Wise Attendance Summary</h3>
-          <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', fontSize: '0.875rem' }}>
-            <thead style={{ backgroundColor: '#eff6ff' }}>
-              <tr>
-                <th style={{ padding: '0.75rem 1rem', fontWeight: '600', color: '#1e40af', borderRadius: '6px 0 0 6px' }}>Shift</th>
-                <th style={{ padding: '0.75rem 1rem', fontWeight: '600', color: '#1e40af' }}>Checked In</th>
-                <th style={{ padding: '0.75rem 1rem', fontWeight: '600', color: '#1e40af' }}>Not In Yet</th>
-                <th style={{ padding: '0.75rem 1rem', fontWeight: '600', color: '#1e40af', borderRadius: '0 6px 6px 0' }}>Time Off</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td style={{ padding: '1rem', borderBottom: '1px solid #f3f4f6', color: '#4b5563' }}>Open Shift</td>
-                <td style={{ padding: '1rem', borderBottom: '1px solid #f3f4f6', color: '#111827' }}>0</td>
-                <td style={{ padding: '1rem', borderBottom: '1px solid #f3f4f6', color: '#111827' }}>0</td>
-                <td style={{ padding: '1rem', borderBottom: '1px solid #f3f4f6', color: '#111827' }}>0</td>
-              </tr>
-              <tr>
-                <td style={{ padding: '1rem', color: '#4b5563' }}>Daily Shift</td>
-                <td style={{ padding: '1rem', color: '#111827' }}>12</td>
-                <td style={{ padding: '1rem', color: '#111827' }}>1</td>
-                <td style={{ padding: '1rem', color: '#111827' }}>2</td>
-              </tr>
-            </tbody>
-          </table>
+          <div style={{ overflowX: 'auto' }}>
+            <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', fontSize: '0.875rem' }}>
+              <thead style={{ backgroundColor: '#eff6ff' }}>
+                <tr>
+                  <th style={{ padding: '0.75rem 1rem', fontWeight: '600', color: '#1e40af', borderRadius: '6px 0 0 6px' }}>Shift</th>
+                  <th style={{ padding: '0.75rem 1rem', fontWeight: '600', color: '#1e40af' }}>Checked In</th>
+                  <th style={{ padding: '0.75rem 1rem', fontWeight: '600', color: '#1e40af' }}>Not In Yet</th>
+                  <th style={{ padding: '0.75rem 1rem', fontWeight: '600', color: '#1e40af', borderRadius: '0 6px 6px 0' }}>Time Off</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style={{ padding: '1rem', borderBottom: '1px solid #f3f4f6', color: '#4b5563' }}>Open Shift</td>
+                  <td style={{ padding: '1rem', borderBottom: '1px solid #f3f4f6', color: '#111827' }}>0</td>
+                  <td style={{ padding: '1rem', borderBottom: '1px solid #f3f4f6', color: '#111827' }}>0</td>
+                  <td style={{ padding: '1rem', borderBottom: '1px solid #f3f4f6', color: '#111827' }}>0</td>
+                </tr>
+                <tr>
+                  <td style={{ padding: '1rem', color: '#4b5563' }}>Daily Shift</td>
+                  <td style={{ padding: '1rem', color: '#111827' }}>12</td>
+                  <td style={{ padding: '1rem', color: '#111827' }}>1</td>
+                  <td style={{ padding: '1rem', color: '#111827' }}>2</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
 
         <div style={{ flex: 1, backgroundColor: 'white', borderRadius: '8px', border: '1px solid #e5e7eb', boxShadow: '0 1px 2px rgba(0,0,0,0.05)', padding: '1.5rem' }}>
           <h3 style={{ fontSize: '1rem', fontWeight: '600', color: '#374151', margin: '0 0 1rem 0' }}>Today's Department Wise Attendance Summary</h3>
-          <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', fontSize: '0.875rem' }}>
-            <thead style={{ backgroundColor: '#eff6ff' }}>
-              <tr>
-                <th style={{ padding: '0.75rem 1rem', fontWeight: '600', color: '#1e40af', borderRadius: '6px 0 0 6px' }}>Department</th>
-                <th style={{ padding: '0.75rem 1rem', fontWeight: '600', color: '#1e40af' }}>Checked In</th>
-                <th style={{ padding: '0.75rem 1rem', fontWeight: '600', color: '#1e40af' }}>Not In Yet</th>
-                <th style={{ padding: '0.75rem 1rem', fontWeight: '600', color: '#1e40af', borderRadius: '0 6px 6px 0' }}>Time Off</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td style={{ padding: '1rem', borderBottom: '1px solid #f3f4f6', color: '#4b5563' }}>Shetohit Form Solutions</td>
-                <td style={{ padding: '1rem', borderBottom: '1px solid #f3f4f6', color: '#111827' }}>1</td>
-                <td style={{ padding: '1rem', borderBottom: '1px solid #f3f4f6', color: '#111827' }}>0</td>
-                <td style={{ padding: '1rem', borderBottom: '1px solid #f3f4f6', color: '#111827' }}>0</td>
-              </tr>
-              <tr>
-                <td style={{ padding: '1rem', borderBottom: '1px solid #f3f4f6', color: '#4b5563' }}>Geoclaim Energy Private Limited.</td>
-                <td style={{ padding: '1rem', borderBottom: '1px solid #f3f4f6', color: '#111827' }}>2</td>
-                <td style={{ padding: '1rem', borderBottom: '1px solid #f3f4f6', color: '#111827' }}>0</td>
-                <td style={{ padding: '1rem', borderBottom: '1px solid #f3f4f6', color: '#111827' }}>0</td>
-              </tr>
-            </tbody>
-          </table>
+          <div style={{ overflowX: 'auto' }}>
+            <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', fontSize: '0.875rem' }}>
+              <thead style={{ backgroundColor: '#eff6ff' }}>
+                <tr>
+                  <th style={{ padding: '0.75rem 1rem', fontWeight: '600', color: '#1e40af', borderRadius: '6px 0 0 6px' }}>Department</th>
+                  <th style={{ padding: '0.75rem 1rem', fontWeight: '600', color: '#1e40af' }}>Checked In</th>
+                  <th style={{ padding: '0.75rem 1rem', fontWeight: '600', color: '#1e40af' }}>Not In Yet</th>
+                  <th style={{ padding: '0.75rem 1rem', fontWeight: '600', color: '#1e40af', borderRadius: '0 6px 6px 0' }}>Time Off</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style={{ padding: '1rem', borderBottom: '1px solid #f3f4f6', color: '#4b5563' }}>Shetohit Form Solutions</td>
+                  <td style={{ padding: '1rem', borderBottom: '1px solid #f3f4f6', color: '#111827' }}>1</td>
+                  <td style={{ padding: '1rem', borderBottom: '1px solid #f3f4f6', color: '#111827' }}>0</td>
+                  <td style={{ padding: '1rem', borderBottom: '1px solid #f3f4f6', color: '#111827' }}>0</td>
+                </tr>
+                <tr>
+                  <td style={{ padding: '1rem', borderBottom: '1px solid #f3f4f6', color: '#4b5563' }}>Geoclaim Energy Private Limited.</td>
+                  <td style={{ padding: '1rem', borderBottom: '1px solid #f3f4f6', color: '#111827' }}>2</td>
+                  <td style={{ padding: '1rem', borderBottom: '1px solid #f3f4f6', color: '#111827' }}>0</td>
+                  <td style={{ padding: '1rem', borderBottom: '1px solid #f3f4f6', color: '#111827' }}>0</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
 
