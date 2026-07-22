@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import EmployeeProfileModal from '../../components/HRAdmin/EmployeeProfileModal';
 import { ChevronDown, ChevronsUpDown, MoreVertical, X, User } from 'lucide-react';
 
 export default function Designations() {
@@ -253,44 +254,7 @@ export default function Designations() {
 
       {/* View Profile Modal */}
       {viewingEmployee && (
-        <div style={{ position: 'fixed', inset: 0, backgroundColor: 'rgba(0,0,0,0.5)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 60 }}>
-          <div style={{ backgroundColor: 'white', borderRadius: '8px', width: '100%', maxWidth: '400px', padding: '1.5rem', display: 'flex', flexDirection: 'column', gap: '1.5rem', textAlign: 'center', boxShadow: '0 10px 25px rgba(0,0,0,0.1)' }}>
-            <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
-              <button onClick={() => setViewingEmployee(null)} style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#6b7280' }}>
-                <X size={20} />
-              </button>
-            </div>
-            
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem' }}>
-              <div style={{ width: '80px', height: '80px', borderRadius: '50%', backgroundColor: '#e0f2fe', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#0ea5e9' }}>
-                <User size={40} />
-              </div>
-              <h3 style={{ margin: 0, fontSize: '1.25rem', fontWeight: '600', color: '#111827' }}>{viewingEmployee.name}</h3>
-              <p style={{ margin: 0, fontSize: '0.875rem', color: '#6b7280' }}>{viewingEmployee.id}</p>
-            </div>
-
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', textAlign: 'left', backgroundColor: '#f9fafb', padding: '1rem', borderRadius: '8px' }}>
-              <div>
-                <p style={{ margin: 0, fontSize: '0.75rem', color: '#6b7280' }}>Department</p>
-                <p style={{ margin: 0, fontSize: '0.875rem', fontWeight: '500', color: '#111827' }}>{viewingEmployee.dept}</p>
-              </div>
-              <div>
-                <p style={{ margin: 0, fontSize: '0.75rem', color: '#6b7280' }}>Designation</p>
-                <p style={{ margin: 0, fontSize: '0.875rem', fontWeight: '500', color: '#111827' }}>{viewingEmployee.role}</p>
-              </div>
-              <div>
-                <p style={{ margin: 0, fontSize: '0.75rem', color: '#6b7280' }}>Status</p>
-                <p style={{ margin: 0, fontSize: '0.875rem', fontWeight: '500', color: viewingEmployee.status === 'Active' ? '#10b981' : '#ef4444' }}>{viewingEmployee.status}</p>
-              </div>
-              <div>
-                <p style={{ margin: 0, fontSize: '0.75rem', color: '#6b7280' }}>Date of Joining</p>
-                <p style={{ margin: 0, fontSize: '0.875rem', fontWeight: '500', color: '#111827' }}>{viewingEmployee.date}</p>
-              </div>
-            </div>
-
-            <button onClick={() => setViewingEmployee(null)} style={{ padding: '0.5rem 1rem', border: '1px solid #d1d5db', borderRadius: '4px', background: 'white', color: '#374151', cursor: 'pointer', fontWeight: '500', fontSize: '0.875rem' }}>Close</button>
-          </div>
-        </div>
+        <EmployeeProfileModal profile={viewingEmployee} onClose={() => setViewingEmployee(null)} />
       )}
 
       <style>{`
