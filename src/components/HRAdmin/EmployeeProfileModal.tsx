@@ -185,6 +185,51 @@ export default function EmployeeProfileModal({ profile, onClose }: EmployeeProfi
                     </div>
                   </div>
                 </div>
+                
+                {/* Organizational Assignments Card */}
+                <div style={{ backgroundColor: 'white', borderRadius: '12px', padding: '1.5rem', border: '1px solid #e2e8f0', boxShadow: '0 1px 3px rgba(0,0,0,0.05)' }}>
+                  <h3 style={{ margin: '0 0 1rem 0', fontSize: '1rem', fontWeight: '600', color: '#0f172a' }}>Organizational Assignments</h3>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                    <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem' }}>
+                      <div style={{ width: '32px', height: '32px', borderRadius: '8px', backgroundColor: '#f1f5f9', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#64748b', flexShrink: 0 }}>
+                        <Building size={16} />
+                      </div>
+                      <div>
+                        <p style={{ margin: 0, fontSize: '0.75rem', color: '#64748b' }}>Organization</p>
+                        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginTop: '0.25rem' }}>
+                          <span style={{ padding: '0.25rem 0.5rem', backgroundColor: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: '4px', fontSize: '0.8125rem', fontWeight: '500', color: '#1e293b' }}>Sarvaya Group</span>
+                          {/* Ready for mapping multiple orgs */}
+                        </div>
+                      </div>
+                    </div>
+                    <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem' }}>
+                      <div style={{ width: '32px', height: '32px', borderRadius: '8px', backgroundColor: '#f1f5f9', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#64748b', flexShrink: 0 }}>
+                        <MapPin size={16} />
+                      </div>
+                      <div>
+                        <p style={{ margin: 0, fontSize: '0.75rem', color: '#64748b' }}>Department(s)</p>
+                        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginTop: '0.25rem' }}>
+                          {profile.dept.split(',').map((d, i) => (
+                            <span key={i} style={{ padding: '0.25rem 0.5rem', backgroundColor: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: '4px', fontSize: '0.8125rem', fontWeight: '500', color: '#1e293b' }}>{d.trim()}</span>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                    <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem' }}>
+                      <div style={{ width: '32px', height: '32px', borderRadius: '8px', backgroundColor: '#f1f5f9', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#64748b', flexShrink: 0 }}>
+                        <Briefcase size={16} />
+                      </div>
+                      <div>
+                        <p style={{ margin: 0, fontSize: '0.75rem', color: '#64748b' }}>Role(s) & Designations</p>
+                        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginTop: '0.25rem' }}>
+                          {profile.role.split(',').map((r, i) => (
+                            <span key={i} style={{ padding: '0.25rem 0.5rem', backgroundColor: '#f0f9ff', border: '1px solid #bae6fd', color: '#0369a1', borderRadius: '4px', fontSize: '0.8125rem', fontWeight: '500' }}>{r.trim()}</span>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           )}
