@@ -156,7 +156,18 @@ export default function HRAdminWrapper() {
               
               if (item.isHeader) {
                 return (
-                  <div key={`header-${index}`} style={{ marginTop: index === 0 ? '0' : '1.5rem', marginBottom: '0.5rem', paddingLeft: '1rem', fontSize: '0.75rem', fontWeight: '700', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                  <div key={`header-${index}`} style={{ 
+                    marginTop: index === 0 ? '0' : '1.5rem', 
+                    paddingTop: index === 0 ? '0' : '1.5rem',
+                    borderTop: index === 0 ? 'none' : '1px solid #e5e7eb',
+                    marginBottom: '0.5rem', 
+                    paddingLeft: '1rem', 
+                    fontSize: '0.75rem', 
+                    fontWeight: '700', 
+                    color: '#9ca3af', 
+                    textTransform: 'uppercase', 
+                    letterSpacing: '0.05em' 
+                  }}>
                     {item.name}
                   </div>
                 );
@@ -182,8 +193,8 @@ export default function HRAdminWrapper() {
                         color: isActive ? 'var(--text-emerald)' : 'var(--text-muted)', fontWeight: isActive ? '600' : '500', cursor: 'pointer', textAlign: 'left', transition: 'all 0.2s ease', width: '100%', justifyContent: 'space-between', fontSize: '1rem', fontFamily: 'inherit'
                       }}
                     >
-                      <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.75rem' }}>
-                        {item.icon} {item.name}
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', whiteSpace: 'nowrap' }}>
+                        {item.icon} <span style={{ whiteSpace: 'nowrap' }}>{item.name}</span>
                       </div>
                       {isOpen ? <ChevronDown size={16} /> : <ChevronRight size={16} />}
                     </button>
@@ -218,11 +229,11 @@ export default function HRAdminWrapper() {
                   style={{
                     display: 'flex', alignItems: 'center', gap: '0.75rem',
                     padding: '0.875rem 1rem', borderRadius: '12px', textDecoration: 'none',
-                    background: isActive ? 'var(--text-emerald)' : 'transparent', color: isActive ? 'white' : 'var(--text-main)', fontWeight: isActive ? '600' : '400', transition: 'all 0.2s ease', fontSize: '1rem', boxShadow: isActive ? '0 4px 12px rgba(35, 127, 112, 0.2)' : 'none'
+                    background: isActive ? 'var(--text-emerald)' : 'transparent', color: isActive ? 'white' : 'var(--text-main)', fontWeight: isActive ? '600' : '400', transition: 'all 0.2s ease', fontSize: '1rem', boxShadow: isActive ? '0 4px 12px rgba(35, 127, 112, 0.2)' : 'none', whiteSpace: 'nowrap'
                   }}
                  onClick={() => setIsMobileMenuOpen(false)}>
                   {item.icon}
-                  {item.name}
+                  <span style={{ whiteSpace: 'nowrap' }}>{item.name}</span>
                 </Link>
               );
             })}
