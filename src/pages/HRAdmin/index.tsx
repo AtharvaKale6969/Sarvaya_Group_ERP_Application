@@ -1,11 +1,12 @@
 import { useState } from 'react';
 import { Outlet, Link, useLocation } from 'react-router-dom';
 import { useAuthStore } from '../../store/useAuthStore';
-import { LayoutDashboard, Users, Briefcase, FileText, ListTodo, ChevronDown, ChevronRight, LogOut, UserPlus } from 'lucide-react';
+import {  LayoutDashboard, Users, Briefcase, FileText, ListTodo, ChevronDown, ChevronRight, LogOut, UserPlus , Menu } from 'lucide-react';
 
 export default function HRAdminWrapper() {
   const { user, signOut } = useAuthStore();
   const location = useLocation();
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [openMenus, setOpenMenus] = useState<Record<string, boolean>>({});
 
   const toggleMenu = (name: string) => {
@@ -77,8 +78,37 @@ export default function HRAdminWrapper() {
   return (
     <div className="dashboard-bg" style={{ display: 'flex', flexDirection: 'column', height: '100vh', position: 'relative' }}>
       
+      {/* Mobile Hamburger Header */}
+      <div className="mobile-only" style={{
+        position: 'fixed', top: 0, left: 0, right: 0, height: '4rem',
+        background: 'rgba(255,255,255,0.9)', backdropFilter: 'blur(12px)',
+        WebkitBackdropFilter: 'blur(12px)',
+        display: 'flex', alignItems: 'center', padding: '0 1rem',
+        borderBottom: '1px solid var(--border-light)', zIndex: 50,
+        boxShadow: '0 4px 12px rgba(0,0,0,0.03)'
+      }}>
+        <button onClick={() => setIsMobileMenuOpen(true)} style={{ background: 'none', border: 'none', color: 'var(--text-emerald)', cursor: 'pointer', padding: '0.5rem', display: 'flex', alignItems: 'center' }}>
+          <Menu size={24} />
+        </button>
+        <span style={{ marginLeft: '0.75rem', fontWeight: '700', color: 'var(--text-emerald)', fontSize: '1.2rem', flex: 1 }}>HR Payroll</span>
+        <Link to="/profile" style={{ textDecoration: 'none' }}>
+          <div style={{ width: '32px', height: '32px', borderRadius: '50%', background: 'var(--text-emerald)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', fontWeight: 'bold', fontSize: '0.85rem' }}>
+            {user?.email?.charAt(0).toUpperCase()}
+          </div>
+        </Link>
+      </div>
+
+      {/* Mobile Menu Backdrop */}
+      {isMobileMenuOpen && (
+        <div 
+          className="mobile-only"
+          onClick={() => setIsMobileMenuOpen(false)}
+          style={{ position: 'fixed', top: 0, left: 0, right: 0, bottom: 0, background: 'rgba(0,0,0,0.5)', zIndex: 900, backdropFilter: 'blur(4px)', WebkitBackdropFilter: 'blur(4px)' }} 
+        />
+      )}
+      
       {/* Top Header */}
-      <header style={{ 
+      <header className="desktop-only" style={{ 
         display: 'flex', alignItems: 'center', justifyContent: 'space-between', 
         padding: '1rem 2rem', borderBottom: '1px solid var(--border-color)', 
         backgroundColor: 'var(--card-bg)', zIndex: 20 
@@ -111,7 +141,7 @@ export default function HRAdminWrapper() {
       <div style={{ display: 'flex', flex: 1, overflow: 'hidden' }}>
         
         {/* Sidebar */}
-        <aside style={{ 
+        <aside className={`sidebar ${isMobileMenuOpen ? 'open' : ''}`} style={{ 
           width: '16rem', backgroundColor: 'var(--card-bg)', 
           borderRight: '1px solid var(--border-color)', display: 'flex', 
           flexDirection: 'column', paddingTop: '1.5rem', overflowY: 'auto' 
@@ -170,7 +200,7 @@ export default function HRAdminWrapper() {
                                 fontWeight: isSubActive ? '600' : '500',
                                 fontSize: '0.875rem', transition: 'all 0.2s'
                               }}
-                            >
+                             onClick={() => setIsMobileMenuOpen(false)}>
                               {subItem.name}
                             </Link>
                           )
@@ -193,7 +223,7 @@ export default function HRAdminWrapper() {
                     fontWeight: isActive ? '600' : '500', transition: 'all 0.2s',
                     fontSize: '0.875rem'
                   }}
-                >
+                 onClick={() => setIsMobileMenuOpen(false)}>
                   {item.icon}
                   {item.name}
                 </Link>
