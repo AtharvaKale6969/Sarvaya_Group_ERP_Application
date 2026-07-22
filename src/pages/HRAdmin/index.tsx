@@ -107,32 +107,33 @@ export default function HRAdminWrapper() {
       )}
       
       {/* Top Header */}
-      <header className="desktop-only" style={{ 
-        display: 'flex', alignItems: 'center', justifyContent: 'space-between', 
-        padding: '1rem 2rem', borderBottom: '1px solid var(--border-color)', 
-        background: 'var(--sidebar-bg)', zIndex: 20 
+      {/* Top Desktop Header (Full Width) */}
+      <header className="desktop-only" style={{
+        display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+        padding: '1rem 2rem', borderBottom: '1px solid var(--border-light)',
+        background: 'white', zIndex: 20
       }}>
-        <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.75rem', width: '14rem' }}>
-          <img src="/logo.png" alt="Logo" style={{ width: '2.5rem', height: '2.5rem', objectFit: 'contain', borderRadius: '8px' }} />
-          <h2 style={{ fontSize: '1.25rem', margin: 0, fontWeight: '700', color: 'var(--primary)' }}>HR PAYROLL</h2>
+        {/* Left Side: Logo */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', width: '220px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+             <img src="/logo.png" alt="Logo" style={{ width: '48px', height: '48px', objectFit: 'contain', borderRadius: '8px' }} />
+          </div>
+          <h2 style={{ fontSize: '1.25rem', fontWeight: '700', margin: 0, color: 'var(--text-emerald)' }}>HR PAYROLL</h2>
         </div>
 
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '3rem', alignItems: 'center' }}>
-          <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '1rem', paddingLeft: '1.5rem', borderLeft: '1px solid var(--border-color)' }}>
-            <div style={{ textAlign: 'right', display: 'flex', flexDirection: 'column' }}>
-              <span style={{ fontSize: '0.875rem', fontWeight: '600', color: 'var(--text-color)', lineHeight: 1.2 }}>
-                {user?.email?.split('@')[0]}
-              </span>
-              <span style={{ fontSize: '0.75rem', color: 'var(--primary)' }}>HR</span>
-            </div>
-            <div style={{ 
-              width: '2.5rem', height: '2.5rem', borderRadius: '50%', 
-              backgroundColor: 'var(--primary)', display: 'flex', alignItems: 'center', 
-              justifyContent: 'center', color: 'white', fontWeight: 'bold' 
-            }}>
-              {user?.email?.charAt(0).toUpperCase()}
-            </div>
-          </div>
+        {/* Right Side: Profile */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
+           <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', paddingLeft: '1.5rem', borderLeft: '1px solid var(--border-light)' }}>
+             <div style={{ textAlign: 'right' }}>
+               <div style={{ fontSize: '0.85rem', fontWeight: '600', color: 'var(--text-main)', lineHeight: 1.2 }}>{user?.email?.split('@')[0]}</div>
+               <div style={{ fontSize: '0.75rem', color: 'var(--text-emerald)', fontWeight: '500' }}>Active</div>
+             </div>
+             <Link to="/profile" style={{ textDecoration: 'none' }}>
+               <div style={{ width: '36px', height: '36px', borderRadius: '50%', background: 'var(--text-emerald)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', fontWeight: 'bold', fontSize: '0.9rem', boxShadow: '0 2px 8px rgba(35, 127, 112, 0.2)' }}>
+                 {user?.email?.charAt(0).toUpperCase()}
+               </div>
+             </Link>
+           </div>
         </div>
       </header>
 
@@ -242,19 +243,31 @@ export default function HRAdminWrapper() {
             })}
           </nav>
 
-          <button 
-            onClick={signOut}
-            style={{
-              display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.75rem',
-              padding: '0.875rem 1rem', borderRadius: '12px', backgroundColor: 'var(--surface-color)',
-              color: 'var(--text-color)', fontWeight: '500', cursor: 'pointer',
-              marginTop: 'auto', border: '1px solid var(--border-color)',
-              margin: '0 1rem 1.5rem', fontSize: '0.875rem'
-            }}
-          >
-            <LogOut size={20} />
-            Sign Out
-          </button>
+          <div style={{ padding: '0 1rem 1.5rem' }}>
+            <button 
+              onClick={signOut}
+              style={{
+                display: 'flex', alignItems: 'center', gap: '0.75rem',
+                width: '100%', padding: '0.75rem 1rem', borderRadius: '8px',
+                border: '1px solid var(--border-color)', backgroundColor: 'transparent',
+                color: 'var(--text-main)', fontWeight: '500', cursor: 'pointer',
+                transition: 'all 0.2s ease', justifyContent: 'center'
+              }}
+              onMouseOver={(e) => {
+                e.currentTarget.style.backgroundColor = '#fee2e2';
+                e.currentTarget.style.color = '#ef4444';
+                e.currentTarget.style.borderColor = '#fecaca';
+              }}
+              onMouseOut={(e) => {
+                e.currentTarget.style.backgroundColor = 'transparent';
+                e.currentTarget.style.color = 'var(--text-main)';
+                e.currentTarget.style.borderColor = 'var(--border-color)';
+              }}
+            >
+              <LogOut size={18} />
+              Sign Out
+            </button>
+          </div>
         </aside>
 
         {/* Main Content Area */}
