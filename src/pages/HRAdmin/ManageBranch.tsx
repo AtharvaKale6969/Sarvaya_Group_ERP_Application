@@ -18,7 +18,7 @@ export default function ManageBranch() {
     { id: 3, name: 'Shetahit Farm Solutions Private Limited', radius: '-', employees: 18, createdOn: '29-10-2025' },
     { id: 4, name: 'Geoclaim Energy Private Limited', radius: '-', employees: 30, createdOn: '29-10-2025' },
     { id: 5, name: 'Aayuneer Enterprises', radius: '-', employees: 8, createdOn: '29-10-2025' },
-    { id: 6, name: 'Sarvaya Group', radius: '-', employees: 45, createdOn: '29-10-2025' },
+    { id: 6, name: 'Saravya Group', radius: '-', employees: 45, createdOn: '29-10-2025' },
   ];
 
   const handleEditClick = (branch: any) => {

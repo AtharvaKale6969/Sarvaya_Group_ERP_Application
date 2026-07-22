@@ -26,16 +26,16 @@ export default function LeaveBalance() {
   };
 
   const [employees, setEmployees] = useState<Employee[]>([
-    { id: 'EMP0034', name: 'Shipali Raut', org: 'Shetahit Farm Solutions', dept: 'Finance', designation: 'Account Executive', leaves: { oh: null, pl: null, sl: null, cl: null, co: null } },
-    { id: 'SFS003', name: 'Vrushabh Raut', org: 'Shetahit Farm Solutions', dept: 'Shetahit Farm Solutions', designation: 'Business Development Associate', leaves: { oh: null, pl: null, sl: null, cl: null, co: null } },
-    { id: '23', name: 'Prajwal Wankhede', org: 'Shetahit Farm Solutions', dept: 'Internship', designation: 'Intern', leaves: { oh: null, pl: null, sl: null, cl: null, co: null } },
-    { id: 'SFS002', name: 'Sarang Talmale', org: 'Shetahit Farm Solutions', dept: 'Shetahit Farm Solutions', designation: 'Business Development Associate', leaves: { oh: null, pl: null, sl: null, cl: null, co: null } },
-    { id: '20', name: 'Sahil Pusdekar', org: 'Shetahit Farm Solutions', dept: 'RM', designation: 'Intern', leaves: { oh: null, pl: null, sl: null, cl: null, co: null } },
-    { id: '5', name: 'Ekta Satghare', org: 'Shetahit Farm Solutions', dept: 'Data', designation: 'Intern - Data Analyst', leaves: { oh: null, pl: null, sl: null, cl: null, co: null } },
-    { id: 'SFS001', name: 'Ankita Kothe', org: 'Shetahit Farm Solutions', dept: 'Shetahit Farm Solutions', designation: 'Business Development Associate', leaves: { oh: '2', pl: '5', sl: '3', cl: '4', co: null } },
-    { id: 'GC002', name: 'Rakesh Karmakar', org: 'Geoclaim Energy Pvt Ltd.', dept: 'Geoclaim Energy Pvt Ltd.', designation: 'Business Intelligence Analyst', leaves: { oh: '2', pl: '5', sl: '3', cl: '4', co: null } },
-    { id: 'EMP031', name: 'Bhushan Chilange', org: 'Shetahit Farm Solutions', dept: 'RM', designation: 'Business Development Associate', leaves: { oh: '2', pl: '5', sl: '3', cl: '4', co: null } },
-    { id: 'GC001', name: 'Praful Bhalera', org: 'Geoclaim Energy Pvt Ltd.', dept: 'Geoclaim Energy Pvt Ltd.', designation: 'Business Development Associate', leaves: { oh: '2', pl: '5', sl: '3', cl: '4', co: null } },
+    { id: 'EMP0034', name: 'Shipali Raut', org: 'Shetahit Farm Solutions', dept: 'FVF', designation: 'Account Executive', leaves: { oh: null, pl: null, sl: null, cl: null, co: null } },
+    { id: 'SFS003', name: 'Vrushabh Raut', org: 'Shetahit Farm Solutions', dept: 'MPD', designation: 'Business Development Associate', leaves: { oh: null, pl: null, sl: null, cl: null, co: null } },
+    { id: '23', name: 'Prajwal Wankhede', org: 'Shetahit Farm Solutions', dept: 'FVF', designation: 'Intern', leaves: { oh: null, pl: null, sl: null, cl: null, co: null } },
+    { id: 'SFS002', name: 'Sarang Talmale', org: 'Shetahit Farm Solutions', dept: 'FVF', designation: 'Business Development Associate', leaves: { oh: null, pl: null, sl: null, cl: null, co: null } },
+    { id: '20', name: 'Sahil Pusdekar', org: 'Shetahit Farm Solutions', dept: 'FVF', designation: 'Intern', leaves: { oh: null, pl: null, sl: null, cl: null, co: null } },
+    { id: '5', name: 'Ekta Satghare', org: 'Shetahit Farm Solutions', dept: 'MPD', designation: 'Intern - Data Analyst', leaves: { oh: null, pl: null, sl: null, cl: null, co: null } },
+    { id: 'SFS001', name: 'Ankita Kothe', org: 'Shetahit Farm Solutions', dept: 'MPD', designation: 'Business Development Associate', leaves: { oh: '2', pl: '5', sl: '3', cl: '4', co: null } },
+    { id: 'GC002', name: 'Rakesh Karmakar', org: 'Geoclaim Energy Private Limited.', dept: 'Biomass', designation: 'Business Intelligence Analyst', leaves: { oh: '2', pl: '5', sl: '3', cl: '4', co: null } },
+    { id: 'EMP031', name: 'Bhushan Chilange', org: 'Shetahit Farm Solutions', dept: 'MPD', designation: 'Business Development Associate', leaves: { oh: '2', pl: '5', sl: '3', cl: '4', co: null } },
+    { id: 'GC001', name: 'Praful Bhalera', org: 'Geoclaim Energy Private Limited.', dept: 'Shredding Unit', designation: 'Business Development Associate', leaves: { oh: '2', pl: '5', sl: '3', cl: '4', co: null } },
   ]);
 
   const handleSelectAll = (e: React.ChangeEvent<HTMLInputElement>) => {

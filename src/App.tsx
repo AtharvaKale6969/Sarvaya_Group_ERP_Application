@@ -24,7 +24,7 @@ import Notes from './pages/Ops/Notes';
 import { ProtectedRoute } from './components/ProtectedRoute';
 import { RoleProtectedRoute } from './components/RoleProtectedRoute';
 
-// HR Admin Routes
+// HR Routes
 import HRAdminWrapper from './pages/HRAdmin';
 import HRAdminDashboard from './pages/HRAdmin/Dashboard';
 import HREmployees from './pages/HRAdmin/Employees';
@@ -45,6 +45,20 @@ import HRAdminApprovals from './pages/HRAdmin/Approvals';
 import HRAdminBulkAttendance from './pages/HRAdmin/BulkAttendance';
 import HRAdminProcessPayroll from './pages/HRAdmin/ProcessPayroll';
 import HRAdminPayrollGroup from './pages/HRAdmin/PayrollGroup';
+import HRAdminAssignPayrollGroup from './pages/HRAdmin/AssignPayrollGroup';
+import HRAdminFinalizedPayroll from './pages/HRAdmin/FinalizedPayroll';
+import HRAdminLoanAdvance from './pages/HRAdmin/LoanAdvance';
+import HRAdminArrears from './pages/HRAdmin/Arrears';
+import HRAdminAttendanceMaster from './pages/HRAdmin/AttendanceMaster';
+import HRAdminShiftWiseReport from './pages/HRAdmin/ShiftWiseReport';
+import HRAdminDailyPunchReport from './pages/HRAdmin/DailyPunchReport';
+import HRAdminWorkingHoursReport from './pages/HRAdmin/WorkingHoursReport';
+import HRAdminOrgWisePunchReport from './pages/HRAdmin/OrgWisePunchReport';
+import HRAdminActivityLogs from './pages/HRAdmin/ActivityLogs';
+import HRAdminOnboarding from './pages/HRAdmin/Onboarding';
+import HRAdminMusterReport from './pages/HRAdmin/MusterReport';
+import HRAdminHRApproval from './pages/HRAdmin/HRApproval';
+import HRAdminUserManagement from './pages/HRAdmin/UserManagement';
 
 import Layout from './components/Layout';
 
@@ -87,14 +101,21 @@ function App() {
               <Route index element={<Navigate to="inward" replace />} />
             </Route>
 
+            {/* Admin Management Routes */}
+            <Route path="/admin" element={<RoleProtectedRoute requiredRole="Admin" />}>
+              <Route path="hr-approval" element={<HRAdminHRApproval />} />
+              <Route path="user-management" element={<HRAdminUserManagement />} />
+            </Route>
+
             {/* Default redirect to home if authenticated */}
             <Route path="/" element={<Navigate to="/home" replace />} />
           </Route>
 
-          {/* HR Admin Route (Protected by Role, outside main Layout for full screen) */}
-          <Route element={<RoleProtectedRoute requiredRole="HR Admin" />}>
-            <Route path="/hr-admin" element={<HRAdminWrapper />}>
+          {/* HR Route (Protected by Role, outside main Layout for full screen) */}
+          <Route element={<RoleProtectedRoute requiredRole="HR" />}>
+            <Route path="hr-admin" element={<HRAdminWrapper />}>
               <Route path="dashboard" element={<HRAdminDashboard />} />
+              <Route path="onboarding" element={<HRAdminOnboarding />} />
               <Route path="employees" element={<HREmployees />} />
               <Route path="departments" element={<HRAdminDepartments />} />
               <Route path="designations" element={<HRAdminDesignations />} />
@@ -113,6 +134,17 @@ function App() {
               <Route path="bulk-attendance" element={<HRAdminBulkAttendance />} />
               <Route path="process-payroll" element={<HRAdminProcessPayroll />} />
               <Route path="payroll-group" element={<HRAdminPayrollGroup />} />
+              <Route path="assign-payroll-group" element={<HRAdminAssignPayrollGroup />} />
+              <Route path="finalized-payroll" element={<HRAdminFinalizedPayroll />} />
+              <Route path="loan-advance" element={<HRAdminLoanAdvance />} />
+              <Route path="arrears" element={<HRAdminArrears />} />
+              <Route path="attendance-master" element={<HRAdminAttendanceMaster />} />
+              <Route path="shift-wise-report" element={<HRAdminShiftWiseReport />} />
+              <Route path="daily-punch-report" element={<HRAdminDailyPunchReport />} />
+              <Route path="working-hours-report" element={<HRAdminWorkingHoursReport />} />
+              <Route path="org-wise-punch" element={<HRAdminOrgWisePunchReport />} />
+              <Route path="muster-report" element={<HRAdminMusterReport />} />
+              <Route path="activity-logs" element={<HRAdminActivityLogs />} />
               <Route index element={<Navigate to="dashboard" replace />} />
             </Route>
           </Route>

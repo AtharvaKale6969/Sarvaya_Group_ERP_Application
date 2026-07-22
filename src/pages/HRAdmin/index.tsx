@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Outlet, Link, useLocation } from 'react-router-dom';
 import { useAuthStore } from '../../store/useAuthStore';
-import { LayoutDashboard, Users, Briefcase, FileText, ListTodo, ChevronDown, ChevronRight, LogOut } from 'lucide-react';
+import { LayoutDashboard, Users, Briefcase, FileText, ListTodo, ChevronDown, ChevronRight, LogOut, UserPlus } from 'lucide-react';
 
 export default function HRAdminWrapper() {
   const { user, signOut } = useAuthStore();
@@ -12,16 +12,12 @@ export default function HRAdminWrapper() {
     setOpenMenus(prev => ({ ...prev, [name]: !prev[name] }));
   };
 
-  const navItems = [
+    const navItems: any[] = [
+    { isHeader: true, name: 'Core' },
     { name: 'Dashboard', path: '/hr-admin/dashboard', icon: <LayoutDashboard size={20} /> },
-    { isSeparator: true },
-    { name: 'Employees', icon: <Users size={20} />, children: [
-        { name: 'Employees', path: '/hr-admin/employees' },
-        { name: 'Departments', path: '/hr-admin/departments' },
-        { name: 'Designations', path: '/hr-admin/designations' },
-        { name: 'Attendance Permission', path: '/hr-admin/attendance-permission' },
-        { name: 'Manage Branch', path: '/hr-admin/manage-branch' }
-    ]},
+    
+    { isHeader: true, name: 'Onboarding & Setup' },
+    { name: 'Onboarding', path: '/hr-admin/onboarding', icon: <UserPlus size={20} color="#0ea5e9" /> },
     { name: 'Manage Shifts', icon: <Briefcase size={20} />, children: [
         { name: 'Shifts', path: '/hr-admin/shifts' },
         { name: 'Shift Assignment', path: '/hr-admin/shift-assignment' },
@@ -35,7 +31,6 @@ export default function HRAdminWrapper() {
         { name: 'Holiday Create', path: '/hr-admin/holiday-create' },
         { name: 'Holiday Assign', path: '/hr-admin/holiday-assign' }
     ]},
-    { name: 'Approval Requests', path: '/hr-admin/approvals', icon: <ListTodo size={20} /> },
     { name: 'Payroll', icon: <Briefcase size={20} />, children: [
         { name: 'Bulk Attendance', path: '/hr-admin/bulk-attendance' },
         { name: 'Process Payroll', path: '/hr-admin/process-payroll' },
@@ -43,20 +38,41 @@ export default function HRAdminWrapper() {
         { name: 'Assign Payroll Group', path: '/hr-admin/assign-payroll-group' },
         { name: 'Finalized Details', path: '/hr-admin/finalized-payroll' }
     ]},
+    
+    { isHeader: true, name: 'Employee Management' },
+    { name: 'Employees', icon: <Users size={20} />, children: [
+        { name: 'Employees', path: '/hr-admin/employees' },
+        { name: 'Departments', path: '/hr-admin/departments' },
+        { name: 'Designations', path: '/hr-admin/designations' },
+        { name: 'Attendance Permission', path: '/hr-admin/attendance-permission' },
+        { name: 'Manage Branch', path: '/hr-admin/manage-branch' }
+    ]},
+    { name: 'Approval Requests', path: '/hr-admin/approvals', icon: <ListTodo size={20} /> },
     { name: 'Settlements', icon: <Briefcase size={20} />, children: [
         { name: 'Loan & Advance', path: '/hr-admin/loan-advance' },
         { name: 'Arrears', path: '/hr-admin/arrears' }
     ]},
+    
+    { isHeader: true, name: 'Administration' },
     { name: 'Reports', icon: <FileText size={20} />, children: [
         { name: 'Attendance Master', path: '/hr-admin/attendance-master' },
         { name: 'Shift Wise Report', path: '/hr-admin/shift-wise-report' },
         { name: 'Daily Punch Report', path: '/hr-admin/daily-punch-report' },
         { name: 'Working Hours Report', path: '/hr-admin/working-hours-report' },
         { name: 'Muster Report', path: '/hr-admin/muster-report' },
-        { name: 'Branch Wise Punch', path: '/hr-admin/branch-wise-punch' }
+        { name: 'Org Wise Punch', path: '/hr-admin/org-wise-punch' }
     ]},
     { name: 'Activity Logs', path: '/hr-admin/activity-logs', icon: <ListTodo size={20} /> },
+
   ];
+
+  if (user?.email === 'admin@test01.com') {
+    navItems.push(
+      { isHeader: true, name: 'Admin Management' },
+      { name: 'HR Approval', path: '/hr-admin/hr-approval', icon: <ListTodo size={20} /> },
+      { name: 'User Management', path: '/hr-admin/user-management', icon: <Users size={20} /> }
+    );
+  }
 
   return (
     <div className="dashboard-bg" style={{ display: 'flex', flexDirection: 'column', height: '100vh', position: 'relative' }}>
@@ -78,7 +94,7 @@ export default function HRAdminWrapper() {
               <span style={{ fontSize: '0.875rem', fontWeight: '600', color: 'var(--text-color)', lineHeight: 1.2 }}>
                 {user?.email?.split('@')[0]}
               </span>
-              <span style={{ fontSize: '0.75rem', color: 'var(--primary)' }}>HR Admin</span>
+              <span style={{ fontSize: '0.75rem', color: 'var(--primary)' }}>HR</span>
             </div>
             <div style={{ 
               width: '2.5rem', height: '2.5rem', borderRadius: '50%', 
@@ -102,6 +118,15 @@ export default function HRAdminWrapper() {
         }}>
           <nav style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', flex: 1, padding: '0 1rem' }}>
             {navItems.map((item, index) => {
+              
+              if (item.isHeader) {
+                return (
+                  <div key={`header-${index}`} style={{ marginTop: index === 0 ? '0' : '1.5rem', marginBottom: '0.5rem', paddingLeft: '1rem', fontSize: '0.75rem', fontWeight: '700', color: '#94a3b8', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                    {item.name}
+                  </div>
+                );
+              }
+              
               if (item.isSeparator) {
                 return <div key={`sep-${index}`} style={{ height: '1px', backgroundColor: 'var(--border-color)', margin: '0.5rem 0' }} />;
               }

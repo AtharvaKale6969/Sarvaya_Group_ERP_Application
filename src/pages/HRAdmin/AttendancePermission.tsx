@@ -66,23 +66,23 @@ export default function AttendancePermission() {
     'Shetahit Farm Solutions Private Limited': ['FVF', 'MPD'],
     'Geoclaim Energy Private Limited': ['Biogas', 'Biomass', 'Shredding Unit', 'PMS'],
     'Aayuneer Enterprises': ['Flow Up', 'Zoo Platform'],
-    'Sarvaya Group': ['HQ / Operations']
+    'Saravya Group': ['HQ / Operations']
   };
 
   const allDepts = Object.values(orgToDepts).flat();
 
   // Rows state
   const [employees, setEmployees] = useState([
-    { id: 'EMP0034', name: 'Shipali Raut', org: 'Plastroots Waste Management Pvt Ltd', dept: 'Corporate Compliance', role: 'Account Executive', toggle1: true, toggle2: false, toggle3: false },
-    { id: 'SFS003', name: 'Vrushabh Raut', org: 'Shetahit Farm Solutions Pvt Ltd', dept: 'FVF', role: 'Business Development Associate', toggle1: true, toggle2: false, toggle3: false },
-    { id: '23', name: 'Prajwal Wankhede', org: 'Plastroots Foundation', dept: 'CSR', role: 'Intern', toggle1: true, toggle2: false, toggle3: false },
-    { id: 'SFS002', name: 'Sarang Talmale', org: 'Shetahit Farm Solutions Pvt Ltd', dept: 'MPD', role: 'Business Development Associate', toggle1: true, toggle2: false, toggle3: false },
-    { id: '20', name: 'Sahil Pusdekar', org: 'Sarvaya Group', dept: 'HQ / Operations', role: 'Intern', toggle1: true, toggle2: false, toggle3: false },
+    { id: 'EMP0034', name: 'Shipali Raut', org: 'Plastroots Waste Management & Solutions Private Limited Pvt Ltd', dept: 'Corporate Compliance', role: 'Account Executive', toggle1: true, toggle2: false, toggle3: false },
+    { id: 'SFS003', name: 'Vrushabh Raut', org: 'Shetahit Farm Solutions Pvt Ltd', dept: 'HQ / Operations', role: 'Business Development Associate', toggle1: true, toggle2: false, toggle3: false },
+    { id: '23', name: 'Prajwal Wankhede', org: 'Plastroots Foundation', dept: 'RRC', role: 'Intern', toggle1: true, toggle2: false, toggle3: false },
+    { id: 'SFS002', name: 'Sarang Talmale', org: 'Shetahit Farm Solutions Pvt Ltd', dept: 'HQ / Operations', role: 'Business Development Associate', toggle1: true, toggle2: false, toggle3: false },
+    { id: '20', name: 'Sahil Pusdekar', org: 'Saravya Group', dept: 'HQ / Operations', role: 'Intern', toggle1: true, toggle2: false, toggle3: false },
     { id: '5', name: 'Ekta Satghare', org: 'Aayuneer Enterprises', dept: 'Zoo Platform', role: 'Intern - Data Analyst', toggle1: true, toggle2: false, toggle3: false },
-    { id: 'SFS001', name: 'Ankita Kothe', org: 'Shetahit Farm Solutions Pvt Ltd', dept: 'FVF', role: 'Business Development Associate', toggle1: true, toggle2: false, toggle3: false },
-    { id: 'GC002', name: 'Rakesh Karmakar', org: 'Geoclaim Energy Pvt Ltd.', dept: 'Biogas', role: 'Business Intelligence Analyst', toggle1: true, toggle2: false, toggle3: false },
-    { id: 'EMP031', name: 'Bhushan Chilange', org: 'Sarvaya Group', dept: 'HQ / Operations', role: 'Business Development Associate', toggle1: true, toggle2: false, toggle3: false },
-    { id: 'GC001', name: 'Praful Bhalerao', org: 'Geoclaim Energy Pvt Ltd.', dept: 'PMS', role: 'Business Development Associate', toggle1: true, toggle2: false, toggle3: false },
+    { id: 'SFS001', name: 'Ankita Kothe', org: 'Shetahit Farm Solutions Pvt Ltd', dept: 'HQ / Operations', role: 'Business Development Associate', toggle1: true, toggle2: false, toggle3: false },
+    { id: 'GC002', name: 'Rakesh Karmakar', org: 'Geoclaim Energy Private Limited.', dept: 'Biogas', role: 'Business Intelligence Analyst', toggle1: true, toggle2: false, toggle3: false },
+    { id: 'EMP031', name: 'Bhushan Chilange', org: 'Saravya Group', dept: 'HQ / Operations', role: 'Business Development Associate', toggle1: true, toggle2: false, toggle3: false },
+    { id: 'GC001', name: 'Praful Bhalerao', org: 'Geoclaim Energy Private Limited.', dept: 'PMS', role: 'Business Development Associate', toggle1: true, toggle2: false, toggle3: false },
   ]);
 
   const toggleRowSelect = (id: string) => {

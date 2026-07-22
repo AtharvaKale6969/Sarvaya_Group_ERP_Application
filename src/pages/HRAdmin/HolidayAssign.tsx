@@ -10,16 +10,16 @@ export default function HolidayAssign() {
 
   // Mock data based on the screenshot
   const [employees, setEmployees] = useState([
-    { id: 'EMP0034', name: 'Shipali Raut', org: 'Shetahit Farm Solutions', dept: 'Finance', designation: 'Account Executive', template: '-' },
-    { id: 'SFS003', name: 'Vrushabh Raut', org: 'Shetahit Farm Solutions', dept: 'Shetahit Farm Solutions', designation: 'Business Development Associate', template: '-' },
-    { id: '23', name: 'Prajwal Wankhede', org: 'Shetahit Farm Solutions', dept: 'Internship', designation: 'Intern', template: '-' },
-    { id: 'SFS002', name: 'Sarang Talmale', org: 'Shetahit Farm Solutions', dept: 'Shetahit Farm Solutions', designation: 'Business Development Associate', template: '-' },
-    { id: '20', name: 'Sahil Pusdekar', org: 'Shetahit Farm Solutions', dept: 'RM', designation: 'Intern', template: '-' },
-    { id: '5', name: 'Ekta Satghare', org: 'Shetahit Farm Solutions', dept: 'Data', designation: 'Intern - Data Analyst', template: '-' },
-    { id: 'SFS001', name: 'Ankita Kothe', org: 'Shetahit Farm Solutions', dept: 'Shetahit Farm Solutions', designation: 'Business Development Associate', template: 'Optional Holidays' },
-    { id: 'GC002', name: 'Rakesh Karmakar', org: 'Geoclaim Energy Pvt Ltd.', dept: 'Geoclaim Energy Pvt Ltd.', designation: 'Business Intelligence Analyst', template: 'Optional Holidays' },
-    { id: 'EMP031', name: 'Bhushan Chilange', org: 'Shetahit Farm Solutions', dept: 'RM', designation: 'Business Development Associate', template: 'Optional Holidays' },
-    { id: 'GC001', name: 'Praful Bhalera', org: 'Geoclaim Energy Pvt Ltd.', dept: 'Geoclaim Energy Pvt Ltd.', designation: 'Business Development Associate', template: 'Optional Holidays' },
+    { id: 'EMP0034', name: 'Shipali Raut', org: 'Shetahit Farm Solutions', dept: 'FVF', designation: 'Account Executive', template: '-' },
+    { id: 'SFS003', name: 'Vrushabh Raut', org: 'Shetahit Farm Solutions', dept: 'FVF', designation: 'Business Development Associate', template: '-' },
+    { id: '23', name: 'Prajwal Wankhede', org: 'Shetahit Farm Solutions', dept: 'FVF', designation: 'Intern', template: '-' },
+    { id: 'SFS002', name: 'Sarang Talmale', org: 'Shetahit Farm Solutions', dept: 'FVF', designation: 'Business Development Associate', template: '-' },
+    { id: '20', name: 'Sahil Pusdekar', org: 'Shetahit Farm Solutions', dept: 'FVF', designation: 'Intern', template: '-' },
+    { id: '5', name: 'Ekta Satghare', org: 'Shetahit Farm Solutions', dept: 'MPD', designation: 'Intern - Data Analyst', template: '-' },
+    { id: 'SFS001', name: 'Ankita Kothe', org: 'Shetahit Farm Solutions', dept: 'MPD', designation: 'Business Development Associate', template: 'Optional Holidays' },
+    { id: 'GC002', name: 'Rakesh Karmakar', org: 'Geoclaim Energy Private Limited.', dept: 'Biomass', designation: 'Business Intelligence Analyst', template: 'Optional Holidays' },
+    { id: 'EMP031', name: 'Bhushan Chilange', org: 'Shetahit Farm Solutions', dept: 'FVF', designation: 'Business Development Associate', template: 'Optional Holidays' },
+    { id: 'GC001', name: 'Praful Bhalera', org: 'Geoclaim Energy Private Limited.', dept: 'Biogas', designation: 'Business Development Associate', template: 'Optional Holidays' },
   ]);
 
   const toggleSelectAll = () => {

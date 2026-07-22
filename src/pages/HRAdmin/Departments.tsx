@@ -29,8 +29,8 @@ export default function Departments() {
     // Aayuneer Enterprises
     { id: '13', name: 'Flow Up', count: 4, org: 'Aayuneer Enterprises' },
     { id: '14', name: 'Zoo Platform', count: 6, org: 'Aayuneer Enterprises' },
-    // Sarvaya Group
-    { id: '15', name: 'HQ / Operations', count: 9, org: 'Sarvaya Group' }
+    // Saravya Group
+    { id: '15', name: 'HQ / Operations', count: 9, org: 'Saravya Group' }
   ];
 
   const organizations = [
@@ -40,7 +40,7 @@ export default function Departments() {
     'Shetahit Farm Solutions Private Limited',
     'Geoclaim Energy Private Limited',
     'Aayuneer Enterprises',
-    'Sarvaya Group'
+    'Saravya Group'
   ];
 
   const filteredDepartments = selectedOrg === 'All Organizations' 

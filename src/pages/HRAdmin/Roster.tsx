@@ -12,10 +12,10 @@ export default function Roster() {
 
   // Sample data
   const allEmployees = [
-    { code: 'GC001', name: 'Praful Bhalerao', branch: 'Geoclaim Energy Private Limited', dept: 'Business Development', designation: 'Business Development Associate' },
-    { code: 'EMP031', name: 'Bhushan Chilange', branch: 'Plastroots Waste Management & Solutions Private Limited', dept: 'RM', designation: 'Business Development Associate' },
-    { code: 'GC002', name: 'Rakesh Karmakar', branch: 'Geoclaim Energy Private Limited', dept: 'Data', designation: 'Business Intelligence Analyst' },
-    { code: 'SFS001', name: 'Ankita Kathe', branch: 'Shetahit Farm Solutions Private Limited', dept: 'Business Development', designation: 'Business Development Associate' },
+    { code: 'GC001', name: 'Praful Bhalerao', branch: 'Geoclaim Energy Private Limited', dept: 'PMS', designation: 'Business Development Associate' },
+    { code: 'EMP031', name: 'Bhushan Chilange', branch: 'Plastroots Waste Management & Solutions Private Limited', dept: 'RMT', designation: 'Business Development Associate' },
+    { code: 'GC002', name: 'Rakesh Karmakar', branch: 'Geoclaim Energy Private Limited', dept: 'Biomass', designation: 'Business Intelligence Analyst' },
+    { code: 'SFS001', name: 'Ankita Kathe', branch: 'Shetahit Farm Solutions Private Limited', dept: 'MPD', designation: 'Business Development Associate' },
   ];
 
   const employees = activeFilterOrg === 'All Organizations' 
@@ -106,7 +106,7 @@ export default function Roster() {
             <option>Shetahit Farm Solutions Private Limited</option>
             <option>Geoclaim Energy Private Limited</option>
             <option>Aayuneer Enterprises</option>
-            <option>Sarvaya Group</option>
+            <option>Saravya Group</option>
           </select>
 
           <button 

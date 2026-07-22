@@ -24,16 +24,16 @@ export default function WeekOff() {
   });
 
   const assignments = [
-    { id: '1', empId: 'EMP0034', name: 'Shipali Raut', branch: 'Plastroots Waste Management Pvt Ltd', dept: 'Finance' },
-    { id: '2', empId: 'SFS003', name: 'Vrushabh Raut', branch: 'Shetahit Farm Solutions', dept: 'Business Development' },
-    { id: '3', empId: '23', name: 'Prajwal Wankhede', branch: 'Plastroots Waste Management Pvt Ltd', dept: 'Internship' },
-    { id: '4', empId: 'SFS002', name: 'Sarang Talmale', branch: 'Shetahit Farm Solutions', dept: 'Business Development' },
-    { id: '5', empId: '20', name: 'Sahil Pusdekar', branch: 'Plastroots Waste Management Pvt Ltd', dept: 'RM' },
-    { id: '6', empId: '5', name: 'Ekta Satghare', branch: 'Plastroots Waste Management Pvt Ltd', dept: 'Data' },
-    { id: '7', empId: 'SFS001', name: 'Ankita Kathe', branch: 'Shetahit Farm Solutions', dept: 'Business Development' },
-    { id: '8', empId: 'GC002', name: 'Rakesh Karmakar', branch: 'Geoclaim Energy Pvt Ltd.', dept: 'Data' },
-    { id: '9', empId: 'EMP031', name: 'Bhushan Chilange', branch: 'Plastroots Waste Management Pvt Ltd', dept: 'RM' },
-    { id: '10', empId: 'GC001', name: 'Praful Bhalerao', branch: 'Geoclaim Energy Pvt Ltd.', dept: 'Business Development' },
+    { id: '1', empId: 'EMP0034', name: 'Shipali Raut', branch: 'Plastroots Waste Management & Solutions Private Limited Pvt Ltd', dept: 'Government Services' },
+    { id: '2', empId: 'SFS003', name: 'Vrushabh Raut', branch: 'Shetahit Farm Solutions', dept: 'FVF' },
+    { id: '3', empId: '23', name: 'Prajwal Wankhede', branch: 'Plastroots Waste Management & Solutions Private Limited Pvt Ltd', dept: 'Corporate Compliance' },
+    { id: '4', empId: 'SFS002', name: 'Sarang Talmale', branch: 'Shetahit Farm Solutions', dept: 'FVF' },
+    { id: '5', empId: '20', name: 'Sahil Pusdekar', branch: 'Plastroots Waste Management & Solutions Private Limited Pvt Ltd', dept: 'RMT' },
+    { id: '6', empId: '5', name: 'Ekta Satghare', branch: 'Plastroots Waste Management & Solutions Private Limited Pvt Ltd', dept: 'Government Services' },
+    { id: '7', empId: 'SFS001', name: 'Ankita Kathe', branch: 'Shetahit Farm Solutions', dept: 'FVF' },
+    { id: '8', empId: 'GC002', name: 'Rakesh Karmakar', branch: 'Geoclaim Energy Private Limited.', dept: 'Shredding Unit' },
+    { id: '9', empId: 'EMP031', name: 'Bhushan Chilange', branch: 'Plastroots Waste Management & Solutions Private Limited Pvt Ltd', dept: 'RMT' },
+    { id: '10', empId: 'GC001', name: 'Praful Bhalerao', branch: 'Geoclaim Energy Private Limited.', dept: 'Shredding Unit' },
   ];
 
   const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];

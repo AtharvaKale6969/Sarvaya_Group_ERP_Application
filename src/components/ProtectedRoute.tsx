@@ -31,12 +31,14 @@ export const ProtectedRoute = () => {
     return <Navigate to="/login" replace />;
   }
 
-  // Redirect HR Admins away from standard protected routes if they land on the root or /home
+  // Redirect HRs away from standard protected routes if they land on the root or /home
   // This ensures they don't see the normal app layout.
+  // Redirect HRs away from standard protected routes if they land on the root or /home
   // TEMPORARY: Also checking email directly to bypass any database mapping issues.
-  const isHRAdmin = roles.some(r => r.name === 'HR Admin') || user.email?.toLowerCase() === 'hr@test01.com';
+  const isHRAdmin = roles.some(r => r.name === 'HR') || user.email?.toLowerCase() === 'hr@test01.com';
+  const isAdmin = roles.some(r => r.name === 'Admin' || r.name === 'Super Admin') || user.email?.toLowerCase() === 'admin@test01.com';
   
-  if (isHRAdmin && (location.pathname === '/home' || location.pathname === '/')) {
+  if (isHRAdmin && !isAdmin && (location.pathname === '/home' || location.pathname === '/')) {
     return <Navigate to="/hr-admin/dashboard" replace />;
   }
 

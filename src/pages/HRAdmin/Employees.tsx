@@ -1,22 +1,23 @@
 import { useState, useEffect } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { useSearchParams, useNavigate } from 'react-router-dom';
 import { ChevronDown, ChevronsUpDown, MoreVertical, Search, Filter, X, User } from 'lucide-react';
 
 const initialEmployeesData = [
-  { id: 'EMP014', name: 'Pratik Wankhede', branch: 'Plastroots Waste Management Pvt Ltd', dept: 'RM', role: 'Team Lead', date: '12 Nov 2022', status: 'Active' },
-  { id: 'EMP003', name: 'Nikhil Tumsare', branch: 'Plastroots Waste Management Pvt Ltd', dept: 'RM', role: 'Business Development Associate', date: '01 Apr 2026', status: 'Active' },
-  { id: 'EMP020', name: 'Shweta Wakodikar', branch: 'Plastroots Waste Management Pvt Ltd', dept: 'Finance', role: 'Finance Executive', date: '-', status: 'Active' },
-  { id: 'EMP026', name: 'Vedant Lonare', branch: 'Plastroots Waste Management Pvt Ltd', dept: 'Data', role: 'Executive Data Analyst', date: '-', status: 'Active' },
-  { id: 'EMP024', name: 'Aditya Khandekar', branch: 'Plastroots Waste Management Pvt Ltd', dept: 'AFR', role: 'Business Development Associate', date: '-', status: 'Active' },
-  { id: 'PF003', name: 'Himanshu Dhote', branch: 'Plastroots Waste Management Pvt Ltd', dept: 'Plastroots Foundation', role: 'Business Development Associate', date: '01 Apr 2026', status: 'Active' },
-  { id: 'EMP032', name: 'Atharva Kale', branch: 'Plastroots Waste Management Pvt Ltd', dept: 'Data', role: 'Data Analyst', date: '11 Dec 2025', status: 'Active' },
-  { id: 'EMP033', name: 'Faizan Sheikh', branch: 'Plastroots Waste Management Pvt Ltd', dept: 'RM', role: 'Business Analyst', date: '01 May 2026', status: 'Active' },
-  { id: 'EMP007', name: 'Ankit Bhalerao', branch: 'Plastroots Waste Management Pvt Ltd', dept: 'Operations', role: 'Operations Head', date: '01 Jul 2023', status: 'Active' },
-  { id: 'EMP031', name: 'Bhushan Chilange', branch: 'Plastroots Waste Management Pvt Ltd', dept: 'RM', role: 'Business Development Associate', date: '06 Feb 2026', status: 'Active' },
+  { id: 'EMP014', name: 'Pratik Wankhede', branch: 'Plastroots Waste Management & Solutions Private Limited', dept: 'Corporate Compliance', role: 'Team Lead', date: '12 Nov 2022', status: 'Active' },
+  { id: 'EMP003', name: 'Nikhil Tumsare', branch: 'Plastroots Foundation', dept: 'CSR', role: 'Business Development Associate', date: '01 Apr 2026', status: 'Active' },
+  { id: 'EMP020', name: 'Shweta Wakodikar', branch: 'Shetahit Farm Solutions Private Limited', dept: 'FVF', role: 'Finance Executive', date: '-', status: 'Active' },
+  { id: 'EMP026', name: 'Vedant Lonare', branch: 'Geoclaim Energy Private Limited', dept: 'Biogas', role: 'Executive Data Analyst', date: '-', status: 'Active' },
+  { id: 'EMP024', name: 'Aditya Khandekar', branch: 'Aayuneer Enterprises', dept: 'Zoo Platform', role: 'Business Development Associate', date: '-', status: 'Active' },
+  { id: 'PF003', name: 'Himanshu Dhote', branch: 'Saravya Group', dept: 'HQ / Operations', role: 'Business Development Associate', date: '01 Apr 2026', status: 'Active' },
+  { id: 'EMP032', name: 'Atharva Kale', branch: 'Plastroots Waste Management & Solutions Private Limited', dept: 'RMT', role: 'Data Analyst', date: '11 Dec 2025', status: 'Active' },
+  { id: 'EMP033', name: 'Faizan Sheikh', branch: 'Plastroots Foundation', dept: 'IEC', role: 'Business Analyst', date: '01 May 2026', status: 'Active' },
+  { id: 'EMP007', name: 'Ankit Bhalerao', branch: 'Shetahit Farm Solutions Private Limited', dept: 'FVF', role: 'Operations Head', date: '01 Jul 2023', status: 'Active' },
+  { id: 'EMP031', name: 'Bhushan Chilange', branch: 'Geoclaim Energy Private Limited', dept: 'Biomass', role: 'Business Development Associate', date: '06 Feb 2026', status: 'Active' },
 ];
 
 export default function Employees() {
   const [searchParams] = useSearchParams();
+  const navigate = useNavigate();
   const orgParam = searchParams.get('org');
   const deptParam = searchParams.get('dept');
 
@@ -79,8 +80,7 @@ export default function Employees() {
   };
 
   const openAddModal = () => {
-    setEditingEmployee(null);
-    setIsAddModalOpen(true);
+    navigate('/hr-admin/onboarding');
   };
 
   return (
@@ -301,10 +301,10 @@ export default function Employees() {
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                 <label style={{ fontSize: '0.875rem', fontWeight: '500', color: '#374151' }}>Master Branch</label>
-                <select defaultValue={editingEmployee?.branch || 'Plastroots Waste Management Pvt Ltd'} style={{ padding: '0.5rem', border: '1px solid #d1d5db', borderRadius: '4px', fontSize: '0.875rem', backgroundColor: 'white' }}>
-                  <option>Plastroots Waste Management Pvt Ltd</option>
-                  <option>Geoclaim Energy Pvt Ltd.</option>
-                  <option>Shetohit Form Solutions</option>
+                <select defaultValue={editingEmployee?.branch || 'Plastroots Waste Management & Solutions Private Limited Pvt Ltd'} style={{ padding: '0.5rem', border: '1px solid #d1d5db', borderRadius: '4px', fontSize: '0.875rem', backgroundColor: 'white' }}>
+                  <option>Plastroots Waste Management & Solutions Private Limited</option>
+                  <option>Geoclaim Energy Private Limited</option>
+                  <option>Shetahit Farm Solutions Private Limited</option>
                 </select>
               </div>
 
@@ -315,7 +315,7 @@ export default function Employees() {
                     <option>RM</option>
                     <option>Data</option>
                     <option>Finance</option>
-                    <option>AFR</option>
+                    <option>Aayuneer Enterprises</option>
                     <option>Operations</option>
                   </select>
                 </div>

@@ -12,17 +12,17 @@ export default function BulkAttendance() {
   });
 
   const [mockData, setMockData] = useState([
-    { id: 'EMP007', name: 'Ankit Bhalerao', org: 'Shetahit Farm Solutions', dept: 'Operations', desig: 'Operations Head', attendance: ['FD', 'FD', 'FD', 'FD', 'WO', 'FD', 'A', 'A', 'A', 'A', 'FD', 'WO', 'FD', 'FD', 'FD', 'FD', 'FD', 'FD', 'WO', 'FD'] },
-    { id: 'EMP014', name: 'Pratik Wankhede', org: 'Shetahit Farm Solutions', dept: 'RM', desig: 'Team Lead', attendance: ['FD', 'FD', 'FD', 'FD(blue)', 'WO', 'FD(blue)', 'FD', 'FD(blue)', 'FD', 'FD', 'FD(blue)', 'WO', 'FD', 'FD', 'FD', 'FD', 'FD', 'FD', 'WO', 'FD'] },
-    { id: 'EMP003', name: 'Nikhil Tumsare', org: 'Shetahit Farm Solutions', dept: 'RM', desig: 'Business Development Associate', attendance: ['FD(red)', 'FD', 'A(red)', 'FD', 'WO', 'FD', 'FD', 'FD', 'FD', 'FD', 'FD', 'WO', 'FD', 'FD', 'FD', 'FD', 'A', 'FD', 'WO', 'FD'] },
-    { id: 'EMP020', name: 'Shweta Wakodikar', org: 'Shetahit Farm Solutions', dept: 'Finance', desig: 'Finance Executive', attendance: ['FD', 'FD', 'FD', 'FD', 'WO', 'FD', 'A(red)', 'FD', 'FD', 'FD', 'FD', 'WO', 'FD', 'A', 'FD', 'FD', 'FD', 'FD', 'WO', 'FD'] },
-    { id: 'EMP026', name: 'Vedant Lonare', org: 'Shetahit Farm Solutions', dept: 'Data', desig: 'Executive Data Analyst', attendance: ['FD', 'FD', 'FD', 'FD', 'WO', 'FD', 'FD', 'HD(red)', 'FD', 'FD', 'FD', 'WO', 'FD', 'FD', 'FD', 'FD', 'FD', 'FD', 'WO', 'FD'] },
-    { id: 'EMP024', name: 'Aditya Kandekar', org: 'Shetahit Farm Solutions', dept: 'AFR', desig: 'Business Development Associate', attendance: ['FD', 'FD(blue)', 'FD', 'FD(blue)', 'WO', 'FD', 'FD', 'FD(blue)', 'FD(blue)', 'FD', 'FD', 'WO', 'FD', 'FD', 'FD', 'FD', 'FD', 'FD', 'WO', 'FD'] },
-    { id: 'PF003', name: 'Himanshu Dhote', org: 'Plastroots Foundation', dept: 'Plastroots Foundation', desig: 'Business Development Associate', attendance: ['FD', 'FD', 'FD', 'FD(blue)', 'WO', 'FD', 'FD', 'A', 'FD', 'FD', 'FD', 'WO', 'FD', 'FD', 'FD', 'FD', 'FD', 'FD', 'WO', 'FD'] },
-    { id: 'EMP032', name: 'Atharva Kale', org: 'Shetahit Farm Solutions', dept: 'Data', desig: 'Data Analyst', attendance: ['FD', 'FD', 'FD', 'FD', 'WO', 'FD', 'FD', 'FD', 'FD', 'FD', 'FD', 'WO', 'FD', 'FD', 'FD', 'FD', 'FD', 'FD', 'WO', 'FD'] },
-    { id: 'EMP033', name: 'Faizan Sheikh', org: 'Shetahit Farm Solutions', dept: 'RM', desig: 'Business Analyst', attendance: ['FD', 'FD', 'FD', 'FD', 'WO', 'A', 'FD', 'FD', 'FD', 'FD', 'FD', 'WO', 'FD', 'FD', 'FD', 'FD', 'FD', 'FD', 'WO', 'FD'] },
-    { id: 'GC001', name: 'Praful Bhalero', org: 'Geoclaim Energy Pvt Ltd.', dept: 'Geoclaim Energy Pvt Ltd.', desig: 'Business Development Associate', attendance: ['FD', 'FD(blue)', 'FD', 'FD', 'WO', 'FD(blue)', 'FD(blue)', 'FD(blue)', 'FD(blue)', 'FD', 'FD(blue)', 'WO', 'FD', 'FD(blue)', 'FD', 'FD', 'FD', 'FD', 'WO', 'FD'] },
-    { id: 'EMP031', name: 'Bhushan Chilange', org: 'Shetahit Farm Solutions', dept: 'RM', desig: 'Business Development Associate', attendance: ['FD', 'SL', 'FD', 'FD', 'WO', 'FD', 'FD', 'FD(blue)', 'FD', 'FD', 'FD', 'WO', 'FD', 'FD', 'FD', 'FD', 'FD', 'FD', 'WO', 'FD'] }
+    { id: 'EMP007', name: 'Ankit Bhalerao', org: 'Shetahit Farm Solutions', dept: 'MPD', desig: 'Operations Head', attendance: ['FD', 'FD', 'FD', 'FD', 'WO', 'FD', 'A', 'A', 'A', 'A', 'FD', 'WO', 'FD', 'FD', 'FD', 'FD', 'FD', 'FD', 'WO', 'FD'] },
+    { id: 'EMP014', name: 'Pratik Wankhede', org: 'Shetahit Farm Solutions', dept: 'MPD', desig: 'Team Lead', attendance: ['FD', 'FD', 'FD', 'FD(blue)', 'WO', 'FD(blue)', 'FD', 'FD(blue)', 'FD', 'FD', 'FD(blue)', 'WO', 'FD', 'FD', 'FD', 'FD', 'FD', 'FD', 'WO', 'FD'] },
+    { id: 'EMP003', name: 'Nikhil Tumsare', org: 'Shetahit Farm Solutions', dept: 'MPD', desig: 'Business Development Associate', attendance: ['FD(red)', 'FD', 'A(red)', 'FD', 'WO', 'FD', 'FD', 'FD', 'FD', 'FD', 'FD', 'WO', 'FD', 'FD', 'FD', 'FD', 'A', 'FD', 'WO', 'FD'] },
+    { id: 'EMP020', name: 'Shweta Wakodikar', org: 'Shetahit Farm Solutions', dept: 'MPD', desig: 'Finance Executive', attendance: ['FD', 'FD', 'FD', 'FD', 'WO', 'FD', 'A(red)', 'FD', 'FD', 'FD', 'FD', 'WO', 'FD', 'A', 'FD', 'FD', 'FD', 'FD', 'WO', 'FD'] },
+    { id: 'EMP026', name: 'Vedant Lonare', org: 'Shetahit Farm Solutions', dept: 'MPD', desig: 'Executive Data Analyst', attendance: ['FD', 'FD', 'FD', 'FD', 'WO', 'FD', 'FD', 'HD(red)', 'FD', 'FD', 'FD', 'WO', 'FD', 'FD', 'FD', 'FD', 'FD', 'FD', 'WO', 'FD'] },
+    { id: 'EMP024', name: 'Aditya Kandekar', org: 'Shetahit Farm Solutions', dept: 'FVF', desig: 'Business Development Associate', attendance: ['FD', 'FD(blue)', 'FD', 'FD(blue)', 'WO', 'FD', 'FD', 'FD(blue)', 'FD(blue)', 'FD', 'FD', 'WO', 'FD', 'FD', 'FD', 'FD', 'FD', 'FD', 'WO', 'FD'] },
+    { id: 'PF003', name: 'Himanshu Dhote', org: 'Plastroots Foundation', dept: 'RRC', desig: 'Business Development Associate', attendance: ['FD', 'FD', 'FD', 'FD(blue)', 'WO', 'FD', 'FD', 'A', 'FD', 'FD', 'FD', 'WO', 'FD', 'FD', 'FD', 'FD', 'FD', 'FD', 'WO', 'FD'] },
+    { id: 'EMP032', name: 'Atharva Kale', org: 'Shetahit Farm Solutions', dept: 'FVF', desig: 'Data Analyst', attendance: ['FD', 'FD', 'FD', 'FD', 'WO', 'FD', 'FD', 'FD', 'FD', 'FD', 'FD', 'WO', 'FD', 'FD', 'FD', 'FD', 'FD', 'FD', 'WO', 'FD'] },
+    { id: 'EMP033', name: 'Faizan Sheikh', org: 'Shetahit Farm Solutions', dept: 'MPD', desig: 'Business Analyst', attendance: ['FD', 'FD', 'FD', 'FD', 'WO', 'A', 'FD', 'FD', 'FD', 'FD', 'FD', 'WO', 'FD', 'FD', 'FD', 'FD', 'FD', 'FD', 'WO', 'FD'] },
+    { id: 'GC001', name: 'Praful Bhalero', org: 'Geoclaim Energy Private Limited.', dept: 'PMS', desig: 'Business Development Associate', attendance: ['FD', 'FD(blue)', 'FD', 'FD', 'WO', 'FD(blue)', 'FD(blue)', 'FD(blue)', 'FD(blue)', 'FD', 'FD(blue)', 'WO', 'FD', 'FD(blue)', 'FD', 'FD', 'FD', 'FD', 'WO', 'FD'] },
+    { id: 'EMP031', name: 'Bhushan Chilange', org: 'Shetahit Farm Solutions', dept: 'FVF', desig: 'Business Development Associate', attendance: ['FD', 'SL', 'FD', 'FD', 'WO', 'FD', 'FD', 'FD(blue)', 'FD', 'FD', 'FD', 'WO', 'FD', 'FD', 'FD', 'FD', 'FD', 'FD', 'WO', 'FD'] }
   ]);
 
   const [activeCell, setActiveCell] = useState<{ rowId: string, colIdx: number } | null>(null);
@@ -34,7 +34,7 @@ export default function BulkAttendance() {
   const orgOptions = [
     'All Orgs',
     'Shetahit Farm Solutions',
-    'Geoclaim Energy Pvt Ltd.',
+    'Geoclaim Energy Private Limited.',
     'Plastroots Foundation',
     'Plastroots Waste Management & Solutions Private Limited',
     'Aayuneer Enterprises'

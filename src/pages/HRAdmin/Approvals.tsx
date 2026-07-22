@@ -105,7 +105,7 @@ export default function ApprovalRequests() {
       subType: 'Casual Leave',
       employee: 'EMP024 - Aditya Kandekar',
       org: 'Shetahit Farm Solutions',
-      designation: 'Business Development Associate • AFR',
+      designation: 'Business Development Associate • Aayuneer Enterprises',
       detailsType: 'range',
       detailsData: { from: 'Tue 21 Jul', to: 'Tue 21 Jul', duration: '1 Day' },
       status: 'Pending'
@@ -115,8 +115,8 @@ export default function ApprovalRequests() {
       type: 'Leave',
       subType: 'Sick Leaves',
       employee: 'GC002 - Rakesh Karmakar',
-      org: 'Geoclaim Energy Pvt Ltd.',
-      designation: 'Business Intelligence Analyst • Geoclaim Energy Pvt Ltd.',
+      org: 'Geoclaim Energy Private Limited.',
+      designation: 'Business Intelligence Analyst • Geoclaim Energy Private Limited.',
       detailsType: 'range',
       detailsData: { from: 'Mon 20 Jul', to: 'Mon 20 Jul', duration: '1 Day' },
       status: 'Pending'

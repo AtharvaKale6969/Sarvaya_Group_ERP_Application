@@ -8,6 +8,7 @@ export default function Layout() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isHrOpen, setIsHrOpen] = useState(false);
   const [isWorkspaceOpen, setIsWorkspaceOpen] = useState(false);
+  const [isAdminOpen, setIsAdminOpen] = useState(false);
   const { user, roles: userRoles, signOut } = useAuthStore();
   const { activeOrg, activeDept, activeSubDept, activeRole, setActiveOrg, setActiveDept, setActiveSubDept, setActiveRole } = useContextStore();
   const location = useLocation();
@@ -15,7 +16,7 @@ export default function Layout() {
   const currentOrg = ORGANIZATIONS.find(o => o.name === activeOrg);
   const currentDept = currentOrg?.departments.find(d => d.name === activeDept);
 
-  const isHR = userRoles.some(r => r.name === 'HR Admin' || r.name === 'Super Admin');
+  const isHR = userRoles.some(r => r.name === 'HR' || r.name === 'Super Admin');
   const hasTracksheets = userRoles.some(r => r.name === 'Employee' || r.name === 'Manager' || r.name === 'Super Admin');
 
   const hrSubItems = [
@@ -54,7 +55,17 @@ export default function Layout() {
       ]
     }] : []),
     ...(hasTracksheets ? [{ name: 'Tracksheets', path: '/tracksheets', icon: <FileText size={20} /> }] : []),
-    ...(isHR ? [{ name: 'Admin', path: '/admin', icon: <Users size={20} /> }] : []),
+    ...(isHR ? [{ name: 'Admin', path: '/hr-admin/dashboard', icon: <Users size={20} /> }] : []),
+    ...(user?.email === 'admin@test01.com' ? [
+      {
+        name: 'Admin Management',
+        icon: <Shield size={20} />,
+        children: [
+          { name: 'HR Approval', path: '/admin/hr-approval' },
+          { name: 'User Management', path: '/admin/user-management' }
+        ]
+      }
+    ] : [])
   ];
 
   return (
@@ -206,11 +217,14 @@ export default function Layout() {
               const isActive = location.pathname.startsWith(item.path || '');
               
               if (item.children) {
-                const isOpen = item.name === 'HR' ? isHrOpen : isWorkspaceOpen;
-                const toggle = () => item.name === 'HR' ? setIsHrOpen(!isHrOpen) : setIsWorkspaceOpen(!isWorkspaceOpen);
+                let isOpen = false;
+                let toggle = () => {};
+                if (item.name === 'HR') { isOpen = isHrOpen; toggle = () => setIsHrOpen(!isHrOpen); }
+                else if (item.name === 'Workspace' || item.name === 'Operations') { isOpen = isWorkspaceOpen; toggle = () => setIsWorkspaceOpen(!isWorkspaceOpen); }
+                else if (item.name === 'Admin Management') { isOpen = isAdminOpen; toggle = () => setIsAdminOpen(!isAdminOpen); }
                 
                 return (
-                  <div key={item.path} style={{ display: 'flex', flexDirection: 'column' }}>
+                  <div key={item.name} style={{ display: 'flex', flexDirection: 'column' }}>
                     <button 
                       onClick={toggle}
                       style={{

@@ -6,6 +6,9 @@ export default function PayrollGroup() {
   const [pageSize, setPageSize] = useState(10);
   const [selectedGroupForDrawer, setSelectedGroupForDrawer] = useState<any>(null);
   const [viewingEmployee, setViewingEmployee] = useState<any>(null);
+  const [isCreateNewDrawerOpen, setIsCreateNewDrawerOpen] = useState(false);
+  const [newGroupName, setNewGroupName] = useState('');
+  const [newPayrollType, setNewPayrollType] = useState('');
 
   const groups = [
     { id: '1', name: 'Monthly Payroll (No Compliance)', count: 8, createdOn: '13 February 2026', editedOn: '13 February 2026' },
@@ -26,7 +29,10 @@ export default function PayrollGroup() {
           <button style={{ backgroundColor: 'white', color: '#374151', border: '1px solid #d1d5db', padding: '0.5rem 1rem', borderRadius: '6px', fontSize: '0.875rem', fontWeight: '500', cursor: 'pointer' }}>
             Assign Group
           </button>
-          <button style={{ backgroundColor: '#0ea5e9', color: 'white', border: 'none', padding: '0.5rem 1rem', borderRadius: '6px', fontSize: '0.875rem', fontWeight: '500', cursor: 'pointer' }}>
+          <button 
+            onClick={() => setIsCreateNewDrawerOpen(true)}
+            style={{ backgroundColor: '#0ea5e9', color: 'white', border: 'none', padding: '0.5rem 1rem', borderRadius: '6px', fontSize: '0.875rem', fontWeight: '500', cursor: 'pointer' }}
+          >
             Create New
           </button>
         </div>
@@ -239,6 +245,85 @@ export default function PayrollGroup() {
                 </table>
               </div>
 
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Create New Drawer Overlay */}
+      {isCreateNewDrawerOpen && (
+        <div style={{ position: 'fixed', inset: 0, backgroundColor: 'rgba(0,0,0,0.5)', zIndex: 100, display: 'flex', justifyContent: 'flex-end' }}>
+          
+          <div style={{ 
+            width: '100%', maxWidth: '500px', backgroundColor: 'white', height: '100%', 
+            boxShadow: '-4px 0 15px rgba(0,0,0,0.1)', display: 'flex', flexDirection: 'column',
+            animation: 'slideIn 0.3s ease-out forwards'
+          }}>
+            
+            {/* Header */}
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '1.25rem 1.5rem', backgroundColor: '#f0f9ff', borderBottom: '1px solid #e0f2fe' }}>
+              <h3 style={{ margin: 0, fontSize: '1.125rem', fontWeight: '600', color: '#0f172a' }}>
+                New Payroll Group
+              </h3>
+              <button 
+                onClick={() => setIsCreateNewDrawerOpen(false)}
+                style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#6b7280', padding: '0.25rem' }}
+              >
+                <X size={20} />
+              </button>
+            </div>
+
+            {/* Body */}
+            <div style={{ padding: '1.5rem', overflowY: 'auto', flex: 1, display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+              
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                <label style={{ fontSize: '0.875rem', fontWeight: '500', color: '#374151' }}>
+                  Group Name<span style={{ color: '#ef4444' }}>*</span>
+                </label>
+                <input 
+                  type="text" 
+                  value={newGroupName}
+                  onChange={(e) => setNewGroupName(e.target.value)}
+                  placeholder="Enter Name"
+                  style={{ padding: '0.625rem 0.75rem', border: '1px solid #d1d5db', borderRadius: '6px', fontSize: '0.875rem', color: '#111827', outline: 'none' }}
+                />
+              </div>
+
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                <label style={{ fontSize: '0.875rem', fontWeight: '500', color: '#374151' }}>
+                  Payroll Type<span style={{ color: '#ef4444' }}>*</span>
+                </label>
+                <div style={{ position: 'relative' }}>
+                  <select 
+                    value={newPayrollType}
+                    onChange={(e) => setNewPayrollType(e.target.value)}
+                    style={{ width: '100%', padding: '0.625rem 2.5rem 0.625rem 0.75rem', border: '1px solid #d1d5db', borderRadius: '6px', fontSize: '0.875rem', color: newPayrollType ? '#111827' : '#9ca3af', outline: 'none', appearance: 'none', backgroundColor: 'white' }}
+                  >
+                    <option value="" disabled hidden>Select Payroll Type</option>
+                    <option value="Monthly Without Compliance" style={{ color: '#111827' }}>Monthly Without Compliance</option>
+                    <option value="Monthly With Compliance" style={{ color: '#111827' }}>Monthly With Compliance</option>
+                    <option value="Hourly Payroll" style={{ color: '#111827' }}>Hourly Payroll</option>
+                  </select>
+                  <ChevronDown size={16} style={{ position: 'absolute', right: '0.75rem', top: '50%', transform: 'translateY(-50%)', pointerEvents: 'none', color: '#6b7280' }} />
+                </div>
+              </div>
+
+            </div>
+
+            {/* Footer */}
+            <div style={{ padding: '1.25rem 1.5rem', borderTop: '1px solid #e5e7eb', backgroundColor: '#f0f9ff', display: 'flex', justifyContent: 'flex-end', gap: '0.75rem' }}>
+              <button 
+                onClick={() => setIsCreateNewDrawerOpen(false)}
+                style={{ padding: '0.5rem 1.5rem', border: '1px solid #d1d5db', borderRadius: '6px', backgroundColor: 'white', color: '#374151', fontSize: '0.875rem', fontWeight: '500', cursor: 'pointer' }}
+              >
+                Close
+              </button>
+              <button 
+                disabled={!newGroupName || !newPayrollType}
+                style={{ padding: '0.5rem 1.5rem', border: 'none', borderRadius: '6px', backgroundColor: (!newGroupName || !newPayrollType) ? '#cbd5e1' : '#0ea5e9', color: (!newGroupName || !newPayrollType) ? '#f8fafc' : 'white', fontSize: '0.875rem', fontWeight: '500', cursor: (!newGroupName || !newPayrollType) ? 'not-allowed' : 'pointer' }}
+              >
+                Create
+              </button>
             </div>
           </div>
         </div>

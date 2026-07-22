@@ -27,13 +27,13 @@ export default function Dashboard() {
   ];
 
   const employees = [
-    { id: 'EMP032', name: 'Atharva Kale', org: 'Sarvaya Group', dept: 'Data', role: 'Data Analyst', firstPunch: '11:01 AM', lastPunch: '-', working: '04h 43m' },
-    { id: 'GC001', name: 'Praful Bhalera', org: 'Geoclaim', dept: 'Geoclaim Energy Pvt Ltd.', role: 'Business Development Associate', firstPunch: '10:55 AM', lastPunch: '-', working: '04h 48m' },
-    { id: 'EMP031', name: 'Bhushan Chilange', org: 'Sarvaya Group', dept: 'RM', role: 'Business Development Associate', firstPunch: '10:46 AM', lastPunch: '-', working: '04h 58m' },
-    { id: 'EMP026', name: 'Vedant Lonare', org: 'Sarvaya Group', dept: 'Data', role: 'Executive Data Analyst', firstPunch: '10:46 AM', lastPunch: '-', working: '04h 58m' },
-    { id: 'EMP007', name: 'Ankit Bhalerao', org: 'Sarvaya Group', dept: 'Operations', role: 'Operations Head', firstPunch: '10:35 AM', lastPunch: '-', working: '05h 08m' },
-    { id: 'EMP020', name: 'Shweta Wakadikar', org: 'Sarvaya Group', dept: 'Finance', role: 'Finance Executive', firstPunch: '10:25 AM', lastPunch: '10:35 AM', working: '00h 10m' },
-    { id: 'SFS001', name: 'Ankita Kothe', org: 'Shetohit', dept: 'Shetohit Form Solutions', role: 'Business Development Associate', firstPunch: '10:34 AM', lastPunch: '-', working: '05h 10m' },
+    { id: 'EMP032', name: 'Atharva Kale', org: 'Saravya Group', dept: 'HQ / Operations', role: 'Data Analyst', firstPunch: '11:01 AM', lastPunch: '-', working: '04h 43m' },
+    { id: 'GC001', name: 'Praful Bhalera', org: 'Geoclaim', dept: 'PMS', role: 'Business Development Associate', firstPunch: '10:55 AM', lastPunch: '-', working: '04h 48m' },
+    { id: 'EMP031', name: 'Bhushan Chilange', org: 'Saravya Group', dept: 'HQ / Operations', role: 'Business Development Associate', firstPunch: '10:46 AM', lastPunch: '-', working: '04h 58m' },
+    { id: 'EMP026', name: 'Vedant Lonare', org: 'Saravya Group', dept: 'HQ / Operations', role: 'Executive Data Analyst', firstPunch: '10:46 AM', lastPunch: '-', working: '04h 58m' },
+    { id: 'EMP007', name: 'Ankit Bhalerao', org: 'Saravya Group', dept: 'HQ / Operations', role: 'Operations Head', firstPunch: '10:35 AM', lastPunch: '-', working: '05h 08m' },
+    { id: 'EMP020', name: 'Shweta Wakadikar', org: 'Saravya Group', dept: 'HQ / Operations', role: 'Finance Executive', firstPunch: '10:25 AM', lastPunch: '10:35 AM', working: '00h 10m' },
+    { id: 'SFS001', name: 'Ankita Kothe', org: 'Shetohit', dept: 'HQ / Operations', role: 'Business Development Associate', firstPunch: '10:34 AM', lastPunch: '-', working: '05h 10m' },
   ];
 
   return (
@@ -216,7 +216,7 @@ export default function Dashboard() {
                 <td style={{ padding: '1rem', borderBottom: '1px solid #f3f4f6', color: '#111827' }}>0</td>
               </tr>
               <tr>
-                <td style={{ padding: '1rem', borderBottom: '1px solid #f3f4f6', color: '#4b5563' }}>Geoclaim Energy Pvt Ltd.</td>
+                <td style={{ padding: '1rem', borderBottom: '1px solid #f3f4f6', color: '#4b5563' }}>Geoclaim Energy Private Limited.</td>
                 <td style={{ padding: '1rem', borderBottom: '1px solid #f3f4f6', color: '#111827' }}>2</td>
                 <td style={{ padding: '1rem', borderBottom: '1px solid #f3f4f6', color: '#111827' }}>0</td>
                 <td style={{ padding: '1rem', borderBottom: '1px solid #f3f4f6', color: '#111827' }}>0</td>

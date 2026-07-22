@@ -11,16 +11,16 @@ export default function ShiftAssignment() {
   const [selectedRows, setSelectedRows] = useState<string[]>([]);
 
   const assignments = [
-    { id: '1', empId: 'EMP0034', name: 'Shipali Raut', branch: 'Plastroots Waste Management Pvt Ltd', dept: 'Finance', designation: 'Account Executive', shift: 'Default Shift' },
-    { id: '2', empId: 'SFS003', name: 'Vrushabh Raut', branch: 'Shetahit Farm Solutions', dept: 'Business Development', designation: 'Business Development Associate', shift: 'Default Shift' },
-    { id: '3', empId: '23', name: 'Prajwal Wankhede', branch: 'Plastroots Waste Management Pvt Ltd', dept: 'Internship', designation: 'Intern', shift: 'Default Shift' },
-    { id: '4', empId: 'SFS002', name: 'Sarang Talmale', branch: 'Shetahit Farm Solutions', dept: 'Business Development', designation: 'Business Development Associate', shift: 'Default Shift' },
-    { id: '5', empId: '20', name: 'Sahil Pusdekar', branch: 'Plastroots Waste Management Pvt Ltd', dept: 'RM', designation: 'Intern', shift: 'Daily Shift' },
-    { id: '6', empId: '5', name: 'Ekta Satghare', branch: 'Plastroots Waste Management Pvt Ltd', dept: 'Data', designation: 'Intern - Data Analyst', shift: 'Daily Shift' },
-    { id: '7', empId: 'SFS001', name: 'Ankita Kathe', branch: 'Shetahit Farm Solutions', dept: 'Business Development', designation: 'Business Development Associate', shift: 'Daily Shift' },
-    { id: '8', empId: 'GC002', name: 'Rakesh Karmakar', branch: 'Geoclaim Energy Pvt Ltd.', dept: 'Data', designation: 'Business Intelligence Analyst', shift: 'Daily Shift' },
-    { id: '9', empId: 'EMP031', name: 'Bhushan Chilange', branch: 'Plastroots Waste Management Pvt Ltd', dept: 'RM', designation: 'Business Development Associate', shift: 'Daily Shift' },
-    { id: '10', empId: 'GC001', name: 'Praful Bhalerao', branch: 'Geoclaim Energy Pvt Ltd.', dept: 'Business Development', designation: 'Business Development Associate', shift: 'Daily Shift' },
+    { id: '1', empId: 'EMP0034', name: 'Shipali Raut', branch: 'Plastroots Waste Management & Solutions Private Limited Pvt Ltd', dept: 'RMT', designation: 'Account Executive', shift: 'Default Shift' },
+    { id: '2', empId: 'SFS003', name: 'Vrushabh Raut', branch: 'Shetahit Farm Solutions', dept: 'MPD', designation: 'Business Development Associate', shift: 'Default Shift' },
+    { id: '3', empId: '23', name: 'Prajwal Wankhede', branch: 'Plastroots Waste Management & Solutions Private Limited Pvt Ltd', dept: 'Government Services', designation: 'Intern', shift: 'Default Shift' },
+    { id: '4', empId: 'SFS002', name: 'Sarang Talmale', branch: 'Shetahit Farm Solutions', dept: 'MPD', designation: 'Business Development Associate', shift: 'Default Shift' },
+    { id: '5', empId: '20', name: 'Sahil Pusdekar', branch: 'Plastroots Waste Management & Solutions Private Limited Pvt Ltd', dept: 'Government Services', designation: 'Intern', shift: 'Daily Shift' },
+    { id: '6', empId: '5', name: 'Ekta Satghare', branch: 'Plastroots Waste Management & Solutions Private Limited Pvt Ltd', dept: 'Government Services', designation: 'Intern - Data Analyst', shift: 'Daily Shift' },
+    { id: '7', empId: 'SFS001', name: 'Ankita Kathe', branch: 'Shetahit Farm Solutions', dept: 'FVF', designation: 'Business Development Associate', shift: 'Daily Shift' },
+    { id: '8', empId: 'GC002', name: 'Rakesh Karmakar', branch: 'Geoclaim Energy Private Limited.', dept: 'PMS', designation: 'Business Intelligence Analyst', shift: 'Daily Shift' },
+    { id: '9', empId: 'EMP031', name: 'Bhushan Chilange', branch: 'Plastroots Waste Management & Solutions Private Limited Pvt Ltd', dept: 'RMT', designation: 'Business Development Associate', shift: 'Daily Shift' },
+    { id: '10', empId: 'GC001', name: 'Praful Bhalerao', branch: 'Geoclaim Energy Private Limited.', dept: 'Biogas', designation: 'Business Development Associate', shift: 'Daily Shift' },
   ];
 
   const toggleDropdown = (id: string) => {
